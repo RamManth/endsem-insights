@@ -8,14 +8,12 @@ interface TopNavProps {
   subjects: SubjectRecord[];
   activeSubjectId: string | null;
   onGoHome: () => void;
-  onSelectSubject: (subjectId: string) => void;
 }
 
 export function TopNav({
   subjects,
   activeSubjectId,
   onGoHome,
-  onSelectSubject,
 }: TopNavProps) {
   const progressRef = useRef<HTMLDivElement | null>(null);
 
@@ -92,32 +90,27 @@ export function TopNav({
           <span className="brand-title">Endsem Insights</span>
         </button>
 
-        <nav className="nav-pills" aria-label="Subject navigation">
+        <nav className="nav-pills" aria-label="Workspace navigation">
           {activeSubjectId !== null && (
-            <button
-              type="button"
-              className="memphis-btn memphis-btn--yellow"
-              onClick={onGoHome}
-            >
-              <ArrowLeft size={16} aria-hidden="true" />
-              <span>Home</span>
-            </button>
-          )}
-          {subjects.map((subj) => {
-            const isActive = subj.id === activeSubjectId;
-            const accentClass = isActive ? `memphis-btn--${subj.accentColor}` : '';
-            return (
-              <button
-                key={subj.id}
-                type="button"
-                className={`memphis-btn ${accentClass}`}
-                aria-current={isActive ? 'page' : undefined}
-                onClick={() => onSelectSubject(subj.id)}
+            <>
+              <span
+                className="memphis-pill"
+                style={{ background: 'var(--bg-cream)' }}
+                data-testid="topnav-active-subject"
               >
-                <span>{subj.shortName}</span>
+                {subjects.find((s) => s.id === activeSubjectId)?.shortName ?? activeSubjectId}
+              </span>
+              <button
+                type="button"
+                className="memphis-btn memphis-btn--yellow"
+                onClick={onGoHome}
+                data-testid="topnav-home-btn"
+              >
+                <ArrowLeft size={16} aria-hidden="true" />
+                <span>All Subjects</span>
               </button>
-            );
-          })}
+            </>
+          )}
         </nav>
       </div>
       <div className="scroll-progress-track" aria-hidden="true">

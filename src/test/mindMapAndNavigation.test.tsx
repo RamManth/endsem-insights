@@ -59,17 +59,7 @@ describe('App navigation & subject views', () => {
 
     expect(screen.getByTestId('subject-view-nas')).toBeInTheDocument();
     expect(screen.getByTestId('mindmap-canvas')).toBeInTheDocument();
-
-    // Verify all 5 NAS blueprint modules appear in rankings in descending weightage order
-    const rankingsSection = screen.getByTestId('module-rankings');
-    const rankedCards = within(rankingsSection).getAllByTestId(/^ranked-module-nas-m/);
-    expect(rankedCards.map((el) => el.getAttribute('data-testid'))).toEqual([
-      'ranked-module-nas-m5',
-      'ranked-module-nas-m4',
-      'ranked-module-nas-m1',
-      'ranked-module-nas-m3',
-      'ranked-module-nas-m2',
-    ]);
+    expect(screen.queryByTestId('module-rankings')).not.toBeInTheDocument();
 
     // Verify mind map branch expand/collapse toggle & Branch Outline switch
     const toggleM3 = screen.getByTestId('mindmap-toggle-nas-m3');
@@ -81,11 +71,30 @@ describe('App navigation & subject views', () => {
     expect(screen.getByTestId('mindmap-outline')).toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: /^Mind Map$/i }));
 
-    // Verify strategy section renders steps & responds to time budget presets
+    // Switch to Rankings tab -> verifies forward gravity transition + descending order
+    fireEvent.click(screen.getByTestId('dash-tab-rankings'));
+    expect(screen.getByTestId('tabpanel-rankings')).toHaveAttribute('data-gravity-direction', 'right');
+    const rankingsSection = screen.getByTestId('module-rankings');
+    const rankedCards = within(rankingsSection).getAllByTestId(/^ranked-module-nas-m/);
+    expect(rankedCards.map((el) => el.getAttribute('data-testid'))).toEqual([
+      'ranked-module-nas-m5',
+      'ranked-module-nas-m4',
+      'ranked-module-nas-m1',
+      'ranked-module-nas-m3',
+      'ranked-module-nas-m2',
+    ]);
+
+    // Switch to Study Plan tab -> verifies strategy presets
+    fireEvent.click(screen.getByTestId('dash-tab-strategy'));
+    expect(screen.getByTestId('tabpanel-strategy')).toHaveAttribute('data-gravity-direction', 'right');
     const strategySection = screen.getByTestId('study-strategy');
     expect(within(strategySection).getByText(/64% of marks first/i)).toBeInTheDocument();
     fireEvent.click(within(strategySection).getByRole('button', { name: /6h \(Sprint\)/i }));
     expect(within(strategySection).getByText(/Custom: 6h/i)).toBeInTheDocument();
+
+    // Switching back to Mind Map triggers backward gravity direction
+    fireEvent.click(screen.getByTestId('dash-tab-mindmap'));
+    expect(screen.getByTestId('tabpanel-mindmap')).toHaveAttribute('data-gravity-direction', 'left');
 
     // Navigate back home in 1 click
     fireEvent.click(screen.getByRole('button', { name: /Back to Subjects/i }));
@@ -151,9 +160,11 @@ describe('App navigation & subject views', () => {
     expect(screen.getByTestId('home-readiness-nas')).toHaveTextContent('17 / 50 marks ready');
   });
 
-  it('renders separate Repeated Questions and Repeated Topics lists with PYQ exam stats and PDF links', () => {
+  it('renders separate Repeated Questions and Repeated Topics lists in PYQ Strategy tab with PDF links', () => {
     render(<App rawData={generatedData} initialHash="#/subject/nas" />);
 
+    fireEvent.click(screen.getByTestId('dash-tab-pyq'));
+    expect(screen.getByTestId('tabpanel-pyq')).toHaveAttribute('data-gravity-direction', 'right');
     const pyqSection = screen.getByTestId('pyq-reverse-strategy');
     expect(within(pyqSection).getByTestId('pyq-stats-grid')).toHaveTextContent('93');
     expect(within(pyqSection).getByTestId('pyq-stats-grid')).toHaveTextContent('5');
@@ -182,17 +193,25 @@ describe('App navigation & subject views', () => {
     expect(within(topicsList).getByTestId('pyq-topic-pyq-t-fourier-ctft')).toBeInTheDocument();
   });
 
-  it('navigates to MATH III and SNT and displays clear missing-material error states', () => {
+  it('navigates to MATH III and SNT via Home without subject switchers in TopNav', () => {
     render(<App rawData={generatedData} initialHash="#/" />);
+
+    const nav = screen.getByRole('navigation', { name: /Workspace navigation/i });
+    expect(within(nav).queryByRole('button', { name: /NAS/i })).not.toBeInTheDocument();
+    expect(within(nav).queryByRole('button', { name: /MATH III/i })).not.toBeInTheDocument();
+    expect(within(nav).queryByRole('button', { name: /SNT/i })).not.toBeInTheDocument();
 
     fireEvent.click(screen.getByTestId('subject-card-math-iii'));
     const errorCard = screen.getByTestId('subject-error-state');
     expect(errorCard).toBeInTheDocument();
     expect(within(errorCard).getByText(/MATH III has no study material yet/i)).toBeInTheDocument();
 
-    // Jump directly to SNT from top nav in 1 click
-    const nav = screen.getByRole('navigation', { name: /Subject navigation/i });
-    fireEvent.click(within(nav).getByRole('button', { name: /SNT/i }));
+    // Still no subject switching pills in TopNav when viewing a subject
+    expect(within(nav).queryByRole('button', { name: /SNT/i })).not.toBeInTheDocument();
+
+    // Return to Home via TopNav All Subjects button, then open SNT
+    fireEvent.click(within(nav).getByTestId('topnav-home-btn'));
+    fireEvent.click(screen.getByTestId('subject-card-snt'));
     expect(screen.getByText(/SNT has no study material yet/i)).toBeInTheDocument();
   });
 
@@ -206,7 +225,7 @@ describe('App navigation & subject views', () => {
     expect(screen.getByTestId('fatal-data-error')).toBeInTheDocument();
   });
 
-  it('activates scroll progress indicator and floating quick-jump dock cleanly on scroll', async () => {
+  it('activates scroll progress indicator and back-to-top floating dock cleanly on scroll', async () => {
     render(<App rawData={generatedData} initialHash="#/subject/nas" />);
 
     expect(screen.getByTestId('scroll-progress-fill')).toBeInTheDocument();
@@ -222,14 +241,19 @@ describe('App navigation & subject views', () => {
     });
     expect(dock.className).toContain('floating-scroll-dock--visible');
 
-    // Quick jump buttons operate cleanly
-    fireEvent.click(within(dock).getByRole('button', { name: /Jump to Ranks section/i }));
-    fireEvent.click(within(dock).getByRole('button', { name: /Jump to Files section/i }));
     fireEvent.click(within(dock).getByRole('button', { name: /Scroll smoothly back to top/i }));
   });
 
-  it('renders Files section on Home and NAS views with filter tabs and PDF open/download links', () => {
+  it('renders tabbed Files Library on Home and Files tab on NAS with gravity transitions and PDF links', () => {
     const { unmount } = render(<App rawData={generatedData} initialHash="#/" />);
+
+    // Home starts compactly on Subjects tab
+    expect(screen.getByTestId('subject-card-nas')).toBeInTheDocument();
+    expect(screen.queryByTestId('files-section')).not.toBeInTheDocument();
+
+    // Switch Home to Files Library tab with gravity transition
+    fireEvent.click(screen.getByTestId('home-tab-files'));
+    expect(screen.getByTestId('tabpanel-files')).toHaveAttribute('data-gravity-direction', 'right');
 
     const homeFiles = screen.getByTestId('files-section');
     expect(within(homeFiles).getByText('NAS Repeated Questions PYQ List')).toBeInTheDocument();
@@ -266,7 +290,8 @@ describe('App navigation & subject views', () => {
     unmount();
 
     render(<App rawData={generatedData} initialHash="#/subject/nas" />);
-    expect(screen.getByTestId('jump-files-btn')).toBeInTheDocument();
+    fireEvent.click(screen.getByTestId('jump-files-btn'));
+    expect(screen.getByTestId('tabpanel-files')).toHaveAttribute('data-gravity-direction', 'right');
     const subjFiles = screen.getByTestId('files-section');
     expect(within(subjFiles).getByText('NAS Repeated Questions PYQ List')).toBeInTheDocument();
     expect(within(subjFiles).getByText('NAS Repeated PYQs — Solved With Circuits')).toBeInTheDocument();

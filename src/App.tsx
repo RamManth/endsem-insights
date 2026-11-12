@@ -141,7 +141,6 @@ export function App({ rawData = rawStudyData, initialHash }: AppProps) {
           subjects={dataset.subjects}
           activeSubjectId={activeSubjectId}
           onGoHome={navigateHome}
-          onSelectSubject={navigateToSubject}
         />
 
         <main className="main-container">

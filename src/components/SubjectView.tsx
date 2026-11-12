@@ -1,14 +1,23 @@
-import { useMemo, useRef, useState } from 'react';
-import { AlertTriangle, ArrowLeft, BookOpen, FolderOpen, Repeat } from 'lucide-react';
+import { useEffect, useMemo, useState } from 'react';
+import {
+  AlertTriangle,
+  ArrowLeft,
+  Award,
+  BookOpen,
+  Compass,
+  FolderOpen,
+  GitBranch,
+  Repeat,
+} from 'lucide-react';
 import type { SubjectRecord } from '../types/study';
-import { computeExamReadiness } from '../lib/studyHelpers';
-import { smoothScrollToElement } from '../lib/scrollMotion';
-import { FloatingScrollNav, type ScrollSectionTarget } from './FloatingScrollNav';
+import { buildStudyFileLibrary, computeExamReadiness } from '../lib/studyHelpers';
+import { smoothScrollToY } from '../lib/scrollMotion';
 import { FormulaCheatDrawer } from './FormulaCheatDrawer';
+import { FloatingScrollNav } from './FloatingScrollNav';
+import { GravityTabs, type GravityTabItem } from './GravityTabs';
 import { MindMapView } from './MindMapView';
 import { ModuleRankings } from './ModuleRankings';
 import { PyqReverseStrategySection } from './PyqReverseStrategySection';
-import { ScrollReveal } from './ScrollReveal';
 import { StudyFilesSection } from './StudyFilesSection';
 import { StudyStrategySection } from './StudyStrategySection';
 import { SubjectErrorState } from './SubjectErrorState';
@@ -23,6 +32,8 @@ interface SubjectViewProps {
   onSelectSubject: (subjectId: string) => void;
 }
 
+type SubjectDashboardTab = 'mindmap' | 'rankings' | 'strategy' | 'pyq' | 'files';
+
 export function SubjectView({
   subject,
   requestedId,
@@ -34,31 +45,68 @@ export function SubjectView({
 }: SubjectViewProps) {
   const [focusedModule, setFocusedModule] = useState<{ moduleId: string; seq: number } | null>(null);
   const [cheatDrawerOpen, setCheatDrawerOpen] = useState(false);
-  const mindMapTopRef = useRef<HTMLDivElement | null>(null);
-  const rankingsTopRef = useRef<HTMLDivElement | null>(null);
-  const strategyTopRef = useRef<HTMLDivElement | null>(null);
-  const pyqTopRef = useRef<HTMLDivElement | null>(null);
-  const filesTopRef = useRef<HTMLDivElement | null>(null);
+  const [activeTab, setActiveTab] = useState<SubjectDashboardTab>('mindmap');
+
+  useEffect(() => {
+    setActiveTab('mindmap');
+  }, [subject?.id]);
 
   const hasPyq = Boolean(subject?.pyqAnalysis);
-  const hasFiles =
-    (subject?.sourceFiles.length ?? 0) > 0 ||
-    (subject?.resourceFiles?.length ?? 0) > 0 ||
-    (subject?.pyqAnalysis?.papers.length ?? 0) > 0;
-  const scrollSections = useMemo<ScrollSectionTarget[]>(() => {
-    const base: ScrollSectionTarget[] = [
-      { id: 'mindmap', label: 'Map', getElement: () => mindMapTopRef.current },
-      { id: 'rankings', label: 'Ranks', getElement: () => rankingsTopRef.current },
-      { id: 'strategy', label: 'Plan', getElement: () => strategyTopRef.current },
+  const fileCount = useMemo(
+    () => (subject ? buildStudyFileLibrary([subject]).length : 0),
+    [subject]
+  );
+  const hasFiles = fileCount > 0;
+
+  const dashboardTabs = useMemo<GravityTabItem[]>(() => {
+    if (!subject) return [];
+    const items: GravityTabItem[] = [
+      {
+        id: 'mindmap',
+        label: 'Mind Map',
+        badge: subject.modules.length,
+        icon: <GitBranch size={15} aria-hidden="true" />,
+        accent: 'yellow',
+        testId: 'dash-tab-mindmap',
+      },
+      {
+        id: 'rankings',
+        label: 'Rankings',
+        badge: subject.modules.length,
+        icon: <Award size={15} aria-hidden="true" />,
+        accent: 'teal',
+        testId: 'dash-tab-rankings',
+      },
+      {
+        id: 'strategy',
+        label: 'Study Plan',
+        icon: <Compass size={15} aria-hidden="true" />,
+        accent: 'pink',
+        testId: 'dash-tab-strategy',
+      },
     ];
-    if (hasPyq) {
-      base.push({ id: 'pyq', label: 'PYQs', getElement: () => pyqTopRef.current });
+    if (hasPyq && subject.pyqAnalysis) {
+      items.push({
+        id: 'pyq',
+        label: 'PYQ Strategy',
+        badge: subject.pyqAnalysis.repeatedQuestionCount,
+        icon: <Repeat size={15} aria-hidden="true" />,
+        accent: 'pink',
+        testId: 'dash-tab-pyq',
+      });
     }
     if (hasFiles) {
-      base.push({ id: 'files', label: 'Files', getElement: () => filesTopRef.current });
+      items.push({
+        id: 'files',
+        label: 'Files',
+        badge: fileCount,
+        icon: <FolderOpen size={15} aria-hidden="true" />,
+        accent: 'teal',
+        testId: 'dash-tab-files',
+      });
     }
-    return base;
-  }, [hasPyq, hasFiles]);
+    return items;
+  }, [subject, hasPyq, hasFiles, fileCount]);
 
   if (!subject || subject.status !== 'ready' || subject.modules.length === 0) {
     return (
@@ -75,14 +123,15 @@ export function SubjectView({
   const readiness = computeExamReadiness(subject, reviewedIds);
 
   const handleFocusModule = (moduleId: string) => {
+    setActiveTab('mindmap');
     setFocusedModule((prev) => ({ moduleId, seq: (prev?.seq ?? 0) + 1 }));
-    smoothScrollToElement(mindMapTopRef.current, 88, 720);
+    smoothScrollToY(0, 480);
   };
 
   return (
     <div data-testid={`subject-view-${subject.id}`}>
       <header
-        className="memphis-card subject-header"
+        className="memphis-card subject-header subject-header--compact"
         style={{
           borderTopWidth: '10px',
           borderTopColor:
@@ -116,7 +165,7 @@ export function SubjectView({
               </span>
             ))}
           </div>
-          <h1 style={{ fontSize: 'clamp(1.65rem, 3.2vw, 2.3rem)' }}>
+          <h1 style={{ fontSize: 'clamp(1.5rem, 2.9vw, 2.05rem)' }}>
             {subject.shortName} — {subject.fullName}
           </h1>
 
@@ -138,7 +187,7 @@ export function SubjectView({
             <button
               type="button"
               className="memphis-btn memphis-btn--pink"
-              onClick={() => smoothScrollToElement(pyqTopRef.current, 88, 780)}
+              onClick={() => setActiveTab('pyq')}
               data-testid="jump-pyq-btn"
             >
               <Repeat size={16} aria-hidden="true" />
@@ -160,7 +209,7 @@ export function SubjectView({
             <button
               type="button"
               className="memphis-btn memphis-btn--teal"
-              onClick={() => smoothScrollToElement(filesTopRef.current, 88, 780)}
+              onClick={() => setActiveTab('files')}
               data-testid="jump-files-btn"
             >
               <FolderOpen size={16} aria-hidden="true" />
@@ -187,7 +236,7 @@ export function SubjectView({
           role="status"
           style={{
             padding: '0.75rem 1rem',
-            marginBottom: '1.25rem',
+            marginBottom: '1rem',
             background: 'var(--yellow-soft)',
             display: 'flex',
             alignItems: 'center',
@@ -199,36 +248,38 @@ export function SubjectView({
         </div>
       )}
 
-      <div ref={mindMapTopRef} className="scroll-anchor">
-        <ScrollReveal variant="up">
+      <GravityTabs
+        tabs={dashboardTabs}
+        activeTab={activeTab}
+        onTabChange={(tabId) => setActiveTab(tabId as SubjectDashboardTab)}
+        ariaLabel="Subject dashboard categories"
+        idPrefix="subject-dash"
+      >
+        {activeTab === 'mindmap' && (
           <MindMapView
             subject={subject}
             focusedModule={focusedModule}
             reviewedIds={reviewedIds}
             onToggleReviewed={onToggleReviewed}
           />
-        </ScrollReveal>
-      </div>
+        )}
 
-      <div ref={rankingsTopRef} className="scroll-anchor">
-        <ModuleRankings subject={subject} onFocusModule={handleFocusModule} />
-      </div>
+        {activeTab === 'rankings' && (
+          <ModuleRankings subject={subject} onFocusModule={handleFocusModule} />
+        )}
 
-      <div ref={strategyTopRef} className="scroll-anchor">
-        <StudyStrategySection subject={subject} />
-      </div>
+        {activeTab === 'strategy' && <StudyStrategySection subject={subject} />}
 
-      <div ref={pyqTopRef} className="scroll-anchor">
-        <PyqReverseStrategySection subject={subject} onFocusModule={handleFocusModule} />
-      </div>
+        {activeTab === 'pyq' && hasPyq && (
+          <PyqReverseStrategySection subject={subject} onFocusModule={handleFocusModule} />
+        )}
 
-      {hasFiles && (
-        <div ref={filesTopRef} className="scroll-anchor">
+        {activeTab === 'files' && hasFiles && (
           <StudyFilesSection subjects={[subject]} mode="subject" />
-        </div>
-      )}
+        )}
+      </GravityTabs>
 
-      <FloatingScrollNav sections={scrollSections} />
+      <FloatingScrollNav />
     </div>
   );
 }

@@ -1799,3 +1799,216 @@ a {
     align-items: flex-start;
   }
 }
+
+/* =========================================================
+   Gravity Dashboard Tabs & Weighted Drop-Settle Motion
+   ========================================================= */
+
+.home-hero--compact {
+  padding: 0.7rem 0 1.25rem;
+}
+
+.subject-header--compact {
+  margin-bottom: 1.1rem;
+  padding: 1rem 1.25rem;
+}
+
+.gravity-tabs-shell {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.gravity-tabs-bar-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.gravity-tabs-bar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem;
+  background: var(--bg-cream);
+  border: var(--border-w) solid var(--ink);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.gravity-tabs-glider {
+  position: absolute;
+  top: 0.35rem;
+  bottom: 0.35rem;
+  left: 0;
+  border-radius: calc(var(--radius-md) - 5px);
+  border: 2.5px solid var(--ink);
+  background: var(--yellow);
+  box-shadow: 2px 2px 0px var(--ink);
+  transition:
+    transform 420ms cubic-bezier(0.22, 1.32, 0.36, 1),
+    width 360ms cubic-bezier(0.22, 1.24, 0.36, 1),
+    background-color 240ms ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.gravity-tabs-glider--pink {
+  background: var(--pink);
+}
+
+.gravity-tabs-glider--teal {
+  background: var(--teal);
+}
+
+.gravity-tabs-glider--yellow {
+  background: var(--yellow);
+}
+
+.gravity-tab-btn {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  padding: 0.5rem 0.9rem;
+  border: 2px solid transparent;
+  border-radius: calc(var(--radius-md) - 5px);
+  background: transparent;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.88rem;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    transform 220ms cubic-bezier(0.22, 1.32, 0.36, 1),
+    color 160ms ease;
+}
+
+.gravity-tab-btn:hover:not(.gravity-tab-btn--active) {
+  transform: translateY(-1px);
+}
+
+.gravity-tab-btn--active {
+  transform: translateY(-1px);
+}
+
+.gravity-tab-btn__icon {
+  display: inline-flex;
+  align-items: center;
+}
+
+.gravity-tab-btn__badge {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.08rem 0.42rem;
+  border-radius: 999px;
+  border: 1.8px solid var(--ink);
+  background: var(--bg-white);
+  color: var(--ink);
+}
+
+.gravity-tabpanel {
+  will-change: transform, opacity;
+  transform-origin: center top;
+}
+
+.gravity-tabpanel > .files-section,
+.gravity-tabpanel > .rankings-section,
+.gravity-tabpanel > .pyq-section {
+  margin-top: 0.25rem;
+}
+
+@keyframes gravityDropInitial {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -24px, 0) scale(0.98);
+  }
+  58% {
+    opacity: 1;
+    transform: translate3d(0, 6px, 0) scale(1.004);
+  }
+  80% {
+    opacity: 1;
+    transform: translate3d(0, -2px, 0) scale(0.999);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes gravityDropRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(26px, -36px, 0) scale(0.972) rotate(0.45deg);
+  }
+  52% {
+    opacity: 1;
+    transform: translate3d(-3px, 9px, 0) scale(1.005) rotate(-0.18deg);
+  }
+  76% {
+    opacity: 1;
+    transform: translate3d(1px, -3px, 0) scale(0.998) rotate(0.06deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+  }
+}
+
+@keyframes gravityDropLeft {
+  0% {
+    opacity: 0;
+    transform: translate3d(-26px, -36px, 0) scale(0.972) rotate(-0.45deg);
+  }
+  52% {
+    opacity: 1;
+    transform: translate3d(3px, 9px, 0) scale(1.005) rotate(0.18deg);
+  }
+  76% {
+    opacity: 1;
+    transform: translate3d(-1px, -3px, 0) scale(0.998) rotate(-0.06deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+  }
+}
+
+.gravity-panel--drop-initial {
+  animation: gravityDropInitial 500ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.gravity-panel--drop-right {
+  animation: gravityDropRight 560ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.gravity-panel--drop-left {
+  animation: gravityDropLeft 560ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (max-width: 720px) {
+  .gravity-tab-btn {
+    padding: 0.44rem 0.7rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gravity-tabs-glider,
+  .gravity-tab-btn,
+  .gravity-panel--drop-initial,
+  .gravity-panel--drop-right,
+  .gravity-panel--drop-left {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}
