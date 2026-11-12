@@ -1,0 +1,1830 @@
+{
+  "schemaVersion": "1.0.0",
+  "generatedAt": "2026-11-12T06:34:46.714674+00:00",
+  "studyRootName": "Endsem insights",
+  "subjects": [
+    {
+      "id": "nas",
+      "folderName": "NAS",
+      "shortName": "NAS",
+      "fullName": "Networks and Signals",
+      "courseCode": "ICE 2123",
+      "accentColor": "pink",
+      "tagline": "Circuits, Laplace, LTI Systems & Fourier Analysis",
+      "status": "ready",
+      "statusMessage": "All modules parsed cleanly.",
+      "weightageScaleLabel": "Endsem Blueprint (out of 50)",
+      "weightageSource": "stated",
+      "weightageBasis": "User-provided Endsem Blueprint (CO1=7, CO2=5, CO3=6, CO4=15, CO5=17; total 50), cross-referenced with Course Plan - BTech Theory - 3 Credits_ICE2123_NAS_Rev2_Signed-2.pdf (total 100 CO marks / 48 contact hrs).",
+      "totalWeightage": 50.0,
+      "sourceFiles": [
+        {
+          "filename": "Course Plan - BTech Theory - 3 Credits_ICE2123_NAS_Rev2_Signed-2.pdf",
+          "relativePath": "NAS/Course Plan - BTech Theory - 3 Credits_ICE2123_NAS_Rev2_Signed-2.pdf",
+          "pageCount": 6,
+          "exampleCount": 2,
+          "isCoursePlan": true,
+          "parseError": null
+        },
+        {
+          "filename": "NAS_Module1_partA.pdf",
+          "relativePath": "NAS/NAS_Module1_partA.pdf",
+          "pageCount": 58,
+          "exampleCount": 11,
+          "isCoursePlan": false,
+          "parseError": null
+        },
+        {
+          "filename": "NS_Module2_Rev2.pdf",
+          "relativePath": "NAS/NS_Module2_Rev2.pdf",
+          "pageCount": 61,
+          "exampleCount": 7,
+          "isCoursePlan": false,
+          "parseError": null
+        },
+        {
+          "filename": "NS_Module3A_Rev3.pdf",
+          "relativePath": "NAS/NS_Module3A_Rev3.pdf",
+          "pageCount": 49,
+          "exampleCount": 12,
+          "isCoursePlan": false,
+          "parseError": null
+        },
+        {
+          "filename": "NS_Module3B_Rev3.pdf",
+          "relativePath": "NAS/NS_Module3B_Rev3.pdf",
+          "pageCount": 37,
+          "exampleCount": 16,
+          "isCoursePlan": false,
+          "parseError": null
+        },
+        {
+          "filename": "NS_Module4_Rev1.pdf",
+          "relativePath": "NAS/NS_Module4_Rev1.pdf",
+          "pageCount": 90,
+          "exampleCount": 47,
+          "isCoursePlan": false,
+          "parseError": null
+        },
+        {
+          "filename": "NS_Module5_Rev1.pdf",
+          "relativePath": "NAS/NS_Module5_Rev1.pdf",
+          "pageCount": 87,
+          "exampleCount": 37,
+          "isCoursePlan": false,
+          "parseError": null
+        }
+      ],
+      "parseWarnings": [],
+      "modules": [
+        {
+          "id": "nas-m1",
+          "moduleNumber": 1,
+          "coCode": "CO1",
+          "track": "Networks",
+          "title": "Circuit Analysis & Network Theorems",
+          "weightage": 7,
+          "weightageUnit": "marks",
+          "weightageSource": "stated",
+          "coursePlanHours": 10,
+          "coursePlanMarks100": 22,
+          "sourceFiles": [
+            "NAS_Module1_partA.pdf",
+            "Course Plan - BTech Theory - 3 Credits_ICE2123_NAS_Rev2_Signed-2.pdf"
+          ],
+          "sourceGapNote": "NAS_Module1_partA.pdf covers KCL/KVL, dependent sources, nodal/supernode, and mesh/supermesh (pp. 1-58). Network theorems (L6-L9, L24-L25) are traced from Course Plan - BTech Theory - 3 Credits_ICE2123_NAS_Rev2_Signed-2.pdf because Module1_partB.pdf is not present in NAS/.",
+          "prerequisites": [],
+          "topicGroups": [
+            {
+              "id": "nas-m1-fundamentals",
+              "title": "Circuit Elements & Dependent Sources",
+              "sourceFile": "NAS_Module1_partA.pdf",
+              "sourceRef": "pp. 9-20, 30-35",
+              "priority": "core",
+              "leaves": [
+                {
+                  "id": "nas-m1-f1",
+                  "title": "Independent vs. Dependent Sources (VCVS, CCVS, VCCS, CCCS)",
+                  "sourceFile": "NAS_Module1_partA.pdf",
+                  "sourceRef": "pp. 12-14",
+                  "highYield": true
+                },
+                {
+                  "id": "nas-m1-f2",
+                  "title": "Ohm's Law, Conductance & Series/Parallel Reduction",
+                  "sourceFile": "NAS_Module1_partA.pdf",
+                  "sourceRef": "pp. 16-20, 30-32",
+                  "highYield": false
+                },
+                {
+                  "id": "nas-m1-f3",
+                  "title": "Voltage & Current Division Formulae",
+                  "sourceFile": "NAS_Module1_partA.pdf",
+                  "sourceRef": "pp. 33-35",
+                  "highYield": true
+                }
+              ]
+            },
+            {
+              "id": "nas-m1-nodal-mesh",
+              "title": "KCL, KVL, Nodal & Mesh Analysis",
+              "sourceFile": "NAS_Module1_partA.pdf",
+              "sourceRef": "pp. 21-57",
+              "priority": "high-yield",
+              "leaves": [
+                {
+                  "id": "nas-m1-nm1",
+                  "title": "KCL, KVL & Single-Loop / Single-Node-Pair Power",
+                  "sourceFile": "NAS_Module1_partA.pdf",
+                  "sourceRef": "pp. 21-29",
+                  "highYield": false
+                },
+                {
+                  "id": "nas-m1-nm2",
+                  "title": "Nodal Analysis & Supernode Equations",
+                  "sourceFile": "NAS_Module1_partA.pdf",
+                  "sourceRef": "pp. 36-45",
+                  "highYield": true
+                },
+                {
+                  "id": "nas-m1-nm3",
+                  "title": "Planar Circuits, Mesh Analysis & Supermesh",
+                  "sourceFile": "NAS_Module1_partA.pdf",
+                  "sourceRef": "pp. 46-57",
+                  "highYield": true
+                }
+              ]
+            },
+            {
+              "id": "nas-m1-theorems",
+              "title": "Network Theorems (Course Plan L6-L9, L24-L25)",
+              "sourceFile": "Course Plan - BTech Theory - 3 Credits_ICE2123_NAS_Rev2_Signed-2.pdf",
+              "sourceRef": "Lesson Plan L6-L9, L24-L25 (p. 3)",
+              "priority": "high-yield",
+              "leaves": [
+                {
+                  "id": "nas-m1-t1",
+                  "title": "Superposition Theorem & Source Transformations",
+                  "sourceFile": "Course Plan - BTech Theory - 3 Credits_ICE2123_NAS_Rev2_Signed-2.pdf",
+                  "sourceRef": "L6 (p. 3)",
+                  "highYield": true
+                },
+                {
+                  "id": "nas-m1-t2",
+                  "title": "Th\u00e9venin & Norton Equivalent Circuits (with Dependent Sources)",
+                  "sourceFile": "Course Plan - BTech Theory - 3 Credits_ICE2123_NAS_Rev2_Signed-2.pdf",
+                  "sourceRef": "L6-L8, L25 (p. 3)",
+                  "highYield": true
+                },
+                {
+                  "id": "nas-m1-t3",
+                  "title": "Maximum Power Transfer & Delta-Wye Conversion",
+                  "sourceFile": "Course Plan - BTech Theory - 3 Credits_ICE2123_NAS_Rev2_Signed-2.pdf",
+                  "sourceRef": "L9 (p. 3)",
+                  "highYield": true
+                }
+              ]
+            }
+          ],
+          "pageCount": 58,
+          "exampleCount": 11
+        },
+        {
+          "id": "nas-m2",
+          "moduleNumber": 2,
+          "coCode": "CO2",
+          "track": "Networks",
+          "title": "Transient Performance of RLC Circuits",
+          "weightage": 5,
+          "weightageUnit": "marks",
+          "weightageSource": "stated",
+          "coursePlanHours": 10,
+          "coursePlanMarks100": 20,
+          "sourceFiles": [
+            "NS_Module2_Rev2.pdf",
+            "Course Plan - BTech Theory - 3 Credits_ICE2123_NAS_Rev2_Signed-2.pdf"
+          ],
+          "sourceGapNote": "Signed Course Plan Rev2 lists CO2 at 10 hrs / 20 marks (older slide 6 in NAS_Module1_partA.pdf showed 8 hrs / 16 marks); Endsem blueprint allocates 5 marks.",
+          "prerequisites": [
+            "nas-m1"
+          ],
+          "topicGroups": [
+            {
+              "id": "nas-m2-elements",
+              "title": "Energy Storage & Switching Conditions",
+              "sourceFile": "NS_Module2_Rev2.pdf",
+              "sourceRef": "pp. 2-11, 22-24",
+              "priority": "core",
+              "leaves": [
+                {
+                  "id": "nas-m2-e1",
+                  "title": "Capacitor & Inductor V-I Relations and Series/Parallel Combinations",
+                  "sourceFile": "NS_Module2_Rev2.pdf",
+                  "sourceRef": "pp. 2-11",
+                  "highYield": false
+                },
+                {
+                  "id": "nas-m2-e2",
+                  "title": "Initial Conditions (t = 0-/0+) & Final Steady-State Conditions",
+                  "sourceFile": "NS_Module2_Rev2.pdf",
+                  "sourceRef": "pp. 22-24",
+                  "highYield": true
+                }
+              ]
+            },
+            {
+              "id": "nas-m2-first-order",
+              "title": "First-Order RL & RC Transient Response",
+              "sourceFile": "NS_Module2_Rev2.pdf",
+              "sourceRef": "pp. 12-48",
+              "priority": "high-yield",
+              "leaves": [
+                {
+                  "id": "nas-m2-fo1",
+                  "title": "Source-Free RL & RC Circuits and Time Constant (tau = L/R, RC)",
+                  "sourceFile": "NS_Module2_Rev2.pdf",
+                  "sourceRef": "pp. 12-20",
+                  "highYield": true
+                },
+                {
+                  "id": "nas-m2-fo2",
+                  "title": "Equivalent Multi-Resistor / Multi-Inductor Switching Circuits",
+                  "sourceFile": "NS_Module2_Rev2.pdf",
+                  "sourceRef": "pp. 25-33",
+                  "highYield": true
+                },
+                {
+                  "id": "nas-m2-fo3",
+                  "title": "Driven RL & RC Charging/Discharging Differential Equations",
+                  "sourceFile": "NS_Module2_Rev2.pdf",
+                  "sourceRef": "pp. 34-48",
+                  "highYield": true
+                }
+              ]
+            },
+            {
+              "id": "nas-m2-second-order",
+              "title": "Second-Order Source-Free & Lossless RLC",
+              "sourceFile": "NS_Module2_Rev2.pdf",
+              "sourceRef": "pp. 49-60",
+              "priority": "core",
+              "leaves": [
+                {
+                  "id": "nas-m2-so1",
+                  "title": "Resonant Frequency (omega_0) & Neper Damping Coefficient (alpha)",
+                  "sourceFile": "NS_Module2_Rev2.pdf",
+                  "sourceRef": "pp. 49-51",
+                  "highYield": true
+                },
+                {
+                  "id": "nas-m2-so2",
+                  "title": "Overdamped, Critically Damped & Underdamped Parallel/Series RLC",
+                  "sourceFile": "NS_Module2_Rev2.pdf",
+                  "sourceRef": "pp. 52-58",
+                  "highYield": true
+                },
+                {
+                  "id": "nas-m2-so3",
+                  "title": "Lossless LC Oscillatory Circuits",
+                  "sourceFile": "NS_Module2_Rev2.pdf",
+                  "sourceRef": "pp. 59-60",
+                  "highYield": false
+                }
+              ]
+            }
+          ],
+          "pageCount": 61,
+          "exampleCount": 7
+        },
+        {
+          "id": "nas-m3",
+          "moduleNumber": 3,
+          "coCode": "CO3",
+          "track": "Networks",
+          "title": "Laplace Domain & Two-Port Networks",
+          "weightage": 6,
+          "weightageUnit": "marks",
+          "weightageSource": "stated",
+          "coursePlanHours": 8,
+          "coursePlanMarks100": 16,
+          "sourceFiles": [
+            "NS_Module3A_Rev3.pdf",
+            "NS_Module3B_Rev3.pdf",
+            "Course Plan - BTech Theory - 3 Credits_ICE2123_NAS_Rev2_Signed-2.pdf"
+          ],
+          "sourceGapNote": "Combines NS_Module3A_Rev3.pdf (49 pages) and NS_Module3B_Rev3.pdf (37 pages). Note: Course Plan Lesson Plan L17-L23 & L27 mislabels CO3 as '4' in the lecture table column, while Page 1 CO Statements explicitly map Laplace & Two-Port Networks to CO3 (8 hrs, 16/100 marks).",
+          "prerequisites": [
+            "nas-m1",
+            "nas-m2"
+          ],
+          "topicGroups": [
+            {
+              "id": "nas-m3-laplace-props",
+              "title": "Laplace Transform Theorems & Properties",
+              "sourceFile": "NS_Module3A_Rev3.pdf",
+              "sourceRef": "pp. 2-12, 21",
+              "priority": "core",
+              "leaves": [
+                {
+                  "id": "nas-m3-lp1",
+                  "title": "Transforms of Step, Impulse, Exponential, Ramp & Sinusoids",
+                  "sourceFile": "NS_Module3A_Rev3.pdf",
+                  "sourceRef": "pp. 2-9",
+                  "highYield": true
+                },
+                {
+                  "id": "nas-m3-lp2",
+                  "title": "Time Differentiation, Integration, Shift, Initial & Final Value Theorems",
+                  "sourceFile": "NS_Module3A_Rev3.pdf",
+                  "sourceRef": "pp. 5-7, 10-12, 21",
+                  "highYield": true
+                }
+              ]
+            },
+            {
+              "id": "nas-m3-sdomain",
+              "title": "s-Domain Circuit Analysis",
+              "sourceFile": "NS_Module3A_Rev3.pdf",
+              "sourceRef": "pp. 13-48",
+              "priority": "high-yield",
+              "leaves": [
+                {
+                  "id": "nas-m3-sd1",
+                  "title": "Modeling Inductors & Capacitors with Initial Conditions in s-Domain",
+                  "sourceFile": "NS_Module3A_Rev3.pdf",
+                  "sourceRef": "pp. 13-20",
+                  "highYield": true
+                },
+                {
+                  "id": "nas-m3-sd2",
+                  "title": "s-Domain Mesh & Nodal Analysis for RL, RC & Series RLC",
+                  "sourceFile": "NS_Module3A_Rev3.pdf",
+                  "sourceRef": "pp. 28-41, 44-48",
+                  "highYield": true
+                },
+                {
+                  "id": "nas-m3-sd3",
+                  "title": "Sinusoidal Input & Pole-Zero Response Analysis",
+                  "sourceFile": "NS_Module3A_Rev3.pdf",
+                  "sourceRef": "pp. 42-43",
+                  "highYield": false
+                }
+              ]
+            },
+            {
+              "id": "nas-m3-twoport",
+              "title": "Two-Port Parameters & Interconnections",
+              "sourceFile": "NS_Module3B_Rev3.pdf",
+              "sourceRef": "pp. 2-21",
+              "priority": "high-yield",
+              "leaves": [
+                {
+                  "id": "nas-m3-tp1",
+                  "title": "Z (Impedance) & Y (Admittance) Parameters + Z-to-Y Conversion",
+                  "sourceFile": "NS_Module3B_Rev3.pdf",
+                  "sourceRef": "pp. 3-13",
+                  "highYield": true
+                },
+                {
+                  "id": "nas-m3-tp2",
+                  "title": "Hybrid (h) & Transmission (ABCD / t) Parameters",
+                  "sourceFile": "NS_Module3B_Rev3.pdf",
+                  "sourceRef": "pp. 14-15",
+                  "highYield": true
+                },
+                {
+                  "id": "nas-m3-tp3",
+                  "title": "Cascade, Series & Parallel Connections + Reciprocity/Symmetry",
+                  "sourceFile": "NS_Module3B_Rev3.pdf",
+                  "sourceRef": "pp. 16-21",
+                  "highYield": false
+                }
+              ]
+            },
+            {
+              "id": "nas-m3-netfunc",
+              "title": "Network Functions & Ladder Networks",
+              "sourceFile": "NS_Module3B_Rev3.pdf",
+              "sourceRef": "pp. 22-36",
+              "priority": "core",
+              "leaves": [
+                {
+                  "id": "nas-m3-nf1",
+                  "title": "Driving-Point Impedance/Admittance & Four Transfer Functions",
+                  "sourceFile": "NS_Module3B_Rev3.pdf",
+                  "sourceRef": "pp. 22-29",
+                  "highYield": true
+                },
+                {
+                  "id": "nas-m3-nf2",
+                  "title": "Ladder Networks, Poles/Zeros & Minimum vs. Non-Minimum Phase",
+                  "sourceFile": "NS_Module3B_Rev3.pdf",
+                  "sourceRef": "pp. 30-36",
+                  "highYield": false
+                }
+              ]
+            }
+          ],
+          "pageCount": 86,
+          "exampleCount": 28
+        },
+        {
+          "id": "nas-m4",
+          "moduleNumber": 4,
+          "coCode": "CO4",
+          "track": "Signals",
+          "title": "Signals and LTI Systems",
+          "weightage": 15,
+          "weightageUnit": "marks",
+          "weightageSource": "stated",
+          "coursePlanHours": 10,
+          "coursePlanMarks100": 20,
+          "sourceFiles": [
+            "NS_Module4_Rev1.pdf",
+            "Course Plan - BTech Theory - 3 Credits_ICE2123_NAS_Rev2_Signed-2.pdf"
+          ],
+          "sourceGapNote": "Course Plan Lesson Plan L29-L31, L42-L43, L45 mislabels CO4 as '3' in the lecture table column, while Page 1 CO Statements explicitly map LTI Systems to CO4 (10 hrs, 20/100 marks).",
+          "prerequisites": [],
+          "topicGroups": [
+            {
+              "id": "nas-m4-signals",
+              "title": "Signal Operations & Classifications",
+              "sourceFile": "NS_Module4_Rev1.pdf",
+              "sourceRef": "pp. 2-20",
+              "priority": "high-yield",
+              "leaves": [
+                {
+                  "id": "nas-m4-s1",
+                  "title": "CT/DT Time Shifting, Reflection & Time Scaling Transformations",
+                  "sourceFile": "NS_Module4_Rev1.pdf",
+                  "sourceRef": "pp. 2-8",
+                  "highYield": true
+                },
+                {
+                  "id": "nas-m4-s2",
+                  "title": "Periodic Signals & Even/Odd Signal Decomposition",
+                  "sourceFile": "NS_Module4_Rev1.pdf",
+                  "sourceRef": "pp. 9-14",
+                  "highYield": true
+                },
+                {
+                  "id": "nas-m4-s3",
+                  "title": "Complex Exponential & Sinusoidal Signals",
+                  "sourceFile": "NS_Module4_Rev1.pdf",
+                  "sourceRef": "pp. 15-20",
+                  "highYield": false
+                }
+              ]
+            },
+            {
+              "id": "nas-m4-testsig",
+              "title": "Standard Test Signals & Energy/Power",
+              "sourceFile": "NS_Module4_Rev1.pdf",
+              "sourceRef": "pp. 21-48",
+              "priority": "high-yield",
+              "leaves": [
+                {
+                  "id": "nas-m4-ts1",
+                  "title": "Unit Impulse, Unit Step, Ramp & Rectangular Pulse Synthesis",
+                  "sourceFile": "NS_Module4_Rev1.pdf",
+                  "sourceRef": "pp. 21-39",
+                  "highYield": true
+                },
+                {
+                  "id": "nas-m4-ts2",
+                  "title": "Energy vs. Power Signals (CT Integrals & DT Sums)",
+                  "sourceFile": "NS_Module4_Rev1.pdf",
+                  "sourceRef": "pp. 40-48",
+                  "highYield": true
+                }
+              ]
+            },
+            {
+              "id": "nas-m4-sysprops",
+              "title": "System Properties & Interconnections",
+              "sourceFile": "NS_Module4_Rev1.pdf",
+              "sourceRef": "pp. 49-69",
+              "priority": "high-yield",
+              "leaves": [
+                {
+                  "id": "nas-m4-sp1",
+                  "title": "Series, Parallel & Feedback System Interconnections",
+                  "sourceFile": "NS_Module4_Rev1.pdf",
+                  "sourceRef": "pp. 49-52",
+                  "highYield": false
+                },
+                {
+                  "id": "nas-m4-sp2",
+                  "title": "Memoryless, Invertibility, Causality & BIBO Stability",
+                  "sourceFile": "NS_Module4_Rev1.pdf",
+                  "sourceRef": "pp. 53-60",
+                  "highYield": true
+                },
+                {
+                  "id": "nas-m4-sp3",
+                  "title": "Linearity (Superposition) & Time-Invariance Classification Problems",
+                  "sourceFile": "NS_Module4_Rev1.pdf",
+                  "sourceRef": "pp. 61-69",
+                  "highYield": true
+                }
+              ]
+            },
+            {
+              "id": "nas-m4-convolution",
+              "title": "Convolution Sum & Convolution Integral",
+              "sourceFile": "NS_Module4_Rev1.pdf",
+              "sourceRef": "pp. 70-89",
+              "priority": "high-yield",
+              "leaves": [
+                {
+                  "id": "nas-m4-c1",
+                  "title": "Impulse Decomposition of Discrete-Time Signals",
+                  "sourceFile": "NS_Module4_Rev1.pdf",
+                  "sourceRef": "pp. 70-73",
+                  "highYield": false
+                },
+                {
+                  "id": "nas-m4-c2",
+                  "title": "Discrete-Time Convolution Sum (Graphical & Tabular Methods)",
+                  "sourceFile": "NS_Module4_Rev1.pdf",
+                  "sourceRef": "pp. 74-83",
+                  "highYield": true
+                },
+                {
+                  "id": "nas-m4-c3",
+                  "title": "Continuous-Time Convolution Integral & Boundary Cases",
+                  "sourceFile": "NS_Module4_Rev1.pdf",
+                  "sourceRef": "pp. 84-89",
+                  "highYield": true
+                }
+              ]
+            }
+          ],
+          "pageCount": 90,
+          "exampleCount": 47
+        },
+        {
+          "id": "nas-m5",
+          "moduleNumber": 5,
+          "coCode": "CO5",
+          "track": "Signals",
+          "title": "Fourier Analysis & System Frequency Response",
+          "weightage": 17,
+          "weightageUnit": "marks",
+          "weightageSource": "stated",
+          "coursePlanHours": 10,
+          "coursePlanMarks100": 22,
+          "sourceFiles": [
+            "NS_Module5_Rev1.pdf",
+            "Course Plan - BTech Theory - 3 Credits_ICE2123_NAS_Rev2_Signed-2.pdf"
+          ],
+          "sourceGapNote": "NS_Module5_Rev1.pdf covers CTFS, DTFS, CTFT & LCCDE frequency response (87 pages); DTFT and Sampling & Reconstruction are also specified in Course Plan L41, L43-L44.",
+          "prerequisites": [
+            "nas-m4"
+          ],
+          "topicGroups": [
+            {
+              "id": "nas-m5-ctfs",
+              "title": "Continuous-Time Fourier Series (CTFS)",
+              "sourceFile": "NS_Module5_Rev1.pdf",
+              "sourceRef": "pp. 3-26",
+              "priority": "high-yield",
+              "leaves": [
+                {
+                  "id": "nas-m5-ctfs1",
+                  "title": "LTI Response to Complex Exponentials, Exponential & Trigonometric FS",
+                  "sourceFile": "NS_Module5_Rev1.pdf",
+                  "sourceRef": "pp. 3-16",
+                  "highYield": true
+                },
+                {
+                  "id": "nas-m5-ctfs2",
+                  "title": "CTFS Properties (Linearity, Shift, Scaling, Conjugate Symmetry) & Parseval",
+                  "sourceFile": "NS_Module5_Rev1.pdf",
+                  "sourceRef": "pp. 17-26",
+                  "highYield": true
+                }
+              ]
+            },
+            {
+              "id": "nas-m5-dtfs",
+              "title": "Discrete-Time Fourier Series (DTFS)",
+              "sourceFile": "NS_Module5_Rev1.pdf",
+              "sourceRef": "pp. 27-42",
+              "priority": "core",
+              "leaves": [
+                {
+                  "id": "nas-m5-dtfs1",
+                  "title": "Periodic Discrete-Time Synthesis/Analysis & Coefficient Plots",
+                  "sourceFile": "NS_Module5_Rev1.pdf",
+                  "sourceRef": "pp. 27-38",
+                  "highYield": true
+                },
+                {
+                  "id": "nas-m5-dtfs2",
+                  "title": "DTFS Properties (First Difference, Parseval's Relation)",
+                  "sourceFile": "NS_Module5_Rev1.pdf",
+                  "sourceRef": "pp. 39-42",
+                  "highYield": false
+                }
+              ]
+            },
+            {
+              "id": "nas-m5-ctft",
+              "title": "Continuous-Time Fourier Transform (CTFT)",
+              "sourceFile": "NS_Module5_Rev1.pdf",
+              "sourceRef": "pp. 43-81",
+              "priority": "high-yield",
+              "leaves": [
+                {
+                  "id": "nas-m5-ctft1",
+                  "title": "Fourier Transform of Aperiodic & Periodic Signals (Impulses in Frequency)",
+                  "sourceFile": "NS_Module5_Rev1.pdf",
+                  "sourceRef": "pp. 43-58",
+                  "highYield": true
+                },
+                {
+                  "id": "nas-m5-ctft2",
+                  "title": "CTFT Properties: Shift, Differentiation, Integration, Scaling & Duality",
+                  "sourceFile": "NS_Module5_Rev1.pdf",
+                  "sourceRef": "pp. 59-69, 78-79",
+                  "highYield": true
+                },
+                {
+                  "id": "nas-m5-ctft3",
+                  "title": "Convolution Property, Parseval's Energy Theorem & Standard Pairs",
+                  "sourceFile": "NS_Module5_Rev1.pdf",
+                  "sourceRef": "pp. 70-77, 80-81",
+                  "highYield": true
+                }
+              ]
+            },
+            {
+              "id": "nas-m5-freqresp",
+              "title": "Frequency Response, DTFT & Sampling",
+              "sourceFile": "NS_Module5_Rev1.pdf",
+              "sourceRef": "pp. 72-77, 82-85 & Course Plan L41, L43-L44",
+              "priority": "high-yield",
+              "leaves": [
+                {
+                  "id": "nas-m5-fr1",
+                  "title": "LTI Systems Characterized by LCCDEs & Frequency Response H(j*omega)",
+                  "sourceFile": "NS_Module5_Rev1.pdf",
+                  "sourceRef": "pp. 82-85",
+                  "highYield": true
+                },
+                {
+                  "id": "nas-m5-fr2",
+                  "title": "Discrete-Time Fourier Transform (DTFT) & Properties",
+                  "sourceFile": "Course Plan - BTech Theory - 3 Credits_ICE2123_NAS_Rev2_Signed-2.pdf",
+                  "sourceRef": "L41, L44 (p. 4)",
+                  "highYield": true
+                },
+                {
+                  "id": "nas-m5-fr3",
+                  "title": "Sampling Theorem & Signal Reconstruction",
+                  "sourceFile": "Course Plan - BTech Theory - 3 Credits_ICE2123_NAS_Rev2_Signed-2.pdf",
+                  "sourceRef": "L43-L44 (p. 4)",
+                  "highYield": true
+                }
+              ]
+            }
+          ],
+          "pageCount": 87,
+          "exampleCount": 37
+        }
+      ],
+      "pyqAnalysis": {
+        "totalPdfCount": 6,
+        "totalExamSessions": 5,
+        "totalQuestionsScanned": 93,
+        "repeatedQuestionCount": 14,
+        "repeatedTopicCount": 9,
+        "papers": [
+          {
+            "id": "mar-2021",
+            "filename": "Network Analysis and Signals (ICE 2154).pdf",
+            "relativePath": "pyq/Network Analysis and Signals (ICE 2154).pdf",
+            "examLabel": "Mar 2021 Endsem",
+            "examDate": "01-Mar-2021",
+            "courseCode": "ICE 2154",
+            "maxMarks": 50,
+            "questionCount": 15,
+            "examSessionKey": "2021-03",
+            "pageCount": 4
+          },
+          {
+            "id": "jul-2021",
+            "filename": "Network Analysis and Signals (ICE 2154)Makeup.pdf",
+            "relativePath": "pyq/Network Analysis and Signals (ICE 2154)Makeup.pdf",
+            "examLabel": "Jul 2021 Makeup",
+            "examDate": "19-07-2021",
+            "courseCode": "ICE 2154",
+            "maxMarks": 40,
+            "questionCount": 12,
+            "examSessionKey": "2021-07",
+            "pageCount": 3
+          },
+          {
+            "id": "jan-2022-a",
+            "filename": "Network Analysys and signals (ICE2154) PART A.pdf",
+            "relativePath": "pyq/Network Analysys and signals (ICE2154) PART A.pdf",
+            "examLabel": "Jan 2022 Part A (MCQ)",
+            "examDate": "20-01-2022",
+            "courseCode": "ICE 2154",
+            "maxMarks": 30,
+            "questionCount": 30,
+            "examSessionKey": "2022-01",
+            "pageCount": 33
+          },
+          {
+            "id": "jan-2022-b",
+            "filename": "Network Analysys and signals (ICE2154) PART B.pdf",
+            "relativePath": "pyq/Network Analysys and signals (ICE2154) PART B.pdf",
+            "examLabel": "Jan 2022 Part B",
+            "examDate": "20-01-2022",
+            "courseCode": "ICE 2154",
+            "maxMarks": 20,
+            "questionCount": 6,
+            "examSessionKey": "2022-01",
+            "pageCount": 2
+          },
+          {
+            "id": "dec-2022",
+            "filename": "Network Analysis and Signals (ICE 2154) (1).pdf",
+            "relativePath": "pyq/Network Analysis and Signals (ICE 2154) (1).pdf",
+            "examLabel": "Dec 2022 Endsem",
+            "examDate": "08-Dec-2022",
+            "courseCode": "ICE 2154",
+            "maxMarks": 50,
+            "questionCount": 15,
+            "examSessionKey": "2022-12",
+            "pageCount": 4
+          },
+          {
+            "id": "jan-2023",
+            "filename": "Network Analysis and Signals (ICE 2154)(Makeup).pdf",
+            "relativePath": "pyq/Network Analysis and Signals (ICE 2154)(Makeup).pdf",
+            "examLabel": "Jan 2023 Makeup",
+            "examDate": "20-Jan-2023",
+            "courseCode": "ICE 2154",
+            "maxMarks": 50,
+            "questionCount": 15,
+            "examSessionKey": "2023-01",
+            "pageCount": 4
+          }
+        ],
+        "repeatedQuestions": [
+          {
+            "id": "pyq-q-initial-final-circuits",
+            "title": "Initial & Final Conditions (0\u207b / 0\u207a / d\u00b2/dt\u00b2 / \u221e) Including Identical 1A-100\u03a9-1H & Part-A Diagrams",
+            "moduleId": "nas-m2",
+            "coCode": "CO2",
+            "track": "Networks",
+            "blueprintMarks": 5,
+            "cumulativeMarks": 17,
+            "matchType": "exact-circuit",
+            "summaryCue": "Mar 2021 Q3C & Dec 2022 Q1B reuse the exact 1A || switch || 100\u03a9 || 1H diagram; Part A reuses 3A/10\u03a9/1H/20\u03a9 (3\u00d7) & 12V/4\u03a9/0.05F/8\u03a9 (2\u00d7).",
+            "appearances": [
+              {
+                "examId": "mar-2021",
+                "examLabel": "Mar 2021",
+                "questionRef": "Q2B & Q3C",
+                "marks": 5,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154).pdf",
+                "page": 2,
+                "detail": "Q2B (0+/\u221e derivatives) + Q3C (1A || 100\u03a9 || 1H v(t) circuit)",
+                "similarity": "exact-circuit"
+              },
+              {
+                "examId": "jul-2021",
+                "examLabel": "Jul 2021 Makeup",
+                "questionRef": "Q2A",
+                "marks": 5,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154)Makeup.pdf",
+                "page": 2,
+                "detail": "Switch closed at t=0 -> V_a(0-) & V_a(0+)",
+                "similarity": "variant"
+              },
+              {
+                "examId": "jan-2022-a",
+                "examLabel": "Jan 2022 Part A",
+                "questionRef": "Q11",
+                "marks": 1,
+                "sourceFile": "pyq/Network Analysys and signals (ICE2154) PART A.pdf",
+                "page": 11,
+                "detail": "3A/10\u03a9/1H/20\u03a9 circuit -> i_L(\u221e)",
+                "similarity": "exact-circuit"
+              },
+              {
+                "examId": "jan-2022-a",
+                "examLabel": "Jan 2022 Part A",
+                "questionRef": "Q24",
+                "marks": 1,
+                "sourceFile": "pyq/Network Analysys and signals (ICE2154) PART A.pdf",
+                "page": 25,
+                "detail": "Identical 3A/10\u03a9/1H/20\u03a9 circuit -> i_{10\u03a9}(0+)",
+                "similarity": "exact-circuit"
+              },
+              {
+                "examId": "jan-2022-a",
+                "examLabel": "Jan 2022 Part A",
+                "questionRef": "Q27",
+                "marks": 1,
+                "sourceFile": "pyq/Network Analysys and signals (ICE2154) PART A.pdf",
+                "page": 28,
+                "detail": "Identical 3A/10\u03a9/1H/20\u03a9 circuit -> i_L(0+)",
+                "similarity": "exact-circuit"
+              },
+              {
+                "examId": "jan-2022-a",
+                "examLabel": "Jan 2022 Part A",
+                "questionRef": "Q25",
+                "marks": 1,
+                "sourceFile": "pyq/Network Analysys and signals (ICE2154) PART A.pdf",
+                "page": 26,
+                "detail": "12V/4\u03a9/0.05F/8\u03a9 circuit -> v_C(0+)",
+                "similarity": "exact-circuit"
+              },
+              {
+                "examId": "jan-2022-a",
+                "examLabel": "Jan 2022 Part A",
+                "questionRef": "Q31",
+                "marks": 1,
+                "sourceFile": "pyq/Network Analysys and signals (ICE2154) PART A.pdf",
+                "page": 32,
+                "detail": "Identical 12V/4\u03a9/0.05F/8\u03a9 circuit -> v_C(\u221e)",
+                "similarity": "exact-circuit"
+              },
+              {
+                "examId": "dec-2022",
+                "examLabel": "Dec 2022",
+                "questionRef": "Q1B",
+                "marks": 2,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154) (1).pdf",
+                "page": 1,
+                "detail": "Exact 1A || 100\u03a9 || 1H diagram from Mar 2021 Q3C -> v, dv/dt, d\u00b2v/dt\u00b2 at 0+",
+                "similarity": "exact-circuit"
+              },
+              {
+                "examId": "jan-2023",
+                "examLabel": "Jan 2023 Makeup",
+                "questionRef": "Q1B",
+                "marks": 2,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154)(Makeup).pdf",
+                "page": 1,
+                "detail": "Switch 1->2 at t=0 -> i(0+), di/dt(0+), d\u00b2i/dt\u00b2(0+)",
+                "similarity": "exact"
+              }
+            ],
+            "appearanceCount": 9,
+            "examPaperCount": 5
+          },
+          {
+            "id": "pyq-q-twoport-3i1",
+            "title": "Two-Port Z & Y Parameters (1\u03a9-2\u03a9-2\u03a9-3I\u2081, T-to-Pi & Dependent-Source Networks)",
+            "moduleId": "nas-m3",
+            "coCode": "CO3",
+            "track": "Networks",
+            "blueprintMarks": 6,
+            "cumulativeMarks": 22,
+            "matchType": "exact-circuit",
+            "summaryCue": "Appeared in 5/5 exam sessions! Mar 2021 Q3A & Jan 2023 Q2B share the identical 1\u03a9/2\u03a9/2\u03a9/3I\u2081 circuit; Part A Q5 & Q16 reuse 2\u03a9/2\u03a9/3I\u2081.",
+            "appearances": [
+              {
+                "examId": "mar-2021",
+                "examLabel": "Mar 2021",
+                "questionRef": "Q3A",
+                "marks": 5,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154).pdf",
+                "page": 3,
+                "detail": "1\u03a9 shunt, 2\u03a9 series, 2\u03a9 shunt, 3I\u2081: Find Z & Y parameters",
+                "similarity": "exact-circuit"
+              },
+              {
+                "examId": "jul-2021",
+                "examLabel": "Jul 2021 Makeup",
+                "questionRef": "Q3B",
+                "marks": 5,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154)Makeup.pdf",
+                "page": 2,
+                "detail": "1\u03a9/1\u03a9/1\u03a9 with 2V\u2081, 2V\u2082 sources: Find Y, hence Z parameters",
+                "similarity": "variant"
+              },
+              {
+                "examId": "jan-2022-a",
+                "examLabel": "Jan 2022 Part A",
+                "questionRef": "Q5",
+                "marks": 1,
+                "sourceFile": "pyq/Network Analysys and signals (ICE2154) PART A.pdf",
+                "page": 6,
+                "detail": "Exact 2\u03a9, 2\u03a9, 3I\u2081 network: Find Z\u2082\u2082",
+                "similarity": "exact-circuit"
+              },
+              {
+                "examId": "jan-2022-a",
+                "examLabel": "Jan 2022 Part A",
+                "questionRef": "Q16",
+                "marks": 1,
+                "sourceFile": "pyq/Network Analysys and signals (ICE2154) PART A.pdf",
+                "page": 16,
+                "detail": "Same 2\u03a9, 2\u03a9, 3I\u2081 network: Find Y\u2081\u2082",
+                "similarity": "exact-circuit"
+              },
+              {
+                "examId": "jan-2022-b",
+                "examLabel": "Jan 2022 Part B",
+                "questionRef": "Q1C",
+                "marks": 4,
+                "sourceFile": "pyq/Network Analysys and signals (ICE2154) PART B.pdf",
+                "page": 2,
+                "detail": "2\u03a9/10\u03a9/10\u03a9 with 2I\u2081 dependent source: Z & Y parameters",
+                "similarity": "variant"
+              },
+              {
+                "examId": "dec-2022",
+                "examLabel": "Dec 2022",
+                "questionRef": "Q2C",
+                "marks": 3,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154) (1).pdf",
+                "page": 2,
+                "detail": "10\u03a9/5\u03a9/15\u03a9 T-network: Determine Y parameters & equivalent Pi",
+                "similarity": "variant"
+              },
+              {
+                "examId": "jan-2023",
+                "examLabel": "Jan 2023 Makeup",
+                "questionRef": "Q2B",
+                "marks": 3,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154)(Makeup).pdf",
+                "page": 2,
+                "detail": "Identical 1\u03a9, 2\u03a9, 2\u03a9, 3I\u2081 circuit: Derive Y parameters",
+                "similarity": "exact-circuit"
+              }
+            ],
+            "appearanceCount": 7,
+            "examPaperCount": 5
+          },
+          {
+            "id": "pyq-q-transient-cf-pi",
+            "title": "Switched Transient Total Solution (Complementary + Particular -> i(t) / v(t) for t \u2265 0)",
+            "moduleId": "nas-m2",
+            "coCode": "CO2",
+            "track": "Networks",
+            "blueprintMarks": 5,
+            "cumulativeMarks": 22,
+            "matchType": "exact",
+            "summaryCue": "Appears in 5/5 exams! Jul 2021 Q2B & Jan 2022 Part B Q1B share identical CF+PI phrasing; Dec 2022 & Jan 2023 test classical t \u2265 0 solving.",
+            "appearances": [
+              {
+                "examId": "mar-2021",
+                "examLabel": "Mar 2021",
+                "questionRef": "Q2A",
+                "marks": 5,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154).pdf",
+                "page": 2,
+                "detail": "Switch opens at t=0 after steady state -> find i(t) for t \u2265 0",
+                "similarity": "variant"
+              },
+              {
+                "examId": "jul-2021",
+                "examLabel": "Jul 2021 Makeup",
+                "questionRef": "Q2B",
+                "marks": 5,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154)Makeup.pdf",
+                "page": 2,
+                "detail": "Complementary function, particular & total solution i(t), V_C(\u221e)",
+                "similarity": "exact"
+              },
+              {
+                "examId": "jan-2022-a",
+                "examLabel": "Jan 2022 Part A",
+                "questionRef": "Q23",
+                "marks": 1,
+                "sourceFile": "pyq/Network Analysys and signals (ICE2154) PART A.pdf",
+                "page": 23,
+                "detail": "RL step response expression i(t) = 2(1 - e^{-5t})",
+                "similarity": "variant"
+              },
+              {
+                "examId": "jan-2022-b",
+                "examLabel": "Jan 2022 Part B",
+                "questionRef": "Q1B",
+                "marks": 3,
+                "sourceFile": "pyq/Network Analysys and signals (ICE2154) PART B.pdf",
+                "page": 1,
+                "detail": "Same prompt: complementary & particular form + total i(t)",
+                "similarity": "exact"
+              },
+              {
+                "examId": "dec-2022",
+                "examLabel": "Dec 2022",
+                "questionRef": "Q2B",
+                "marks": 3,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154) (1).pdf",
+                "page": 2,
+                "detail": "Switched RLC (q(0)=5C) -> classical time-domain i(t) for t \u2265 0",
+                "similarity": "variant"
+              },
+              {
+                "examId": "jan-2023",
+                "examLabel": "Jan 2023 Makeup",
+                "questionRef": "Q1C",
+                "marks": 5,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154)(Makeup).pdf",
+                "page": 1,
+                "detail": "Switch opens at t=0 -> classical time-domain v(t) for t \u2265 0",
+                "similarity": "variant"
+              }
+            ],
+            "appearanceCount": 6,
+            "examPaperCount": 5
+          },
+          {
+            "id": "pyq-q-s-domain-circuits",
+            "title": "s-Domain Switched Networks, Laplace Norton & V\u2082/V\u2081, I\u2082/I\u2081, V\u2081/I\u2081 Transfer Ratios",
+            "moduleId": "nas-m3",
+            "coCode": "CO3",
+            "track": "Networks",
+            "blueprintMarks": 6,
+            "cumulativeMarks": 32,
+            "matchType": "exact",
+            "summaryCue": "Appears in all 5/5 exam sessions! Dec 2022 & Jan 2023 ask almost identically for Norton's s-domain equivalent AND V\u2082/V\u2081, I\u2082/I\u2081, V\u2081/I\u2081 ladder transfer ratios.",
+            "appearances": [
+              {
+                "examId": "mar-2021",
+                "examLabel": "Mar 2021",
+                "questionRef": "Q3B & Q3C",
+                "marks": 5,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154).pdf",
+                "page": 3,
+                "detail": "Switched i(t) & v(t) using Laplace transform method",
+                "similarity": "variant"
+              },
+              {
+                "examId": "jul-2021",
+                "examLabel": "Jul 2021 Makeup",
+                "questionRef": "Q3A",
+                "marks": 5,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154)Makeup.pdf",
+                "page": 2,
+                "detail": "Two-loop i\u2081(t) & i\u2082(t) using Laplace Transform method",
+                "similarity": "variant"
+              },
+              {
+                "examId": "jan-2022-a",
+                "examLabel": "Jan 2022 Part A",
+                "questionRef": "Q18 & Q28",
+                "marks": 2,
+                "sourceFile": "pyq/Network Analysys and signals (ICE2154) PART A.pdf",
+                "page": 18,
+                "detail": "IVT x(0) [p.18] and FVT x(\u221e) [p.29] from X(s)",
+                "similarity": "variant"
+              },
+              {
+                "examId": "dec-2022",
+                "examLabel": "Dec 2022",
+                "questionRef": "Q1C, Q2A & Q3A",
+                "marks": 12,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154) (1).pdf",
+                "page": 2,
+                "detail": "Laplace switch (5m), Norton s-domain A-B (4m), V\u2082/V\u2081, I\u2082/I\u2081, V\u2081/I\u2081 (3m)",
+                "similarity": "exact"
+              },
+              {
+                "examId": "jan-2023",
+                "examLabel": "Jan 2023 Makeup",
+                "questionRef": "Q2C & Q3A",
+                "marks": 8,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154)(Makeup).pdf",
+                "page": 2,
+                "detail": "Back-to-back repeat: Norton s-domain (5m) & V\u2082/V\u2081, I\u2082/I\u2081, V\u2081/I\u2081 (3m)",
+                "similarity": "exact"
+              }
+            ],
+            "appearanceCount": 5,
+            "examPaperCount": 5
+          },
+          {
+            "id": "pyq-q-sys-t2x",
+            "title": "System Property Test: y(t) = t\u00b2 x(t) & Causal/Memory/BIBO Variations",
+            "moduleId": "nas-m4",
+            "coCode": "CO4",
+            "track": "Signals",
+            "blueprintMarks": 15,
+            "cumulativeMarks": 11,
+            "matchType": "exact",
+            "summaryCue": "y(t) = t\u00b2 x(t) appeared verbatim twice (Jul 2021 Q4A & Jan 2022 Part A Q13); linear & causal, but NOT time-invariant.",
+            "appearances": [
+              {
+                "examId": "mar-2021",
+                "examLabel": "Mar 2021",
+                "questionRef": "Q4C",
+                "marks": 2,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154).pdf",
+                "page": 4,
+                "detail": "Causal & stable check on h(n)=(-0.5)^{-n}u(n-1), h(t)=e^{2t}u(-t)",
+                "similarity": "variant"
+              },
+              {
+                "examId": "jul-2021",
+                "examLabel": "Jul 2021 Makeup",
+                "questionRef": "Q4A(ii)",
+                "marks": 5,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154)Makeup.pdf",
+                "page": 3,
+                "detail": "Exact: Is y(t) = t\u00b2 x(t) causal, linear, stable & time-invariant?",
+                "similarity": "exact"
+              },
+              {
+                "examId": "jan-2022-a",
+                "examLabel": "Jan 2022 Part A",
+                "questionRef": "Q3",
+                "marks": 1,
+                "sourceFile": "pyq/Network Analysys and signals (ICE2154) PART A.pdf",
+                "page": 3,
+                "detail": "h(t) = \u03b4(t - t\u2080), t\u2080 > 0: causal & stable",
+                "similarity": "variant"
+              },
+              {
+                "examId": "jan-2022-a",
+                "examLabel": "Jan 2022 Part A",
+                "questionRef": "Q13",
+                "marks": 1,
+                "sourceFile": "pyq/Network Analysys and signals (ICE2154) PART A.pdf",
+                "page": 13,
+                "detail": "Exact repeat: System y(t) = t\u00b2 x(t) classification",
+                "similarity": "exact"
+              },
+              {
+                "examId": "jan-2023",
+                "examLabel": "Jan 2023 Makeup",
+                "questionRef": "Q4A",
+                "marks": 2,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154)(Makeup).pdf",
+                "page": 3,
+                "detail": "y(t) = x(t) - x(t - 2): causal, memory, invertible",
+                "similarity": "variant"
+              }
+            ],
+            "appearanceCount": 5,
+            "examPaperCount": 4
+          },
+          {
+            "id": "pyq-q-conv-impulse",
+            "title": "Convolution of Impulse Difference x(t) = \u03b4(t+1) \u2212 \u03b4(t\u22121) & Pulse Convolutions",
+            "moduleId": "nas-m4",
+            "coCode": "CO4",
+            "track": "Signals",
+            "blueprintMarks": 15,
+            "cumulativeMarks": 17,
+            "matchType": "exact",
+            "summaryCue": "Impulse pair \u03b4(t+1) \u2212 \u03b4(t\u22121) convolved with ramp/step signal h(t) appeared back-to-back in Mar 2021 & Jul 2021.",
+            "appearances": [
+              {
+                "examId": "mar-2021",
+                "examLabel": "Mar 2021",
+                "questionRef": "Q4A",
+                "marks": 5,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154).pdf",
+                "page": 3,
+                "detail": "x(t)=\u03b4(t+1)-\u03b4(t-1) * h(t) + DT rectangular pulse convolution",
+                "similarity": "exact"
+              },
+              {
+                "examId": "jul-2021",
+                "examLabel": "Jul 2021 Makeup",
+                "questionRef": "Q4B(i)",
+                "marks": 5,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154)Makeup.pdf",
+                "page": 3,
+                "detail": "Exact x(t)=\u03b4(t+1)-\u03b4(t-1) convolved with r(t+1)-2r(t)+r(t-1)",
+                "similarity": "exact"
+              },
+              {
+                "examId": "jan-2022-b",
+                "examLabel": "Jan 2022 Part B",
+                "questionRef": "Q2A",
+                "marks": 4,
+                "sourceFile": "pyq/Network Analysys and signals (ICE2154) PART B.pdf",
+                "page": 2,
+                "detail": "CT pulse convolution [u(t-2)-u(t-4)] * [u(t+2)-u(t-2)]",
+                "similarity": "variant"
+              },
+              {
+                "examId": "jan-2023",
+                "examLabel": "Jan 2023 Makeup",
+                "questionRef": "Q5C",
+                "marks": 3,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154)(Makeup).pdf",
+                "page": 4,
+                "detail": "DT convolution sum f[n] = x\u2081[n] * x\u2082[n]",
+                "similarity": "variant"
+              }
+            ],
+            "appearanceCount": 4,
+            "examPaperCount": 4
+          },
+          {
+            "id": "pyq-q-trig-periodic-power",
+            "title": "Periodicity & Energy/Power Classification of Trig Combinations",
+            "moduleId": "nas-m4",
+            "coCode": "CO4",
+            "track": "Signals",
+            "blueprintMarks": 15,
+            "cumulativeMarks": 11,
+            "matchType": "exact",
+            "summaryCue": "4/5 exams ask periodicity + Energy vs Power on trig combinations/squares (e.g. 2cos(\u03c0t)sin(3\u03c0t), cos\u00b2(2\u03c0t), 1+cos(\u03c0t)+sin(5\u03c0t)).",
+            "appearances": [
+              {
+                "examId": "mar-2021",
+                "examLabel": "Mar 2021",
+                "questionRef": "Q4B",
+                "marks": 3,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154).pdf",
+                "page": 4,
+                "detail": "Energy & Power of tu(t) and u(n)\u22122u(n\u22124)+u(n\u22128)",
+                "similarity": "variant"
+              },
+              {
+                "examId": "jul-2021",
+                "examLabel": "Jul 2021 Makeup",
+                "questionRef": "Q5B(i)",
+                "marks": 5,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154)Makeup.pdf",
+                "page": 3,
+                "detail": "Energy & power of 1 + cos(\u03c0t) + cos(2\u03c0t) + sin(5\u03c0t)",
+                "similarity": "exact"
+              },
+              {
+                "examId": "jan-2022-a",
+                "examLabel": "Jan 2022 Part A",
+                "questionRef": "Q8",
+                "marks": 1,
+                "sourceFile": "pyq/Network Analysys and signals (ICE2154) PART A.pdf",
+                "page": 8,
+                "detail": "(cos(2\u03c0t))\u00b2 -> periodic, fundamental period, power signal",
+                "similarity": "exact"
+              },
+              {
+                "examId": "dec-2022",
+                "examLabel": "Dec 2022",
+                "questionRef": "Q4A",
+                "marks": 2,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154) (1).pdf",
+                "page": 3,
+                "detail": "y(t) = 2cos(\u03c0t)sin(3\u03c0t): periodic/aperiodic & power/energy",
+                "similarity": "exact"
+              }
+            ],
+            "appearanceCount": 4,
+            "examPaperCount": 4
+          },
+          {
+            "id": "pyq-q-supermesh-36v",
+            "title": "Superposition Theorem & Reused 36V/2A Supermesh Circuit",
+            "moduleId": "nas-m1",
+            "coCode": "CO1",
+            "track": "Networks",
+            "blueprintMarks": 7,
+            "cumulativeMarks": 10,
+            "matchType": "exact-circuit",
+            "summaryCue": "Superposition appears in Mar 2021 & Jul 2021; Part A Q20 & Q30 ask V_2A and i\u2081 from the identical 36V/2A supermesh diagram.",
+            "appearances": [
+              {
+                "examId": "mar-2021",
+                "examLabel": "Mar 2021",
+                "questionRef": "Q1B",
+                "marks": 3,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154).pdf",
+                "page": 1,
+                "detail": "Determine V\u2080 using Superposition theorem",
+                "similarity": "variant"
+              },
+              {
+                "examId": "jul-2021",
+                "examLabel": "Jul 2021 Makeup",
+                "questionRef": "Q1A",
+                "marks": 5,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154)Makeup.pdf",
+                "page": 1,
+                "detail": "Find current in 1\u03a9 resistor using Superposition theorem",
+                "similarity": "variant"
+              },
+              {
+                "examId": "jan-2022-a",
+                "examLabel": "Jan 2022 Part A",
+                "questionRef": "Q20",
+                "marks": 1,
+                "sourceFile": "pyq/Network Analysys and signals (ICE2154) PART A.pdf",
+                "page": 20,
+                "detail": "36V/2A supermesh: voltage V across 2A source",
+                "similarity": "exact-circuit"
+              },
+              {
+                "examId": "jan-2022-a",
+                "examLabel": "Jan 2022 Part A",
+                "questionRef": "Q30",
+                "marks": 1,
+                "sourceFile": "pyq/Network Analysys and signals (ICE2154) PART A.pdf",
+                "page": 31,
+                "detail": "Identical 36V/2A supermesh: mesh current i\u2081",
+                "similarity": "exact-circuit"
+              }
+            ],
+            "appearanceCount": 4,
+            "examPaperCount": 3
+          },
+          {
+            "id": "pyq-q-lccde-system",
+            "title": "2nd-Order Differential Equation LTI System: H(j\u03c9), h(t) & Response to e^{-at}u(t)",
+            "moduleId": "nas-m5",
+            "coCode": "CO5",
+            "track": "Signals",
+            "blueprintMarks": 17,
+            "cumulativeMarks": 13,
+            "matchType": "exact",
+            "summaryCue": "3-part template repeated across 3 exams: find (i) Frequency response H(j\u03c9), (ii) Impulse response h(t), (iii) Output y(t) for exponential step input.",
+            "appearances": [
+              {
+                "examId": "mar-2021",
+                "examLabel": "Mar 2021",
+                "questionRef": "Q5A",
+                "marks": 5,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154).pdf",
+                "page": 4,
+                "detail": "y'' + 5y' + 6y = x(t), input x(t) = e^{-t}u(t)",
+                "similarity": "exact"
+              },
+              {
+                "examId": "jul-2021",
+                "examLabel": "Jul 2021 Makeup",
+                "questionRef": "Q6B",
+                "marks": 5,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154)Makeup.pdf",
+                "page": 3,
+                "detail": "y'' + 3y' + 2y = x' + 3x, input x(t) = e^{-3t}u(t)",
+                "similarity": "exact"
+              },
+              {
+                "examId": "jan-2022-b",
+                "examLabel": "Jan 2022 Part B",
+                "questionRef": "Q2C",
+                "marks": 3,
+                "sourceFile": "pyq/Network Analysys and signals (ICE2154) PART B.pdf",
+                "page": 2,
+                "detail": "2nd-order DE system, input x(t) = e^{-2t}u(t)",
+                "similarity": "exact"
+              }
+            ],
+            "appearanceCount": 3,
+            "examPaperCount": 3
+          },
+          {
+            "id": "pyq-q-max-power",
+            "title": "Maximum Power Transfer: Find R_L & P_max with Controlled Source",
+            "moduleId": "nas-m1",
+            "coCode": "CO1",
+            "track": "Networks",
+            "blueprintMarks": 7,
+            "cumulativeMarks": 13,
+            "matchType": "exact",
+            "summaryCue": "Classic CO1 3\u20135 mark template: open R_L, find V_th & R_th via test source for dependent source, P_max = V_th\u00b2/(4R_th).",
+            "appearances": [
+              {
+                "examId": "mar-2021",
+                "examLabel": "Mar 2021",
+                "questionRef": "Q1A",
+                "marks": 5,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154).pdf",
+                "page": 1,
+                "detail": "Find R_L & P_max (circuit with 2I dependent voltage source)",
+                "similarity": "exact"
+              },
+              {
+                "examId": "jul-2021",
+                "examLabel": "Jul 2021 Makeup",
+                "questionRef": "Q1B",
+                "marks": 5,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154)Makeup.pdf",
+                "page": 1,
+                "detail": "Find R_L & P_max (circuit with 0.5V\u2081 & I\u2081 dependent sources)",
+                "similarity": "exact"
+              },
+              {
+                "examId": "jan-2022-b",
+                "examLabel": "Jan 2022 Part B",
+                "questionRef": "Q1A",
+                "marks": 3,
+                "sourceFile": "pyq/Network Analysys and signals (ICE2154) PART B.pdf",
+                "page": 1,
+                "detail": "Find R_L & P_max (circuit with 0.5V\u2081 dependent source)",
+                "similarity": "exact"
+              }
+            ],
+            "appearanceCount": 3,
+            "examPaperCount": 3
+          },
+          {
+            "id": "pyq-q-fs-spectrum",
+            "title": "Fourier Representation & Spectrum of x(t) = 1 + cos(2\u03c0t) + sin(3\u03c0t)",
+            "moduleId": "nas-m5",
+            "coCode": "CO5",
+            "track": "Signals",
+            "blueprintMarks": 17,
+            "cumulativeMarks": 10,
+            "matchType": "exact",
+            "summaryCue": "Exact equation repeated in Jul 2021 Q5A(i) & Jan 2022 Part B Q2B(i), plus sin/cos multi-harmonic spectrum in Mar 2021 Q5C.",
+            "appearances": [
+              {
+                "examId": "mar-2021",
+                "examLabel": "Mar 2021",
+                "questionRef": "Q5C",
+                "marks": 2,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154).pdf",
+                "page": 4,
+                "detail": "x(t) = sin(\u03c0t) + cos(2\u03c0t) + sin(5\u03c0t) & plot spectrum",
+                "similarity": "variant"
+              },
+              {
+                "examId": "jul-2021",
+                "examLabel": "Jul 2021 Makeup",
+                "questionRef": "Q5A(i)",
+                "marks": 5,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154)Makeup.pdf",
+                "page": 3,
+                "detail": "x(t) = 1 + cos(2\u03c0t) + sin(3\u03c0t): Fourier rep & magnitude spectrum",
+                "similarity": "exact"
+              },
+              {
+                "examId": "jan-2022-b",
+                "examLabel": "Jan 2022 Part B",
+                "questionRef": "Q2B(i)",
+                "marks": 3,
+                "sourceFile": "pyq/Network Analysys and signals (ICE2154) PART B.pdf",
+                "page": 2,
+                "detail": "Identical x(t) = 1 + cos(2\u03c0t) + sin(3\u03c0t): mag & phase spectra",
+                "similarity": "exact"
+              }
+            ],
+            "appearanceCount": 3,
+            "examPaperCount": 3
+          },
+          {
+            "id": "pyq-q-sawtooth-ctfs",
+            "title": "Periodic Sawtooth Waveform ([-1..1], T=2) & Piecewise CTFS Coefficients",
+            "moduleId": "nas-m5",
+            "coCode": "CO5",
+            "track": "Signals",
+            "blueprintMarks": 17,
+            "cumulativeMarks": 16,
+            "matchType": "exact-circuit",
+            "summaryCue": "Dec 2022 Q4B & Jan 2023 Q4B use the identical [-1..1], T=2 sawtooth waveform; Dec 2022 Q3B & Jan 2023 Q3B also pair periodic Trig/Exp CTFS.",
+            "appearances": [
+              {
+                "examId": "dec-2022",
+                "examLabel": "Dec 2022",
+                "questionRef": "Q3B",
+                "marks": 4,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154) (1).pdf",
+                "page": 3,
+                "detail": "Continuous-time Trig CTFS over periodicity 2T",
+                "similarity": "variant"
+              },
+              {
+                "examId": "dec-2022",
+                "examLabel": "Dec 2022",
+                "questionRef": "Q4B",
+                "marks": 4,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154) (1).pdf",
+                "page": 3,
+                "detail": "Identical [-1..1], T=2 sawtooth plot -> exponential coeffs a\u208b\u2081, a\u2081",
+                "similarity": "exact-circuit"
+              },
+              {
+                "examId": "jan-2023",
+                "examLabel": "Jan 2023 Makeup",
+                "questionRef": "Q3B",
+                "marks": 4,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154)(Makeup).pdf",
+                "page": 2,
+                "detail": "Exponential CTFS coeffs for periodic sawtooth [0..1]",
+                "similarity": "variant"
+              },
+              {
+                "examId": "jan-2023",
+                "examLabel": "Jan 2023 Makeup",
+                "questionRef": "Q4B",
+                "marks": 4,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154)(Makeup).pdf",
+                "page": 3,
+                "detail": "Exact same [-1..1], T=2 sawtooth waveform -> Trig CTFS",
+                "similarity": "exact-circuit"
+              }
+            ],
+            "appearanceCount": 4,
+            "examPaperCount": 2
+          },
+          {
+            "id": "pyq-q-scale-deriv-plot",
+            "title": "Time Scaling/Shifting x(at + b) & Derivative Signal Sketch (dh/dt \u2194 Dx(t))",
+            "moduleId": "nas-m4",
+            "coCode": "CO4",
+            "track": "Signals",
+            "blueprintMarks": 15,
+            "cumulativeMarks": 12,
+            "matchType": "exact",
+            "summaryCue": "Back-to-back paired CO4 questions in Dec 2022 & Jan 2023: sketch x(-0.5t+3) / y(2t+4) plus impulse-derivative / antiderivative waveform plots.",
+            "appearances": [
+              {
+                "examId": "dec-2022",
+                "examLabel": "Dec 2022",
+                "questionRef": "Q3C",
+                "marks": 3,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154) (1).pdf",
+                "page": 3,
+                "detail": "Sketch transformed trapezoidal signal x(-0.5t + 3)",
+                "similarity": "exact"
+              },
+              {
+                "examId": "dec-2022",
+                "examLabel": "Dec 2022",
+                "questionRef": "Q5A",
+                "marks": 3,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154) (1).pdf",
+                "page": 4,
+                "detail": "Given dh(t)/dt with step & impulses, plot signal h(t)",
+                "similarity": "exact"
+              },
+              {
+                "examId": "jan-2023",
+                "examLabel": "Jan 2023 Makeup",
+                "questionRef": "Q3C",
+                "marks": 3,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154)(Makeup).pdf",
+                "page": 2,
+                "detail": "Sketch time-scaled & shifted waveform y(2t + 4)",
+                "similarity": "exact"
+              },
+              {
+                "examId": "jan-2023",
+                "examLabel": "Jan 2023 Makeup",
+                "questionRef": "Q5A",
+                "marks": 3,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154)(Makeup).pdf",
+                "page": 3,
+                "detail": "Compute and plot derivative Dx(t) of piecewise trapezoid",
+                "similarity": "exact"
+              }
+            ],
+            "appearanceCount": 4,
+            "examPaperCount": 2
+          },
+          {
+            "id": "pyq-q-inv-ctft-sinc",
+            "title": "Inverse CTFT of X(j\u03c9) = 2sin(\u03c9) / (\u03c9(j\u03c9 + 1)) (Verbatim Repeat)",
+            "moduleId": "nas-m5",
+            "coCode": "CO5",
+            "track": "Signals",
+            "blueprintMarks": 17,
+            "cumulativeMarks": 8,
+            "matchType": "exact",
+            "summaryCue": "Identical equation in Mar 2021 & Jul 2021: product of sinc (rectangular gate) and 1/(j\u03c9+1) = convolution in time!",
+            "appearances": [
+              {
+                "examId": "mar-2021",
+                "examLabel": "Mar 2021",
+                "questionRef": "Q5B",
+                "marks": 3,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154).pdf",
+                "page": 4,
+                "detail": "Find x(t) if X(j\u03c9) = 2sin(\u03c9) / (\u03c9(j\u03c9 + 1))",
+                "similarity": "exact"
+              },
+              {
+                "examId": "jul-2021",
+                "examLabel": "Jul 2021 Makeup",
+                "questionRef": "Q6A",
+                "marks": 5,
+                "sourceFile": "pyq/Network Analysis and Signals (ICE 2154)Makeup.pdf",
+                "page": 3,
+                "detail": "Identical equation: Find x(t) for X(j\u03c9) = 2sin(\u03c9) / (\u03c9(j\u03c9 + 1))",
+                "similarity": "exact"
+              }
+            ],
+            "appearanceCount": 2,
+            "examPaperCount": 2
+          }
+        ],
+        "repeatedTopics": [
+          {
+            "id": "pyq-t-fourier-ctft",
+            "title": "Fourier Series (Exp/Trig/Derivative), CTFT Pairs, Duality & Parseval Spectra",
+            "moduleId": "nas-m5",
+            "coCode": "CO5",
+            "track": "Signals",
+            "blueprintMarks": 17,
+            "paperHits": 5,
+            "totalPapers": 5,
+            "questionCount": 19,
+            "cumulativeMarks": 55,
+            "strategyVerdict": "Must-Do Core",
+            "summary": "Highest-value exam topic: appears in 5/5 exams alongside 17/50 blueprint marks (CO5). Focus on sinc/gate CTFT pairs, time-shift, sawtooth/trig CTFS, dx/dt property & spectra.",
+            "sourceFile": "pyq/Network Analysis and Signals (ICE 2154) (1).pdf",
+            "page": 4
+          },
+          {
+            "id": "pyq-t-signals-ops",
+            "title": "Signal Operations x(at+b), Derivative Plots, Periodicity & Energy/Power",
+            "moduleId": "nas-m4",
+            "coCode": "CO4",
+            "track": "Signals",
+            "blueprintMarks": 15,
+            "paperHits": 5,
+            "totalPapers": 5,
+            "questionCount": 11,
+            "cumulativeMarks": 22,
+            "strategyVerdict": "High-ROI Focus",
+            "summary": "Appeared in all 5/5 sessions: time scaling/shifting x(-0.5t+3)/y(2t+4), derivative/antiderivative plots Dx(t), periodicity & Energy vs Power.",
+            "sourceFile": "pyq/Network Analysis and Signals (ICE 2154) (1).pdf",
+            "page": 3
+          },
+          {
+            "id": "pyq-t-theorems-nodal",
+            "title": "Max Power Transfer, Superposition, Reciprocity & Supermesh",
+            "moduleId": "nas-m1",
+            "coCode": "CO1",
+            "track": "Networks",
+            "blueprintMarks": 7,
+            "paperHits": 5,
+            "totalPapers": 5,
+            "questionCount": 15,
+            "cumulativeMarks": 31,
+            "strategyVerdict": "Fast MCQ Lock",
+            "summary": "Appeared in 5/5 exams: Max Power Transfer (3\u00d7), Superposition (2\u00d7), Reciprocity (1\u00d7), plus fast Nodal/Supermesh numericals.",
+            "sourceFile": "pyq/Network Analysis and Signals (ICE 2154).pdf",
+            "page": 1
+          },
+          {
+            "id": "pyq-t-laplace-sdomain",
+            "title": "s-Domain Switching Circuits, Norton s-Domain, V\u2082/V\u2081 Ratios & IVT/FVT",
+            "moduleId": "nas-m3",
+            "coCode": "CO3",
+            "track": "Networks",
+            "blueprintMarks": 6,
+            "paperHits": 5,
+            "totalPapers": 5,
+            "questionCount": 10,
+            "cumulativeMarks": 32,
+            "strategyVerdict": "Template Drill",
+            "summary": "5/5 exam frequency: Laplace switching, Norton in s-domain, V\u2082/V\u2081 & I\u2082/I\u2081 ratios (Dec 22 & Jan 23 back-to-back) + IVT/FVT MCQs.",
+            "sourceFile": "pyq/Network Analysis and Signals (ICE 2154) (1).pdf",
+            "page": 2
+          },
+          {
+            "id": "pyq-t-twoport",
+            "title": "Two-Port Z, Y, ABCD & Pi Parameters (with Dependent Sources)",
+            "moduleId": "nas-m3",
+            "coCode": "CO3",
+            "track": "Networks",
+            "blueprintMarks": 6,
+            "paperHits": 5,
+            "totalPapers": 5,
+            "questionCount": 8,
+            "cumulativeMarks": 24,
+            "strategyVerdict": "Template Drill",
+            "summary": "100% paper frequency (5/5 exams!), including 3 repeats of the 3I\u2081 T+shunt network & T-to-Pi conversion. Master templates fast since CO3 is 6m.",
+            "sourceFile": "pyq/Network Analysis and Signals (ICE 2154).pdf",
+            "page": 3
+          },
+          {
+            "id": "pyq-t-transients",
+            "title": "RL/RC/RLC Initial/Final Conditions (0+/\u221e) & Classical CF+PI Solutions",
+            "moduleId": "nas-m2",
+            "coCode": "CO2",
+            "track": "Networks",
+            "blueprintMarks": 5,
+            "paperHits": 5,
+            "totalPapers": 5,
+            "questionCount": 17,
+            "cumulativeMarks": 39,
+            "strategyVerdict": "Template Drill",
+            "summary": "Warning: CO2 had 17 Qs across 5 old ICE 2154 exams (~10m/paper) but is only 5/50 marks in ICE 2123! Drill 0\u207a/dv/dt/\u221e continuity & 1st-order \u03c4 formula.",
+            "sourceFile": "pyq/Network Analysis and Signals (ICE 2154) (1).pdf",
+            "page": 1
+          },
+          {
+            "id": "pyq-t-sys-props",
+            "title": "LTI System Properties (Causal, Linear, TI, Memory, BIBO Stability)",
+            "moduleId": "nas-m4",
+            "coCode": "CO4",
+            "track": "Signals",
+            "blueprintMarks": 15,
+            "paperHits": 4,
+            "totalPapers": 5,
+            "questionCount": 6,
+            "cumulativeMarks": 11,
+            "strategyVerdict": "High-ROI Focus",
+            "summary": "Guaranteed short-answer + MCQ score: test h(t)=0 for t<0 (causal), \u222b|h(t)|dt < \u221e (BIBO), and y(t)=t\u00b2x(t) time-variance.",
+            "sourceFile": "pyq/Network Analysys and signals (ICE2154) PART A.pdf",
+            "page": 13
+          },
+          {
+            "id": "pyq-t-conv",
+            "title": "Convolution Integral (Impulse-Difference & Pulse) & DT Sum",
+            "moduleId": "nas-m4",
+            "coCode": "CO4",
+            "track": "Signals",
+            "blueprintMarks": 15,
+            "paperHits": 4,
+            "totalPapers": 5,
+            "questionCount": 4,
+            "cumulativeMarks": 17,
+            "strategyVerdict": "Must-Do Core",
+            "summary": "Appeared in 4/5 exam sessions (3\u20135m each). Drill \u03b4-sifting convolution & piecewise pulse overlap limits.",
+            "sourceFile": "pyq/Network Analysys and signals (ICE2154) PART B.pdf",
+            "page": 2
+          },
+          {
+            "id": "pyq-t-lccde",
+            "title": "2nd-Order LCCDE Frequency Response H(j\u03c9) -> h(t) -> y(t)",
+            "moduleId": "nas-m5",
+            "coCode": "CO5",
+            "track": "Signals",
+            "blueprintMarks": 17,
+            "paperHits": 3,
+            "totalPapers": 5,
+            "questionCount": 3,
+            "cumulativeMarks": 13,
+            "strategyVerdict": "Must-Do Core",
+            "summary": "3\u20135 mark multi-part staple: take j\u03c9 on both sides -> factor quadratic -> partial fractions for h(t) -> multiply X(j\u03c9)H(j\u03c9) for y(t).",
+            "sourceFile": "pyq/Network Analysys and signals (ICE2154) PART B.pdf",
+            "page": 2
+          }
+        ],
+        "reverseStrategy": [
+          {
+            "id": "rev-signals-core",
+            "verdict": "REVERSE CHECK #1 \u2022 PRIORITIZE SIGNALS",
+            "accent": "pink",
+            "headline": "CO4\u20135 Signals = 64% of your Endsem (32/50 marks) + highest verbatim repeats",
+            "metric": "43 PYQs \u2022 32/50 Blueprint",
+            "detail": "X(j\u03c9)=2sin(\u03c9)/(\u03c9(j\u03c9+1)), 1+cos(2\u03c0t)+sin(3\u03c0t), [-1..1] sawtooth CTFS, y(t)=t\u00b2x(t), x(at+b) & derivative plots, and 2nd-order LCCDEs repeat cleanly across exams."
+          },
+          {
+            "id": "rev-pyq-skew",
+            "verdict": "REVERSE CHECK #2 \u2022 AVOID OVER-SPENDING ON CO2\u20133",
+            "accent": "teal",
+            "headline": "Old ICE 2154 papers over-weighted CO2 & CO3 vs your ICE 2123 blueprint",
+            "metric": "35 PYQs \u2022 Only 11/50 Blueprint",
+            "detail": "Past ICE 2154 papers gave CO2 (17 Qs) & CO3 (18 Qs) ~10 marks each. Your ICE 2123 Endsem allocates just 5 marks (CO2) + 6 marks (CO3) \u2014 lock them via repeat templates only."
+          },
+          {
+            "id": "rev-circuit-reuse",
+            "verdict": "REVERSE CHECK #3 \u2022 DRILL THE REUSED CIRCUITS FIRST",
+            "accent": "yellow",
+            "headline": "Master 5 recurring CO1\u20133 circuit archetypes before attempting rare problems",
+            "metric": "18 Marks Secured Fast",
+            "detail": "Prioritize (1) 1\u03a9-2\u03a9-2\u03a9-3I\u2081 Two-Port Z/Y, (2) 1A/100\u03a9/1H 0\u207a derivatives & CF+PI, (3) V\u2082/V\u2081 ladder & s-domain Norton, (4) Dependent-source Max Power Transfer."
+          }
+        ]
+      }
+    },
+    {
+      "id": "math-iii",
+      "folderName": "MATH III",
+      "shortName": "MATH III",
+      "fullName": "Mathematics III",
+      "courseCode": "Pending Syllabus",
+      "accentColor": "teal",
+      "tagline": "Awaiting study material upload in MATH III/",
+      "status": "missing_material",
+      "statusMessage": "No study PDFs or notes found in 'MATH III/'. Add module PDFs or a course plan to 'MATH III/' and run 'npm run parse'.",
+      "weightageScaleLabel": "Not Yet Available",
+      "weightageSource": "missing",
+      "weightageBasis": "No PDF or text files currently exist in MATH III/.",
+      "totalWeightage": 0,
+      "sourceFiles": [],
+      "parseWarnings": [],
+      "modules": []
+    },
+    {
+      "id": "snt",
+      "folderName": "SNT",
+      "shortName": "SNT",
+      "fullName": "SNT",
+      "courseCode": "Pending Syllabus",
+      "accentColor": "yellow",
+      "tagline": "Awaiting study material upload in SNT/",
+      "status": "missing_material",
+      "statusMessage": "No study PDFs or notes found in 'SNT/'. Add module PDFs or a course plan to 'SNT/' and run 'npm run parse'.",
+      "weightageScaleLabel": "Not Yet Available",
+      "weightageSource": "missing",
+      "weightageBasis": "No PDF or text files currently exist in SNT/.",
+      "totalWeightage": 0,
+      "sourceFiles": [],
+      "parseWarnings": [],
+      "modules": []
+    }
+  ]
+}
