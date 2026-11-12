@@ -4,6 +4,7 @@ import { computeExamReadiness } from '../lib/studyHelpers';
 import { rankModulesByWeightage } from '../lib/studyParser';
 import { MemphisGeoBadge, MemphisSquiggle } from './MemphisDecor';
 import { ScrollReveal } from './ScrollReveal';
+import { StudyFilesSection } from './StudyFilesSection';
 
 interface HomeViewProps {
   subjects: SubjectRecord[];
@@ -140,6 +141,8 @@ export function HomeView({
           })}
         </div>
       </section>
+
+      <StudyFilesSection subjects={subjects} mode="home" />
     </div>
   );
 }

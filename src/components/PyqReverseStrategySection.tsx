@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { Crosshair, ExternalLink, Layers, Repeat, Target } from 'lucide-react';
+import { Crosshair, Download, ExternalLink, Layers, Repeat, Target } from 'lucide-react';
 import type { SubjectRecord } from '../types/study';
-import { buildStudyPdfUrl } from '../lib/studyHelpers';
+import { buildStudyDownloadUrl, buildStudyPdfUrl } from '../lib/studyHelpers';
 import { getAccentHex } from './MemphisDecor';
 import { CountUpNumber, ScrollReveal } from './ScrollReveal';
 
@@ -36,6 +36,23 @@ export function PyqReverseStrategySection({
     return true;
   });
 
+  const resolveResourceUrls = (category: 'pyq-summary' | 'pyq-solutions') => {
+    const file = subject.resourceFiles?.find((res) => res.category === category);
+    if (!file) return null;
+    const folderPrefix = `${subject.folderName}/`;
+    const rel = file.relativePath.startsWith(folderPrefix)
+      ? file.relativePath.slice(folderPrefix.length)
+      : file.relativePath;
+    return {
+      file,
+      openUrl: buildStudyPdfUrl(subject.folderName, rel, 'p. 1'),
+      downloadUrl: buildStudyDownloadUrl(subject.folderName, rel),
+    };
+  };
+
+  const summaryResource = resolveResourceUrls('pyq-summary');
+  const solutionsResource = resolveResourceUrls('pyq-solutions');
+
   return (
     <section
       className="pyq-section"
@@ -48,9 +65,47 @@ export function PyqReverseStrategySection({
             <Repeat size={22} aria-hidden="true" />
             <h2 id="pyq-heading">PYQ Reverse Strategy</h2>
           </div>
-          <span className="memphis-pill memphis-pill--pink">
-            {pyq.totalQuestionsScanned} Questions • {pyq.totalExamSessions} Exams ({pyq.totalPdfCount} PDFs)
-          </span>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', alignItems: 'center' }}>
+            {solutionsResource?.openUrl && (
+              <a
+                href={solutionsResource.openUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="memphis-btn mindmap-btn memphis-btn--teal"
+                style={{ textDecoration: 'none' }}
+              >
+                <span>Solved Circuits PDF ({solutionsResource.file.pageCount}p)</span>
+                <ExternalLink size={13} aria-hidden="true" />
+              </a>
+            )}
+            {summaryResource?.openUrl && (
+              <a
+                href={summaryResource.openUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="memphis-btn mindmap-btn memphis-btn--yellow"
+                style={{ textDecoration: 'none' }}
+              >
+                <span>Repeated Qs PDF ({summaryResource.file.pageCount}p)</span>
+                <ExternalLink size={13} aria-hidden="true" />
+              </a>
+            )}
+            {summaryResource?.downloadUrl && (
+              <a
+                href={summaryResource.downloadUrl}
+                download={summaryResource.file.filename}
+                className="memphis-btn mindmap-btn"
+                style={{ textDecoration: 'none' }}
+                aria-label={`Download ${summaryResource.file.filename}`}
+              >
+                <Download size={13} aria-hidden="true" />
+                <span>Download List</span>
+              </a>
+            )}
+            <span className="memphis-pill memphis-pill--pink">
+              {pyq.totalQuestionsScanned} Questions • {pyq.totalExamSessions} Exams ({pyq.totalPdfCount} PDFs)
+            </span>
+          </div>
         </div>
       </ScrollReveal>
 

@@ -224,6 +224,51 @@ describe('App navigation & subject views', () => {
 
     // Quick jump buttons operate cleanly
     fireEvent.click(within(dock).getByRole('button', { name: /Jump to Ranks section/i }));
+    fireEvent.click(within(dock).getByRole('button', { name: /Jump to Files section/i }));
     fireEvent.click(within(dock).getByRole('button', { name: /Scroll smoothly back to top/i }));
+  });
+
+  it('renders Files section on Home and NAS views with filter tabs and PDF open/download links', () => {
+    const { unmount } = render(<App rawData={generatedData} initialHash="#/" />);
+
+    const homeFiles = screen.getByTestId('files-section');
+    expect(within(homeFiles).getByText('NAS Repeated Questions PYQ List')).toBeInTheDocument();
+    expect(within(homeFiles).getByText('NAS Repeated PYQs — Solved With Circuits')).toBeInTheDocument();
+    expect(
+      within(homeFiles).getByRole('link', { name: /Open NAS_Repeated_Questions_PYQ_List\.pdf/i })
+    ).toHaveAttribute('href', '/study-files/NAS/resources/NAS_Repeated_Questions_PYQ_List.pdf#page=1');
+    expect(
+      within(homeFiles).getByRole('link', { name: /Download NAS_Repeated_Questions_PYQ_List\.pdf/i })
+    ).toHaveAttribute('href', '/study-files/NAS/resources/NAS_Repeated_Questions_PYQ_List.pdf');
+    expect(
+      within(homeFiles).getByRole('link', {
+        name: /Open NAS_Repeated_Questions_Solved_With_Circuits\.pdf/i,
+      })
+    ).toHaveAttribute(
+      'href',
+      '/study-files/NAS/resources/NAS_Repeated_Questions_Solved_With_Circuits.pdf#page=1'
+    );
+    expect(
+      within(homeFiles).getByRole('link', {
+        name: /Download NAS_Repeated_Questions_Solved_With_Circuits\.pdf/i,
+      })
+    ).toHaveAttribute(
+      'href',
+      '/study-files/NAS/resources/NAS_Repeated_Questions_Solved_With_Circuits.pdf'
+    );
+
+    // Filter to Repeat List & Guides only
+    fireEvent.click(within(homeFiles).getByTestId('files-filter-summary'));
+    expect(within(homeFiles).getByText('NAS Repeated Questions PYQ List')).toBeInTheDocument();
+    expect(within(homeFiles).getByText('NAS Repeated PYQs — Solved With Circuits')).toBeInTheDocument();
+    expect(within(homeFiles).queryByText('Mar 2021 Endsem (ICE 2154)')).not.toBeInTheDocument();
+
+    unmount();
+
+    render(<App rawData={generatedData} initialHash="#/subject/nas" />);
+    expect(screen.getByTestId('jump-files-btn')).toBeInTheDocument();
+    const subjFiles = screen.getByTestId('files-section');
+    expect(within(subjFiles).getByText('NAS Repeated Questions PYQ List')).toBeInTheDocument();
+    expect(within(subjFiles).getByText('NAS Repeated PYQs — Solved With Circuits')).toBeInTheDocument();
   });
 });

@@ -26,14 +26,9 @@ export function extractFirstPageNumber(sourceRef?: string | null): number {
   return 1;
 }
 
-/**
- * Builds a browser-openable URL pointing to the exact PDF page for a study source.
- * Returns `null` when the source string refers to multiple files or unsafe path segments.
- */
-export function buildStudyPdfUrl(
+function encodeSafeStudyBasePath(
   folderName: string | undefined,
-  sourceFile?: string | null,
-  sourceRef?: string | null
+  sourceFile?: string | null
 ): string | null {
   if (!folderName || !sourceFile) return null;
   const trimmedFolder = folderName.trim();
@@ -59,9 +54,33 @@ export function buildStudyPdfUrl(
     return null;
   }
 
-  const page = extractFirstPageNumber(sourceRef);
   const encodedPath = fileSegments.map((seg) => encodeURIComponent(seg)).join('/');
-  return `/study-files/${encodeURIComponent(trimmedFolder)}/${encodedPath}#page=${page}`;
+  return `/study-files/${encodeURIComponent(trimmedFolder)}/${encodedPath}`;
+}
+
+/**
+ * Builds a browser-openable URL pointing to the exact PDF page for a study source.
+ * Returns `null` when the source string refers to multiple files or unsafe path segments.
+ */
+export function buildStudyPdfUrl(
+  folderName: string | undefined,
+  sourceFile?: string | null,
+  sourceRef?: string | null
+): string | null {
+  const basePath = encodeSafeStudyBasePath(folderName, sourceFile);
+  if (!basePath) return null;
+  const page = extractFirstPageNumber(sourceRef);
+  return `${basePath}#page=${page}`;
+}
+
+/**
+ * Builds a clean URL for downloading a study file without a `#page=` fragment.
+ */
+export function buildStudyDownloadUrl(
+  folderName: string | undefined,
+  sourceFile?: string | null
+): string | null {
+  return encodeSafeStudyBasePath(folderName, sourceFile);
 }
 
 function getModuleCompletionFraction(mod: ModuleRecord, reviewedIds: Set<string>): number {
@@ -451,5 +470,119 @@ export function searchMindMapNodes(
     .sort((a, b) => b.score - a.score || a.result.level - b.result.level)
     .slice(0, limit)
     .map((item) => item.result);
+}
+
+export type StudyFileKind = 'summary' | 'slides' | 'pyq' | 'plan';
+
+export interface StudyFileLibraryItem {
+  id: string;
+  subjectId: string;
+  subjectShortName: string;
+  folderName: string;
+  title: string;
+  description: string;
+  filename: string;
+  kind: StudyFileKind;
+  badge: string;
+  featured: boolean;
+  pageCount: number;
+  sizeBytes?: number;
+  openUrl: string | null;
+  downloadUrl: string | null;
+}
+
+/**
+ * Formats byte counts cleanly for display inside file cards.
+ */
+export function formatFileSize(sizeBytes?: number): string | null {
+  if (typeof sizeBytes !== 'number' || !Number.isFinite(sizeBytes) || sizeBytes <= 0) {
+    return null;
+  }
+  if (sizeBytes < 1024) return `${sizeBytes} B`;
+  const kb = sizeBytes / 1024;
+  if (kb < 1024) return `${Math.round(kb)} KB`;
+  return `${(kb / 1024).toFixed(1)} MB`;
+}
+
+function toSubjectRelativePath(folderName: string, relativePath: string, filename: string): string {
+  const prefix = `${folderName}/`;
+  if (relativePath.startsWith(prefix)) {
+    return relativePath.slice(prefix.length);
+  }
+  return relativePath || filename;
+}
+
+/**
+ * Collects curated resources, course plans, module slides, and audited PYQ papers
+ * into a unified, sorted list for the website's Files section.
+ */
+export function buildStudyFileLibrary(subjects: SubjectRecord[]): StudyFileLibraryItem[] {
+  const items: StudyFileLibraryItem[] = [];
+
+  for (const subj of subjects) {
+    for (const res of subj.resourceFiles ?? []) {
+      const subRel = toSubjectRelativePath(subj.folderName, res.relativePath, res.filename);
+      items.push({
+        id: `${subj.id}-res-${res.id}`,
+        subjectId: subj.id,
+        subjectShortName: subj.shortName,
+        folderName: subj.folderName,
+        title: res.title,
+        description: res.description,
+        filename: res.filename,
+        kind: 'summary',
+        badge: res.badge || 'PYQ REPEAT LIST',
+        featured: true,
+        pageCount: res.pageCount,
+        sizeBytes: res.sizeBytes,
+        openUrl: buildStudyPdfUrl(subj.folderName, subRel, 'p. 1'),
+        downloadUrl: buildStudyDownloadUrl(subj.folderName, subRel),
+      });
+    }
+
+    for (const src of subj.sourceFiles) {
+      const subRel = toSubjectRelativePath(subj.folderName, src.relativePath, src.filename);
+      const isPlan = src.isCoursePlan;
+      items.push({
+        id: `${subj.id}-src-${src.filename}`,
+        subjectId: subj.id,
+        subjectShortName: subj.shortName,
+        folderName: subj.folderName,
+        title: src.filename.replace(/\.pdf$/i, '').replace(/_/g, ' '),
+        description: isPlan
+          ? 'Official course plan, CO weights & lecture breakdown'
+          : `${src.pageCount} slides${src.exampleCount > 0 ? ` • ${src.exampleCount} worked examples` : ''}`,
+        filename: src.filename,
+        kind: isPlan ? 'plan' : 'slides',
+        badge: isPlan ? 'COURSE PLAN' : 'MODULE SLIDES',
+        featured: false,
+        pageCount: src.pageCount,
+        sizeBytes: src.sizeBytes,
+        openUrl: buildStudyPdfUrl(subj.folderName, subRel, 'p. 1'),
+        downloadUrl: buildStudyDownloadUrl(subj.folderName, subRel),
+      });
+    }
+
+    for (const paper of subj.pyqAnalysis?.papers ?? []) {
+      const subRel = toSubjectRelativePath(subj.folderName, paper.relativePath, paper.filename);
+      items.push({
+        id: `${subj.id}-pyq-${paper.id}`,
+        subjectId: subj.id,
+        subjectShortName: subj.shortName,
+        folderName: subj.folderName,
+        title: `${paper.examLabel} (${paper.courseCode})`,
+        description: `${paper.questionCount} questions • ${paper.maxMarks} marks • ${paper.examDate}`,
+        filename: paper.filename,
+        kind: 'pyq',
+        badge: 'PYQ PAPER',
+        featured: false,
+        pageCount: paper.pageCount,
+        openUrl: buildStudyPdfUrl(subj.folderName, subRel, 'p. 1'),
+        downloadUrl: buildStudyDownloadUrl(subj.folderName, subRel),
+      });
+    }
+  }
+
+  return items;
 }
 

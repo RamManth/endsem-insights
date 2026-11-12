@@ -672,6 +672,79 @@ def build_dataset(root_dir: Path, blueprints_path: Path) -> dict[str, Any]:
             warnings=warnings,
         )
 
+        resources_dir = next(
+            (
+                entry
+                for entry in folder_path.iterdir()
+                if entry.is_dir() and entry.name.lower() == "resources"
+            ),
+            None,
+        )
+        disk_resources_by_rel: dict[str, dict[str, Any]] = {}
+        if resources_dir is not None:
+            for res_path in sorted(
+                p
+                for p in resources_dir.iterdir()
+                if p.is_file() and not p.name.startswith(".") and p.suffix.lower() in SUPPORTED_EXTENSIONS
+            ):
+                rmeta = (
+                    parse_pdf_file(res_path)
+                    if res_path.suffix.lower() == ".pdf"
+                    else parse_text_file(res_path)
+                )
+                rel = f"{resources_dir.name}/{res_path.name}"
+                rmeta["relativePath"] = rel
+                disk_resources_by_rel[rel] = rmeta
+
+        resource_files: list[dict[str, Any]] = []
+        seen_resource_rels: set[str] = set()
+        for res_cfg in cfg.get("resourceFiles", []):
+            rel = str(res_cfg.get("relativePath") or f"resources/{res_cfg.get('filename', '')}").strip()
+            disk_meta = disk_resources_by_rel.get(rel)
+            if disk_meta is None:
+                candidate = folder_path / rel
+                if candidate.is_file():
+                    disk_meta = (
+                        parse_pdf_file(candidate)
+                        if candidate.suffix.lower() == ".pdf"
+                        else parse_text_file(candidate)
+                    )
+                    disk_meta["relativePath"] = rel
+                else:
+                    warnings.append(f"{subject_id}: Resource file missing on disk: {rel}")
+                    continue
+            seen_resource_rels.add(rel)
+            resource_files.append(
+                {
+                    "id": res_cfg.get("id") or f"{subject_id}-res-{slugify(disk_meta['filename'])}",
+                    "title": res_cfg.get("title") or disk_meta["filename"],
+                    "description": res_cfg.get("description", ""),
+                    "filename": disk_meta["filename"],
+                    "relativePath": rel,
+                    "category": res_cfg.get("category", "other"),
+                    "badge": res_cfg.get("badge"),
+                    "pageCount": disk_meta["pageCount"],
+                    "sizeBytes": disk_meta["sizeBytes"],
+                }
+            )
+
+        for rel, disk_meta in disk_resources_by_rel.items():
+            if rel in seen_resource_rels:
+                continue
+            resource_files.append(
+                {
+                    "id": f"{subject_id}-res-{slugify(disk_meta['filename'])}",
+                    "title": disk_meta["filename"].rsplit(".", 1)[0].replace("_", " "),
+                    "description": "",
+                    "filename": disk_meta["filename"],
+                    "relativePath": rel,
+                    "category": "notes",
+                    "badge": "STUDY FILE",
+                    "pageCount": disk_meta["pageCount"],
+                    "sizeBytes": disk_meta["sizeBytes"],
+                }
+            )
+
         file_by_name = {meta["filename"]: meta for meta in parsed_files}
         configured_modules = cfg.get("modules")
 
@@ -741,12 +814,14 @@ def build_dataset(root_dir: Path, blueprints_path: Path) -> dict[str, Any]:
                         "filename": f["filename"],
                         "relativePath": f["relativePath"],
                         "pageCount": f["pageCount"],
+                        "sizeBytes": f["sizeBytes"],
                         "exampleCount": f["exampleCount"],
                         "isCoursePlan": f["isCoursePlan"],
                         "parseError": f["parseError"],
                     }
                     for f in parsed_files
                 ],
+                "resourceFiles": resource_files,
                 "parseWarnings": warnings,
                 "modules": modules,
                 "pyqAnalysis": pyq_analysis,

@@ -8,6 +8,8 @@ import type {
   RankedModule,
   RepeatedPyqQuestion,
   RepeatedPyqTopic,
+  ResourceFileCategory,
+  ResourceFileMeta,
   ReverseStrategyInsight,
   SourceFileMeta,
   StudyDataset,
@@ -219,9 +221,43 @@ function parseSourceFile(raw: unknown): SourceFileMeta | null {
     filename,
     relativePath: asNonEmptyString(raw.relativePath, filename),
     pageCount: asPositiveInt(raw.pageCount, 0),
+    sizeBytes: typeof raw.sizeBytes === 'number' && Number.isFinite(raw.sizeBytes) && raw.sizeBytes >= 0 ? Math.round(raw.sizeBytes) : undefined,
     exampleCount: asPositiveInt(raw.exampleCount, 0),
     isCoursePlan: Boolean(raw.isCoursePlan),
     parseError: asNullableString(raw.parseError),
+  };
+}
+
+const VALID_RESOURCE_CATEGORIES: ResourceFileCategory[] = [
+  'pyq-summary',
+  'pyq-solutions',
+  'notes',
+  'cheat-sheet',
+  'other',
+];
+
+function parseResourceFile(raw: unknown, idx: number): ResourceFileMeta | null {
+  if (!isRecord(raw)) return null;
+  const filename = asNullableString(raw.filename);
+  const relativePath = asNullableString(raw.relativePath);
+  if (!filename || !relativePath) return null;
+
+  const category: ResourceFileCategory = VALID_RESOURCE_CATEGORIES.includes(
+    raw.category as ResourceFileCategory
+  )
+    ? (raw.category as ResourceFileCategory)
+    : 'other';
+
+  return {
+    id: asNonEmptyString(raw.id, `resource-${idx + 1}`),
+    title: asNonEmptyString(raw.title, filename),
+    description: asNonEmptyString(raw.description, ''),
+    filename,
+    relativePath,
+    category,
+    badge: asNullableString(raw.badge),
+    pageCount: asPositiveInt(raw.pageCount, 0),
+    sizeBytes: asPositiveInt(raw.sizeBytes, 0),
   };
 }
 
@@ -397,6 +433,12 @@ function parseSubject(raw: unknown, index: number, issues: ValidationIssue[]): S
     ? raw.sourceFiles.map(parseSourceFile).filter((f): f is SourceFileMeta => f !== null)
     : [];
 
+  const resourceFiles = Array.isArray(raw.resourceFiles)
+    ? raw.resourceFiles
+        .map((r, rIdx) => parseResourceFile(r, rIdx))
+        .filter((f): f is ResourceFileMeta => f !== null)
+    : [];
+
   const parseWarnings = Array.isArray(raw.parseWarnings)
     ? raw.parseWarnings.filter((w): w is string => typeof w === 'string' && w.trim().length > 0)
     : [];
@@ -463,6 +505,7 @@ function parseSubject(raw: unknown, index: number, issues: ValidationIssue[]): S
     ),
     totalWeightage,
     sourceFiles,
+    resourceFiles,
     parseWarnings,
     modules: normalizedModules,
     pyqAnalysis: parsePyqAnalysis(raw.pyqAnalysis),

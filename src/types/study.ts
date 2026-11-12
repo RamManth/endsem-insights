@@ -10,9 +10,29 @@ export interface SourceFileMeta {
   filename: string;
   relativePath: string;
   pageCount: number;
+  sizeBytes?: number;
   exampleCount: number;
   isCoursePlan: boolean;
   parseError: string | null;
+}
+
+export type ResourceFileCategory =
+  | 'pyq-summary'
+  | 'pyq-solutions'
+  | 'notes'
+  | 'cheat-sheet'
+  | 'other';
+
+export interface ResourceFileMeta {
+  id: string;
+  title: string;
+  description: string;
+  filename: string;
+  relativePath: string;
+  category: ResourceFileCategory;
+  badge?: string | null;
+  pageCount: number;
+  sizeBytes: number;
 }
 
 export interface TopicLeaf {
@@ -143,6 +163,7 @@ export interface SubjectRecord {
   weightageBasis: string;
   totalWeightage: number;
   sourceFiles: SourceFileMeta[];
+  resourceFiles?: ResourceFileMeta[];
   parseWarnings: string[];
   modules: ModuleRecord[];
   pyqAnalysis?: PyqAnalysisSummary | null;

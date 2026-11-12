@@ -1,5 +1,5 @@
 import { useMemo, useRef, useState } from 'react';
-import { AlertTriangle, ArrowLeft, BookOpen, Repeat } from 'lucide-react';
+import { AlertTriangle, ArrowLeft, BookOpen, FolderOpen, Repeat } from 'lucide-react';
 import type { SubjectRecord } from '../types/study';
 import { computeExamReadiness } from '../lib/studyHelpers';
 import { smoothScrollToElement } from '../lib/scrollMotion';
@@ -9,6 +9,7 @@ import { MindMapView } from './MindMapView';
 import { ModuleRankings } from './ModuleRankings';
 import { PyqReverseStrategySection } from './PyqReverseStrategySection';
 import { ScrollReveal } from './ScrollReveal';
+import { StudyFilesSection } from './StudyFilesSection';
 import { StudyStrategySection } from './StudyStrategySection';
 import { SubjectErrorState } from './SubjectErrorState';
 
@@ -37,8 +38,13 @@ export function SubjectView({
   const rankingsTopRef = useRef<HTMLDivElement | null>(null);
   const strategyTopRef = useRef<HTMLDivElement | null>(null);
   const pyqTopRef = useRef<HTMLDivElement | null>(null);
+  const filesTopRef = useRef<HTMLDivElement | null>(null);
 
   const hasPyq = Boolean(subject?.pyqAnalysis);
+  const hasFiles =
+    (subject?.sourceFiles.length ?? 0) > 0 ||
+    (subject?.resourceFiles?.length ?? 0) > 0 ||
+    (subject?.pyqAnalysis?.papers.length ?? 0) > 0;
   const scrollSections = useMemo<ScrollSectionTarget[]>(() => {
     const base: ScrollSectionTarget[] = [
       { id: 'mindmap', label: 'Map', getElement: () => mindMapTopRef.current },
@@ -48,8 +54,11 @@ export function SubjectView({
     if (hasPyq) {
       base.push({ id: 'pyq', label: 'PYQs', getElement: () => pyqTopRef.current });
     }
+    if (hasFiles) {
+      base.push({ id: 'files', label: 'Files', getElement: () => filesTopRef.current });
+    }
     return base;
-  }, [hasPyq]);
+  }, [hasPyq, hasFiles]);
 
   if (!subject || subject.status !== 'ready' || subject.modules.length === 0) {
     return (
@@ -147,6 +156,18 @@ export function SubjectView({
             <span>Formula Sheet</span>
           </button>
 
+          {hasFiles && (
+            <button
+              type="button"
+              className="memphis-btn memphis-btn--teal"
+              onClick={() => smoothScrollToElement(filesTopRef.current, 88, 780)}
+              data-testid="jump-files-btn"
+            >
+              <FolderOpen size={16} aria-hidden="true" />
+              <span>Files</span>
+            </button>
+          )}
+
           <button type="button" className="memphis-btn" onClick={onBackHome}>
             <ArrowLeft size={16} aria-hidden="true" />
             <span>Back to Subjects</span>
@@ -200,6 +221,12 @@ export function SubjectView({
       <div ref={pyqTopRef} className="scroll-anchor">
         <PyqReverseStrategySection subject={subject} onFocusModule={handleFocusModule} />
       </div>
+
+      {hasFiles && (
+        <div ref={filesTopRef} className="scroll-anchor">
+          <StudyFilesSection subjects={[subject]} mode="subject" />
+        </div>
+      )}
 
       <FloatingScrollNav sections={scrollSections} />
     </div>

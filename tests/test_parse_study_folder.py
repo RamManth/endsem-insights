@@ -28,6 +28,14 @@ class ParseStudyFolderTests(unittest.TestCase):
         self.assertEqual(pyq["totalQuestionsScanned"], 93)
         self.assertEqual(pyq["repeatedQuestionCount"], 14)
         self.assertEqual(pyq["repeatedTopicCount"], 9)
+        res_files = subjects["nas"]["resourceFiles"]
+        self.assertEqual(len(res_files), 2)
+        self.assertEqual(res_files[0]["filename"], "NAS_Repeated_Questions_PYQ_List.pdf")
+        self.assertEqual(res_files[0]["relativePath"], "resources/NAS_Repeated_Questions_PYQ_List.pdf")
+        self.assertEqual(res_files[0]["pageCount"], 6)
+        self.assertEqual(res_files[1]["filename"], "NAS_Repeated_Questions_Solved_With_Circuits.pdf")
+        self.assertEqual(res_files[1]["relativePath"], "resources/NAS_Repeated_Questions_Solved_With_Circuits.pdf")
+        self.assertEqual(res_files[1]["pageCount"], 27)
         self.assertEqual(subjects["math-iii"]["status"], "missing_material")
         self.assertEqual(subjects["snt"]["status"], "missing_material")
 

@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAt": "2026-11-12T06:34:46.714674+00:00",
+  "generatedAt": "2026-11-12T12:13:16.359340+00:00",
   "studyRootName": "Endsem insights",
   "subjects": [
     {
@@ -22,6 +22,7 @@
           "filename": "Course Plan - BTech Theory - 3 Credits_ICE2123_NAS_Rev2_Signed-2.pdf",
           "relativePath": "NAS/Course Plan - BTech Theory - 3 Credits_ICE2123_NAS_Rev2_Signed-2.pdf",
           "pageCount": 6,
+          "sizeBytes": 366090,
           "exampleCount": 2,
           "isCoursePlan": true,
           "parseError": null
@@ -30,6 +31,7 @@
           "filename": "NAS_Module1_partA.pdf",
           "relativePath": "NAS/NAS_Module1_partA.pdf",
           "pageCount": 58,
+          "sizeBytes": 2578626,
           "exampleCount": 11,
           "isCoursePlan": false,
           "parseError": null
@@ -38,6 +40,7 @@
           "filename": "NS_Module2_Rev2.pdf",
           "relativePath": "NAS/NS_Module2_Rev2.pdf",
           "pageCount": 61,
+          "sizeBytes": 2442007,
           "exampleCount": 7,
           "isCoursePlan": false,
           "parseError": null
@@ -46,6 +49,7 @@
           "filename": "NS_Module3A_Rev3.pdf",
           "relativePath": "NAS/NS_Module3A_Rev3.pdf",
           "pageCount": 49,
+          "sizeBytes": 2317861,
           "exampleCount": 12,
           "isCoursePlan": false,
           "parseError": null
@@ -54,6 +58,7 @@
           "filename": "NS_Module3B_Rev3.pdf",
           "relativePath": "NAS/NS_Module3B_Rev3.pdf",
           "pageCount": 37,
+          "sizeBytes": 1090163,
           "exampleCount": 16,
           "isCoursePlan": false,
           "parseError": null
@@ -62,6 +67,7 @@
           "filename": "NS_Module4_Rev1.pdf",
           "relativePath": "NAS/NS_Module4_Rev1.pdf",
           "pageCount": 90,
+          "sizeBytes": 3385788,
           "exampleCount": 47,
           "isCoursePlan": false,
           "parseError": null
@@ -70,9 +76,34 @@
           "filename": "NS_Module5_Rev1.pdf",
           "relativePath": "NAS/NS_Module5_Rev1.pdf",
           "pageCount": 87,
+          "sizeBytes": 3270954,
           "exampleCount": 37,
           "isCoursePlan": false,
           "parseError": null
+        }
+      ],
+      "resourceFiles": [
+        {
+          "id": "nas-repeated-questions-pdf",
+          "title": "NAS Repeated Questions PYQ List",
+          "description": "14 repeat clusters (63 appearances), 9 cross-exam topics & 5-exam audit legend.",
+          "filename": "NAS_Repeated_Questions_PYQ_List.pdf",
+          "relativePath": "resources/NAS_Repeated_Questions_PYQ_List.pdf",
+          "category": "pyq-summary",
+          "badge": "PYQ REPEAT LIST",
+          "pageCount": 6,
+          "sizeBytes": 107110
+        },
+        {
+          "id": "nas-repeated-questions-solved-pdf",
+          "title": "NAS Repeated PYQs \u2014 Solved With Circuits",
+          "description": "All 14 repeat clusters (63 exam items) with original cropped circuits/waveforms, plots & Python-verified step-by-step solutions.",
+          "filename": "NAS_Repeated_Questions_Solved_With_Circuits.pdf",
+          "relativePath": "resources/NAS_Repeated_Questions_Solved_With_Circuits.pdf",
+          "category": "pyq-solutions",
+          "badge": "SOLVED + CIRCUITS",
+          "pageCount": 27,
+          "sizeBytes": 3093622
         }
       ],
       "parseWarnings": [],

@@ -2,9 +2,12 @@ import { describe, expect, it } from 'vitest';
 import generatedData from '../data/study-data.generated.json';
 import { buildMindMapTree } from '../lib/mindMapBuilder';
 import {
+  buildStudyDownloadUrl,
+  buildStudyFileLibrary,
   buildStudyPdfUrl,
   computeExamReadiness,
   extractFirstPageNumber,
+  formatFileSize,
   getFormulaCheatSheet,
   searchMindMapNodes,
 } from '../lib/studyHelpers';
@@ -46,6 +49,35 @@ describe('studyHelpers', () => {
     expect(buildStudyPdfUrl('NAS', 'pyq/../secret.pdf', 'p. 1')).toBeNull();
     expect(buildStudyPdfUrl('NAS', '/abs/file.pdf', 'p. 1')).toBeNull();
     expect(buildStudyPdfUrl('NAS', 'a.pdf, b.pdf', 'p. 1')).toBeNull();
+
+    expect(buildStudyDownloadUrl('NAS', 'resources/NAS_Repeated_Questions_PYQ_List.pdf')).toBe(
+      '/study-files/NAS/resources/NAS_Repeated_Questions_PYQ_List.pdf'
+    );
+    expect(buildStudyDownloadUrl('NAS', '../secret.pdf')).toBeNull();
+    expect(formatFileSize(107110)).toBe('105 KB');
+  });
+
+  it('collects resource PDFs, slides, course plan, and PYQ papers in study file library', () => {
+    const library = buildStudyFileLibrary([nas]);
+    expect(library[0]).toMatchObject({
+      filename: 'NAS_Repeated_Questions_PYQ_List.pdf',
+      kind: 'summary',
+      featured: true,
+      pageCount: 6,
+      openUrl: '/study-files/NAS/resources/NAS_Repeated_Questions_PYQ_List.pdf#page=1',
+      downloadUrl: '/study-files/NAS/resources/NAS_Repeated_Questions_PYQ_List.pdf',
+    });
+    expect(library[1]).toMatchObject({
+      filename: 'NAS_Repeated_Questions_Solved_With_Circuits.pdf',
+      kind: 'summary',
+      featured: true,
+      pageCount: 27,
+      openUrl: '/study-files/NAS/resources/NAS_Repeated_Questions_Solved_With_Circuits.pdf#page=1',
+      downloadUrl: '/study-files/NAS/resources/NAS_Repeated_Questions_Solved_With_Circuits.pdf',
+    });
+    expect(library.filter((i) => i.kind === 'pyq')).toHaveLength(6);
+    expect(library.filter((i) => i.kind === 'slides')).toHaveLength(6);
+    expect(library.filter((i) => i.kind === 'plan')).toHaveLength(1);
   });
 
   it('computes live exam readiness without double-counting parent and child items', () => {
