@@ -296,4 +296,102 @@ describe('App navigation & subject views', () => {
     expect(within(subjFiles).getByText('NAS Repeated Questions PYQ List')).toBeInTheDocument();
     expect(within(subjFiles).getByText('NAS Repeated PYQs — Solved With Circuits')).toBeInTheDocument();
   });
+
+  it('renders Exam Countdown Bar on Home and NAS views with dual timers and custom date editing', () => {
+    const { unmount } = render(<App rawData={generatedData} initialHash="#/" />);
+
+    // Exam countdown bar is displayed on Home
+    const homeCounter = screen.getByTestId('exam-countdown-bar');
+    expect(homeCounter).toBeInTheDocument();
+    expect(within(homeCounter).getByText(/1:00 AM SYLLABUS CRASH DEADLINE/i)).toBeInTheDocument();
+    expect(within(homeCounter).getByTestId('counter-box-one-am')).toBeInTheDocument();
+    expect(within(homeCounter).getByTestId('counter-box-exam')).toBeInTheDocument();
+
+    // Clicking 1 AM Strategy Plan button on Home jumps to NAS with 1 AM Sprint active
+    fireEvent.click(within(homeCounter).getByTestId('open-sprint-btn'));
+    expect(screen.getByTestId('subject-view-nas')).toBeInTheDocument();
+
+    unmount();
+
+    // Directly in NAS: test editing custom exam date and time
+    render(<App rawData={generatedData} initialHash="#/subject/nas" />);
+    const nasCounter = screen.getByTestId('exam-countdown-bar');
+    expect(nasCounter).toBeInTheDocument();
+
+    const editBtn = within(nasCounter).getByTestId('edit-exam-date-btn');
+    fireEvent.click(editBtn);
+    const dateInput = within(nasCounter).getByTestId('exam-datetime-input');
+    fireEvent.change(dateInput, { target: { value: '2026-11-20T14:00' } });
+    fireEvent.click(within(nasCounter).getByTestId('save-exam-date-btn'));
+    expect(within(nasCounter).getByText(/20 Nov 2026/i)).toBeInTheDocument();
+  });
+
+  it('renders 1 AM Sprint Roadmap with 6 time slots, marks milestones, and emergency golden rules', () => {
+    render(<App rawData={generatedData} initialHash="#/subject/nas" />);
+
+    // Switch to 1 AM Sprint tab
+    fireEvent.click(screen.getByTestId('dash-tab-sprint'));
+    expect(screen.getByTestId('tabpanel-sprint')).toHaveAttribute('data-gravity-direction', 'right');
+
+    const sprintSection = screen.getByTestId('one-am-sprint-strategy');
+    expect(sprintSection).toBeInTheDocument();
+    expect(within(sprintSection).getByTestId('sprint-milestones')).toBeInTheDocument();
+
+    // Verify all 6 slots exist in priority order (M5 first, then M4, M1, M3, M2, Final Audit)
+    expect(within(sprintSection).getByTestId('sprint-slot-1')).toHaveTextContent(/Module 5: Signals, CTFT/i);
+    expect(within(sprintSection).getByTestId('sprint-slot-1')).toHaveTextContent(/17 Marks Unlocked/i);
+
+    expect(within(sprintSection).getByTestId('sprint-slot-2')).toHaveTextContent(/Module 4: Laplace Transforms/i);
+    expect(within(sprintSection).getByTestId('sprint-slot-2')).toHaveTextContent(/Cumulative: 32\/50 \(64%\)/i);
+
+    expect(within(sprintSection).getByTestId('sprint-slot-3')).toHaveTextContent(/Module 1: Circuit Theorems/i);
+    expect(within(sprintSection).getByTestId('sprint-slot-4')).toHaveTextContent(/Module 3: Transients/i);
+    expect(within(sprintSection).getByTestId('sprint-slot-5')).toHaveTextContent(/Module 2: Two-Port Parameters/i);
+    expect(within(sprintSection).getByTestId('sprint-slot-6')).toHaveTextContent(/Final Sprint Audit/i);
+
+    expect(within(sprintSection).getByTestId('sprint-emergency-card')).toHaveTextContent(
+      /The 3 Golden Rules to Finish by 1:00 AM/i
+    );
+  });
+
+  it('renders interactive Syllabus Completion Checklist with 20 items, marks scoreboard, and 1 AM Core filters', () => {
+    render(<App rawData={generatedData} initialHash="#/subject/nas" />);
+
+    // Jump to checklist tab
+    fireEvent.click(screen.getByTestId('jump-checklist-btn'));
+    expect(screen.getByTestId('tabpanel-checklist')).toHaveAttribute('data-gravity-direction', 'right');
+
+    const checklist = screen.getByTestId('syllabus-checklist');
+    expect(checklist).toBeInTheDocument();
+
+    // Initial scoreboard shows 0 / 50 marks ready
+    const scoreboard = within(checklist).getByTestId('checklist-scoreboard');
+    expect(scoreboard).toHaveTextContent('0 / 50');
+
+    // Filter to 1 AM Core only
+    fireEvent.click(within(checklist).getByTestId('filter-1am-core'));
+    expect(within(checklist).getAllByTestId(/^checklist-item-chk-/).length).toBe(13);
+
+    // Filter back to All Items
+    fireEvent.click(within(checklist).getByTestId('filter-all'));
+    expect(within(checklist).getAllByTestId(/^checklist-item-chk-/).length).toBe(20);
+
+    // Toggle 2nd-order LCCDE item (17 marks)
+    const lccdeItem = within(checklist).getByTestId('checklist-item-chk-m5-lccde');
+    const checkbox = within(lccdeItem).getByRole('checkbox', { name: /Mark 2nd-Order LCCDE System Response/i });
+    expect(checkbox).not.toBeChecked();
+    fireEvent.click(checkbox);
+    expect(checkbox).toBeChecked();
+
+    // Marks scoreboard updates to 17 / 50
+    expect(within(checklist).getByTestId('checklist-scoreboard')).toHaveTextContent('17 / 50');
+
+    // Click "Mark 1 AM Core Done" button -> locks in 50/50 marks
+    fireEvent.click(within(checklist).getByTestId('mark-all-core-btn'));
+    expect(within(checklist).getByTestId('checklist-scoreboard')).toHaveTextContent('50 / 50');
+
+    // Reset clears all checkboxes
+    fireEvent.click(within(checklist).getByTestId('clear-all-checks-btn'));
+    expect(within(checklist).getByTestId('checklist-scoreboard')).toHaveTextContent('0 / 50');
+  });
 });

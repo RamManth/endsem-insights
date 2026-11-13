@@ -4,7 +4,9 @@ import {
   ArrowLeft,
   Award,
   BookOpen,
+  CheckSquare,
   Compass,
+  Flame,
   FolderOpen,
   GitBranch,
   Repeat,
@@ -12,15 +14,18 @@ import {
 import type { SubjectRecord } from '../types/study';
 import { buildStudyFileLibrary, computeExamReadiness } from '../lib/studyHelpers';
 import { smoothScrollToY } from '../lib/scrollMotion';
+import { ExamCountdownBar } from './ExamCountdownBar';
 import { FormulaCheatDrawer } from './FormulaCheatDrawer';
 import { FloatingScrollNav } from './FloatingScrollNav';
 import { GravityTabs, type GravityTabItem } from './GravityTabs';
 import { MindMapView } from './MindMapView';
 import { ModuleRankings } from './ModuleRankings';
+import { OneAmSprintStrategy } from './OneAmSprintStrategy';
 import { PyqReverseStrategySection } from './PyqReverseStrategySection';
 import { StudyFilesSection } from './StudyFilesSection';
 import { StudyStrategySection } from './StudyStrategySection';
 import { SubjectErrorState } from './SubjectErrorState';
+import { SyllabusChecklist } from './SyllabusChecklist';
 
 interface SubjectViewProps {
   subject?: SubjectRecord;
@@ -32,7 +37,14 @@ interface SubjectViewProps {
   onSelectSubject: (subjectId: string) => void;
 }
 
-type SubjectDashboardTab = 'mindmap' | 'rankings' | 'strategy' | 'pyq' | 'files';
+type SubjectDashboardTab =
+  | 'mindmap'
+  | 'sprint'
+  | 'checklist'
+  | 'rankings'
+  | 'strategy'
+  | 'pyq'
+  | 'files';
 
 export function SubjectView({
   subject,
@@ -70,18 +82,34 @@ export function SubjectView({
         testId: 'dash-tab-mindmap',
       },
       {
+        id: 'sprint',
+        label: '1 AM Sprint',
+        badge: 'CRASH PLAN',
+        icon: <Flame size={15} aria-hidden="true" />,
+        accent: 'pink',
+        testId: 'dash-tab-sprint',
+      },
+      {
+        id: 'checklist',
+        label: 'Checklist',
+        badge: '20 ITEMS',
+        icon: <CheckSquare size={15} aria-hidden="true" />,
+        accent: 'teal',
+        testId: 'dash-tab-checklist',
+      },
+      {
         id: 'rankings',
         label: 'Rankings',
         badge: subject.modules.length,
         icon: <Award size={15} aria-hidden="true" />,
-        accent: 'teal',
+        accent: 'yellow',
         testId: 'dash-tab-rankings',
       },
       {
         id: 'strategy',
         label: 'Study Plan',
         icon: <Compass size={15} aria-hidden="true" />,
-        accent: 'pink',
+        accent: 'yellow',
         testId: 'dash-tab-strategy',
       },
     ];
@@ -183,15 +211,35 @@ export function SubjectView({
         </div>
 
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.55rem', alignItems: 'center' }}>
+          <button
+            type="button"
+            className="memphis-btn memphis-btn--pink"
+            onClick={() => setActiveTab('sprint')}
+            data-testid="jump-sprint-btn"
+          >
+            <Flame size={16} aria-hidden="true" />
+            <span>1 AM Sprint</span>
+          </button>
+
+          <button
+            type="button"
+            className="memphis-btn memphis-btn--teal"
+            onClick={() => setActiveTab('checklist')}
+            data-testid="jump-checklist-btn"
+          >
+            <CheckSquare size={16} aria-hidden="true" />
+            <span>Checklist</span>
+          </button>
+
           {subject.pyqAnalysis && (
             <button
               type="button"
-              className="memphis-btn memphis-btn--pink"
+              className="memphis-btn"
               onClick={() => setActiveTab('pyq')}
               data-testid="jump-pyq-btn"
             >
               <Repeat size={16} aria-hidden="true" />
-              <span>PYQ Repeats ({subject.pyqAnalysis.repeatedQuestionCount})</span>
+              <span>PYQs ({subject.pyqAnalysis.repeatedQuestionCount})</span>
             </button>
           )}
 
@@ -208,7 +256,7 @@ export function SubjectView({
           {hasFiles && (
             <button
               type="button"
-              className="memphis-btn memphis-btn--teal"
+              className="memphis-btn"
               onClick={() => setActiveTab('files')}
               data-testid="jump-files-btn"
             >
@@ -223,6 +271,12 @@ export function SubjectView({
           </button>
         </div>
       </header>
+
+      <ExamCountdownBar
+        onOpenSprint={() => setActiveTab('sprint')}
+        onOpenChecklist={() => setActiveTab('checklist')}
+        compact
+      />
 
       <FormulaCheatDrawer
         subject={subject}
@@ -261,6 +315,22 @@ export function SubjectView({
             focusedModule={focusedModule}
             reviewedIds={reviewedIds}
             onToggleReviewed={onToggleReviewed}
+          />
+        )}
+
+        {activeTab === 'sprint' && (
+          <OneAmSprintStrategy
+            subject={subject}
+            onOpenChecklist={() => setActiveTab('checklist')}
+            onOpenFormulaDrawer={() => setCheatDrawerOpen(true)}
+            onFocusModule={handleFocusModule}
+          />
+        )}
+
+        {activeTab === 'checklist' && (
+          <SyllabusChecklist
+            subject={subject}
+            onFocusModule={handleFocusModule}
           />
         )}
 

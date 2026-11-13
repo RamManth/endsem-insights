@@ -3,6 +3,7 @@ import { AlertTriangle, ArrowRight, FolderOpen, LayoutGrid } from 'lucide-react'
 import type { SubjectRecord, ValidationIssue } from '../types/study';
 import { buildStudyFileLibrary, computeExamReadiness } from '../lib/studyHelpers';
 import { rankModulesByWeightage } from '../lib/studyParser';
+import { ExamCountdownBar } from './ExamCountdownBar';
 import { GravityTabs, type GravityTabItem } from './GravityTabs';
 import { MemphisGeoBadge, MemphisSquiggle } from './MemphisDecor';
 import { ScrollReveal } from './ScrollReveal';
@@ -25,6 +26,7 @@ export function HomeView({
 }: HomeViewProps) {
   const [activeTab, setActiveTab] = useState<HomeTab>('subjects');
   const totalFilesCount = useMemo(() => buildStudyFileLibrary(subjects).length, [subjects]);
+  const primaryReadySubject = subjects.find((s) => s.status === 'ready')?.id ?? 'nas';
 
   const homeTabs: GravityTabItem[] = useMemo(() => {
     const base: GravityTabItem[] = [
@@ -60,6 +62,11 @@ export function HomeView({
           </div>
         </section>
       </ScrollReveal>
+
+      <ExamCountdownBar
+        onOpenSprint={() => onSelectSubject(primaryReadySubject)}
+        onOpenChecklist={() => onSelectSubject(primaryReadySubject)}
+      />
 
       {issues.some((i) => i.level === 'error') && (
         <div
