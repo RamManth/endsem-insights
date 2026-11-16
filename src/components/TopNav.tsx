@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, LogOut } from 'lucide-react';
 import type { SubjectRecord } from '../types/study';
 import { smoothScrollToY } from '../lib/scrollMotion';
 import { MemphisLogoMark } from './MemphisDecor';
@@ -8,12 +8,14 @@ interface TopNavProps {
   subjects: SubjectRecord[];
   activeSubjectId: string | null;
   onGoHome: () => void;
+  onLogout?: () => void;
 }
 
 export function TopNav({
   subjects,
   activeSubjectId,
   onGoHome,
+  onLogout,
 }: TopNavProps) {
   const progressRef = useRef<HTMLDivElement | null>(null);
 
@@ -110,6 +112,20 @@ export function TopNav({
                 <span>All Subjects</span>
               </button>
             </>
+          )}
+
+          {onLogout && (
+            <button
+              type="button"
+              className="memphis-btn memphis-btn--pink topnav-logout-btn"
+              onClick={onLogout}
+              data-testid="topnav-logout-btn"
+              aria-label="Log out of Endsem Insights"
+              title="Log Out"
+            >
+              <LogOut size={16} aria-hidden="true" />
+              <span>Log Out</span>
+            </button>
           )}
         </nav>
       </div>

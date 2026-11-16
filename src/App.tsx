@@ -7,6 +7,8 @@ import { TopNav } from './components/TopNav';
 import { HomeView } from './components/HomeView';
 import { SubjectView } from './components/SubjectView';
 import { SubjectErrorState } from './components/SubjectErrorState';
+import { LoginPage } from './components/LoginPage';
+import { checkIsAuthenticated, clearAuthenticated } from './lib/auth';
 
 const STORAGE_KEY = 'endsem-insights-reviewed-v1';
 
@@ -51,16 +53,41 @@ function saveReviewedIds(ids: Set<string>) {
 interface AppProps {
   rawData?: unknown;
   initialHash?: string;
+  initialAuthenticated?: boolean;
 }
 
-export function App({ rawData = rawStudyData, initialHash }: AppProps) {
+export function App({
+  rawData = rawStudyData,
+  initialHash,
+  initialAuthenticated,
+}: AppProps) {
   const parsed = useMemo(() => parseAndValidateStudyDataset(rawData), [rawData]);
   const { dataset, issues, hasFatalError } = parsed;
+
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(() => {
+    if (initialAuthenticated !== undefined) return initialAuthenticated;
+    return checkIsAuthenticated();
+  });
 
   const [route, setRoute] = useState<AppRoute>(() =>
     parseHashRoute(initialHash ?? (typeof window !== 'undefined' ? window.location.hash : ''))
   );
   const [reviewedIds, setReviewedIds] = useState<Set<string>>(() => loadReviewedIds());
+
+  const handleLoginSuccess = useCallback(() => {
+    setIsAuthenticated(true);
+    smoothScrollToY(0, 520);
+  }, []);
+
+  const handleLogout = useCallback(() => {
+    clearAuthenticated();
+    setIsAuthenticated(false);
+    if (typeof window !== 'undefined') {
+      window.location.hash = '#/';
+    }
+    setRoute({ kind: 'home' });
+    smoothScrollToY(0, 520);
+  }, []);
 
   useEffect(() => {
     const onHashChange = () => {
@@ -137,59 +164,68 @@ export function App({ rawData = rawStudyData, initialHash }: AppProps) {
   return (
     <ErrorBoundary onReset={navigateHome}>
       <div className="app-shell">
-        <TopNav
-          subjects={dataset.subjects}
-          activeSubjectId={activeSubjectId}
-          onGoHome={navigateHome}
-        />
+        {!isAuthenticated ? (
+          <main className="main-container">
+            <LoginPage onLogin={handleLoginSuccess} />
+          </main>
+        ) : (
+          <>
+            <TopNav
+              subjects={dataset.subjects}
+              activeSubjectId={activeSubjectId}
+              onGoHome={navigateHome}
+              onLogout={handleLogout}
+            />
 
-        <main className="main-container">
-          {hasFatalError ? (
-            <section className="memphis-card error-card" role="alert" data-testid="fatal-data-error">
-              <span className="memphis-pill memphis-pill--solid-pink">MALFORMED STUDY DATA</span>
-              <h1 style={{ fontSize: '1.75rem', marginTop: '0.85rem' }}>
-                Could not load study dataset
-              </h1>
-              <p style={{ marginTop: '0.55rem', color: 'var(--ink-muted)' }}>
-                {issues.map((i) => i.message).join(' ')}
-              </p>
-              <p style={{ marginTop: '0.85rem', fontSize: '0.9rem' }}>
-                Run <code>npm run parse</code> to rebuild{' '}
-                <code>src/data/study-data.generated.json</code> from your study material folders.
-              </p>
-            </section>
-          ) : route.kind === 'home' ? (
-            <div key="view-home" className="page-enter">
-              <HomeView
-                subjects={dataset.subjects}
-                issues={issues}
-                reviewedIds={reviewedIds}
-                onSelectSubject={navigateToSubject}
-              />
-            </div>
-          ) : route.kind === 'not_found' ? (
-            <div key="view-not-found" className="page-enter">
-              <SubjectErrorState
-                requestedId={route.rawPath}
-                readySubject={firstReadySubject}
-                onBackHome={navigateHome}
-                onOpenReadySubject={navigateToSubject}
-              />
-            </div>
-          ) : (
-            <div key={`view-subject-${route.subjectId}`} className="page-enter">
-              <SubjectView
-                subject={activeSubject}
-                requestedId={route.subjectId}
-                readySubject={firstReadySubject}
-                reviewedIds={reviewedIds}
-                onToggleReviewed={toggleReviewed}
-                onBackHome={navigateHome}
-                onSelectSubject={navigateToSubject}
-              />
-            </div>
-          )}
-        </main>
+            <main className="main-container">
+              {hasFatalError ? (
+                <section className="memphis-card error-card" role="alert" data-testid="fatal-data-error">
+                  <span className="memphis-pill memphis-pill--solid-pink">MALFORMED STUDY DATA</span>
+                  <h1 style={{ fontSize: '1.75rem', marginTop: '0.85rem' }}>
+                    Could not load study dataset
+                  </h1>
+                  <p style={{ marginTop: '0.55rem', color: 'var(--ink-muted)' }}>
+                    {issues.map((i) => i.message).join(' ')}
+                  </p>
+                  <p style={{ marginTop: '0.85rem', fontSize: '0.9rem' }}>
+                    Run <code>npm run parse</code> to rebuild{' '}
+                    <code>src/data/study-data.generated.json</code> from your study material folders.
+                  </p>
+                </section>
+              ) : route.kind === 'home' ? (
+                <div key="view-home" className="page-enter">
+                  <HomeView
+                    subjects={dataset.subjects}
+                    issues={issues}
+                    reviewedIds={reviewedIds}
+                    onSelectSubject={navigateToSubject}
+                  />
+                </div>
+              ) : route.kind === 'not_found' ? (
+                <div key="view-not-found" className="page-enter">
+                  <SubjectErrorState
+                    requestedId={route.rawPath}
+                    readySubject={firstReadySubject}
+                    onBackHome={navigateHome}
+                    onOpenReadySubject={navigateToSubject}
+                  />
+                </div>
+              ) : (
+                <div key={`view-subject-${route.subjectId}`} className="page-enter">
+                  <SubjectView
+                    subject={activeSubject}
+                    requestedId={route.subjectId}
+                    readySubject={firstReadySubject}
+                    reviewedIds={reviewedIds}
+                    onToggleReviewed={toggleReviewed}
+                    onBackHome={navigateHome}
+                    onSelectSubject={navigateToSubject}
+                  />
+                </div>
+              )}
+            </main>
+          </>
+        )}
 
         <footer className="app-footer">
           <div className="app-footer__inner">

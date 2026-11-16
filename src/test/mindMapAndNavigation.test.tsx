@@ -37,6 +37,7 @@ describe('mindMapBuilder', () => {
 describe('App navigation & subject views', () => {
   beforeEach(async () => {
     window.localStorage.clear();
+    window.localStorage.setItem('endsem-insights-auth-v1', 'true');
     window.history.replaceState(null, '', '/');
     Object.defineProperty(window, 'scrollY', { value: 0, configurable: true, writable: true });
     // Flush any queued jsdom hashchange tasks from previous tests before mounting
