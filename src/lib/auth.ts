@@ -1,5 +1,5 @@
 export const AUTH_STORAGE_KEY = 'endsem-insights-auth-v1';
-export const CORRECT_PASSWORD = 'admin@123';
+export const CORRECT_PASSWORD = 'ram@123';
 
 /**
  * Checks whether an authenticated session exists in localStorage or sessionStorage.

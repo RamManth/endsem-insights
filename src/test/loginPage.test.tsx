@@ -13,8 +13,9 @@ describe('LoginPage and Portal Authentication', () => {
   });
 
   it('validates password checking logic directly', () => {
-    expect(validatePassword('admin@123')).toBe(true);
-    expect(validatePassword('  admin@123  ')).toBe(true);
+    expect(validatePassword('ram@123')).toBe(true);
+    expect(validatePassword('  ram@123  ')).toBe(true);
+    expect(validatePassword('admin@123')).toBe(false);
     expect(validatePassword('wrongpassword')).toBe(false);
     expect(validatePassword('')).toBe(false);
   });
@@ -86,14 +87,14 @@ describe('LoginPage and Portal Authentication', () => {
 
     expect(input).toHaveValue('');
     fireEvent.click(quickFillBtn);
-    expect(input).toHaveValue('admin@123');
+    expect(input).toHaveValue('ram@123');
   });
 
-  it('successfully unlocks dashboard on entering admin@123 and persists session', async () => {
+  it('successfully unlocks dashboard on entering ram@123 and persists session', async () => {
     render(<App rawData={generatedData} initialHash="#/" />);
 
     const input = screen.getByTestId('login-password-input');
-    fireEvent.change(input, { target: { value: 'admin@123' } });
+    fireEvent.change(input, { target: { value: 'ram@123' } });
 
     const submitBtn = screen.getByTestId('login-submit-btn');
     fireEvent.click(submitBtn);
@@ -116,7 +117,7 @@ describe('LoginPage and Portal Authentication', () => {
     render(<App rawData={generatedData} initialHash="#/" />);
 
     const input = screen.getByTestId('login-password-input');
-    fireEvent.change(input, { target: { value: 'admin@123' } });
+    fireEvent.change(input, { target: { value: 'ram@123' } });
 
     // Submit form by pressing Enter
     fireEvent.submit(input.closest('form')!);
@@ -157,7 +158,7 @@ describe('LoginPage and Portal Authentication', () => {
     fireEvent.click(rememberCheckbox); // uncheck remember
 
     const input = screen.getByTestId('login-password-input');
-    fireEvent.change(input, { target: { value: 'admin@123' } });
+    fireEvent.change(input, { target: { value: 'ram@123' } });
 
     fireEvent.click(screen.getByTestId('login-submit-btn'));
 
