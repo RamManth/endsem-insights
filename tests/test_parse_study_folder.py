@@ -39,7 +39,7 @@ class ParseStudyFolderTests(unittest.TestCase):
         self.assertEqual(subjects["math-iii"]["status"], "ready")
         self.assertEqual(subjects["math-iii"]["totalWeightage"], 50.0)
         self.assertEqual(len(subjects["math-iii"]["modules"]), 5)
-        self.assertEqual(len(subjects["math-iii"]["sourceFiles"]), 10)
+        self.assertEqual(len(subjects["math-iii"]["sourceFiles"]), 11)
         self.assertEqual(subjects["snt"]["status"], "missing_material")
 
     def test_generic_pyq_folder_detects_repeated_questions_automatically(self):

@@ -39,7 +39,7 @@
         },
         {
           "id": "nas-repeated-questions-solved-pdf",
-          "title": "NAS Repeated PYQs — Solved With Circuits",
+          "title": "NAS Repeated PYQs \u2014 Solved With Circuits",
           "description": "All 14 repeat clusters (63 exam items) with original cropped circuits/waveforms, plots & Python-verified step-by-step solutions.",
           "filename": "NAS_Repeated_Questions_Solved_With_Circuits.pdf",
           "relativePath": "resources/NAS_Repeated_Questions_Solved_With_Circuits.pdf",
@@ -142,7 +142,7 @@
                 },
                 {
                   "id": "nas-m1-t2",
-                  "title": "Thévenin & Norton Equivalent Circuits (with Dependent Sources)",
+                  "title": "Th\u00e9venin & Norton Equivalent Circuits (with Dependent Sources)",
                   "sourceFile": "Course Plan - BTech Theory - 3 Credits_ICE2123_NAS_Rev2_Signed-2.pdf",
                   "sourceRef": "L6-L8, L25 (p. 3)",
                   "highYield": true
@@ -174,7 +174,9 @@
             "Course Plan - BTech Theory - 3 Credits_ICE2123_NAS_Rev2_Signed-2.pdf"
           ],
           "sourceGapNote": "Signed Course Plan Rev2 lists CO2 at 10 hrs / 20 marks (older slide 6 in NAS_Module1_partA.pdf showed 8 hrs / 16 marks); Endsem blueprint allocates 5 marks.",
-          "prerequisites": ["nas-m1"],
+          "prerequisites": [
+            "nas-m1"
+          ],
           "topicGroups": [
             {
               "id": "nas-m2-elements",
@@ -278,7 +280,10 @@
             "Course Plan - BTech Theory - 3 Credits_ICE2123_NAS_Rev2_Signed-2.pdf"
           ],
           "sourceGapNote": "Combines NS_Module3A_Rev3.pdf (49 pages) and NS_Module3B_Rev3.pdf (37 pages). Note: Course Plan Lesson Plan L17-L23 & L27 mislabels CO3 as '4' in the lecture table column, while Page 1 CO Statements explicitly map Laplace & Two-Port Networks to CO3 (8 hrs, 16/100 marks).",
-          "prerequisites": ["nas-m1", "nas-m2"],
+          "prerequisites": [
+            "nas-m1",
+            "nas-m2"
+          ],
           "topicGroups": [
             {
               "id": "nas-m3-laplace-props",
@@ -537,7 +542,9 @@
             "Course Plan - BTech Theory - 3 Credits_ICE2123_NAS_Rev2_Signed-2.pdf"
           ],
           "sourceGapNote": "NS_Module5_Rev1.pdf covers CTFS, DTFS, CTFT & LCCDE frequency response (87 pages); DTFT and Sampling & Reconstruction are also specified in Course Plan L41, L43-L44.",
-          "prerequisites": ["nas-m4"],
+          "prerequisites": [
+            "nas-m4"
+          ],
           "topicGroups": [
             {
               "id": "nas-m5-ctfs",
@@ -720,14 +727,14 @@
         "repeatedQuestions": [
           {
             "id": "pyq-q-twoport-3i1",
-            "title": "Two-Port Z & Y Parameters (1Ω-2Ω-2Ω-3I₁, T-to-Pi & Dependent-Source Networks)",
+            "title": "Two-Port Z & Y Parameters (1\u03a9-2\u03a9-2\u03a9-3I\u2081, T-to-Pi & Dependent-Source Networks)",
             "moduleId": "nas-m3",
             "coCode": "CO3",
             "track": "Networks",
             "blueprintMarks": 6,
             "cumulativeMarks": 22,
             "matchType": "exact-circuit",
-            "summaryCue": "Appeared in 5/5 exam sessions! Mar 2021 Q3A & Jan 2023 Q2B share the identical 1Ω/2Ω/2Ω/3I₁ circuit; Part A Q5 & Q16 reuse 2Ω/2Ω/3I₁.",
+            "summaryCue": "Appeared in 5/5 exam sessions! Mar 2021 Q3A & Jan 2023 Q2B share the identical 1\u03a9/2\u03a9/2\u03a9/3I\u2081 circuit; Part A Q5 & Q16 reuse 2\u03a9/2\u03a9/3I\u2081.",
             "appearances": [
               {
                 "examId": "mar-2021",
@@ -736,7 +743,7 @@
                 "marks": 5,
                 "sourceFile": "pyq/Network Analysis and Signals (ICE 2154).pdf",
                 "page": 3,
-                "detail": "1Ω shunt, 2Ω series, 2Ω shunt, 3I₁: Find Z & Y parameters",
+                "detail": "1\u03a9 shunt, 2\u03a9 series, 2\u03a9 shunt, 3I\u2081: Find Z & Y parameters",
                 "similarity": "exact-circuit"
               },
               {
@@ -746,7 +753,7 @@
                 "marks": 5,
                 "sourceFile": "pyq/Network Analysis and Signals (ICE 2154)Makeup.pdf",
                 "page": 2,
-                "detail": "1Ω/1Ω/1Ω with 2V₁, 2V₂ sources: Find Y, hence Z parameters",
+                "detail": "1\u03a9/1\u03a9/1\u03a9 with 2V\u2081, 2V\u2082 sources: Find Y, hence Z parameters",
                 "similarity": "variant"
               },
               {
@@ -756,7 +763,7 @@
                 "marks": 1,
                 "sourceFile": "pyq/Network Analysys and signals (ICE2154) PART A.pdf",
                 "page": 6,
-                "detail": "Exact 2Ω, 2Ω, 3I₁ network: Find Z₂₂",
+                "detail": "Exact 2\u03a9, 2\u03a9, 3I\u2081 network: Find Z\u2082\u2082",
                 "similarity": "exact-circuit"
               },
               {
@@ -766,7 +773,7 @@
                 "marks": 1,
                 "sourceFile": "pyq/Network Analysys and signals (ICE2154) PART A.pdf",
                 "page": 16,
-                "detail": "Same 2Ω, 2Ω, 3I₁ network: Find Y₁₂",
+                "detail": "Same 2\u03a9, 2\u03a9, 3I\u2081 network: Find Y\u2081\u2082",
                 "similarity": "exact-circuit"
               },
               {
@@ -776,7 +783,7 @@
                 "marks": 4,
                 "sourceFile": "pyq/Network Analysys and signals (ICE2154) PART B.pdf",
                 "page": 2,
-                "detail": "2Ω/10Ω/10Ω with 2I₁ dependent source: Z & Y parameters",
+                "detail": "2\u03a9/10\u03a9/10\u03a9 with 2I\u2081 dependent source: Z & Y parameters",
                 "similarity": "variant"
               },
               {
@@ -786,7 +793,7 @@
                 "marks": 3,
                 "sourceFile": "pyq/Network Analysis and Signals (ICE 2154) (1).pdf",
                 "page": 2,
-                "detail": "10Ω/5Ω/15Ω T-network: Determine Y parameters & equivalent Pi",
+                "detail": "10\u03a9/5\u03a9/15\u03a9 T-network: Determine Y parameters & equivalent Pi",
                 "similarity": "variant"
               },
               {
@@ -796,21 +803,21 @@
                 "marks": 3,
                 "sourceFile": "pyq/Network Analysis and Signals (ICE 2154)(Makeup).pdf",
                 "page": 2,
-                "detail": "Identical 1Ω, 2Ω, 2Ω, 3I₁ circuit: Derive Y parameters",
+                "detail": "Identical 1\u03a9, 2\u03a9, 2\u03a9, 3I\u2081 circuit: Derive Y parameters",
                 "similarity": "exact-circuit"
               }
             ]
           },
           {
             "id": "pyq-q-lccde-system",
-            "title": "2nd-Order Differential Equation LTI System: H(jω), h(t) & Response to e^{-at}u(t)",
+            "title": "2nd-Order Differential Equation LTI System: H(j\u03c9), h(t) & Response to e^{-at}u(t)",
             "moduleId": "nas-m5",
             "coCode": "CO5",
             "track": "Signals",
             "blueprintMarks": 17,
             "cumulativeMarks": 13,
             "matchType": "exact",
-            "summaryCue": "3-part template repeated across 3 exams: find (i) Frequency response H(jω), (ii) Impulse response h(t), (iii) Output y(t) for exponential step input.",
+            "summaryCue": "3-part template repeated across 3 exams: find (i) Frequency response H(j\u03c9), (ii) Impulse response h(t), (iii) Output y(t) for exponential step input.",
             "appearances": [
               {
                 "examId": "mar-2021",
@@ -846,14 +853,14 @@
           },
           {
             "id": "pyq-q-inv-ctft-sinc",
-            "title": "Inverse CTFT of X(jω) = 2sin(ω) / (ω(jω + 1)) (Verbatim Repeat)",
+            "title": "Inverse CTFT of X(j\u03c9) = 2sin(\u03c9) / (\u03c9(j\u03c9 + 1)) (Verbatim Repeat)",
             "moduleId": "nas-m5",
             "coCode": "CO5",
             "track": "Signals",
             "blueprintMarks": 17,
             "cumulativeMarks": 8,
             "matchType": "exact",
-            "summaryCue": "Identical equation in Mar 2021 & Jul 2021: product of sinc (rectangular gate) and 1/(jω+1) = convolution in time!",
+            "summaryCue": "Identical equation in Mar 2021 & Jul 2021: product of sinc (rectangular gate) and 1/(j\u03c9+1) = convolution in time!",
             "appearances": [
               {
                 "examId": "mar-2021",
@@ -862,7 +869,7 @@
                 "marks": 3,
                 "sourceFile": "pyq/Network Analysis and Signals (ICE 2154).pdf",
                 "page": 4,
-                "detail": "Find x(t) if X(jω) = 2sin(ω) / (ω(jω + 1))",
+                "detail": "Find x(t) if X(j\u03c9) = 2sin(\u03c9) / (\u03c9(j\u03c9 + 1))",
                 "similarity": "exact"
               },
               {
@@ -872,14 +879,14 @@
                 "marks": 5,
                 "sourceFile": "pyq/Network Analysis and Signals (ICE 2154)Makeup.pdf",
                 "page": 3,
-                "detail": "Identical equation: Find x(t) for X(jω) = 2sin(ω) / (ω(jω + 1))",
+                "detail": "Identical equation: Find x(t) for X(j\u03c9) = 2sin(\u03c9) / (\u03c9(j\u03c9 + 1))",
                 "similarity": "exact"
               }
             ]
           },
           {
             "id": "pyq-q-fs-spectrum",
-            "title": "Fourier Representation & Spectrum of x(t) = 1 + cos(2πt) + sin(3πt)",
+            "title": "Fourier Representation & Spectrum of x(t) = 1 + cos(2\u03c0t) + sin(3\u03c0t)",
             "moduleId": "nas-m5",
             "coCode": "CO5",
             "track": "Signals",
@@ -895,7 +902,7 @@
                 "marks": 2,
                 "sourceFile": "pyq/Network Analysis and Signals (ICE 2154).pdf",
                 "page": 4,
-                "detail": "x(t) = sin(πt) + cos(2πt) + sin(5πt) & plot spectrum",
+                "detail": "x(t) = sin(\u03c0t) + cos(2\u03c0t) + sin(5\u03c0t) & plot spectrum",
                 "similarity": "variant"
               },
               {
@@ -905,7 +912,7 @@
                 "marks": 5,
                 "sourceFile": "pyq/Network Analysis and Signals (ICE 2154)Makeup.pdf",
                 "page": 3,
-                "detail": "x(t) = 1 + cos(2πt) + sin(3πt): Fourier rep & magnitude spectrum",
+                "detail": "x(t) = 1 + cos(2\u03c0t) + sin(3\u03c0t): Fourier rep & magnitude spectrum",
                 "similarity": "exact"
               },
               {
@@ -915,21 +922,21 @@
                 "marks": 3,
                 "sourceFile": "pyq/Network Analysys and signals (ICE2154) PART B.pdf",
                 "page": 2,
-                "detail": "Identical x(t) = 1 + cos(2πt) + sin(3πt): mag & phase spectra",
+                "detail": "Identical x(t) = 1 + cos(2\u03c0t) + sin(3\u03c0t): mag & phase spectra",
                 "similarity": "exact"
               }
             ]
           },
           {
             "id": "pyq-q-sys-t2x",
-            "title": "System Property Test: y(t) = t² x(t) & Causal/Memory/BIBO Variations",
+            "title": "System Property Test: y(t) = t\u00b2 x(t) & Causal/Memory/BIBO Variations",
             "moduleId": "nas-m4",
             "coCode": "CO4",
             "track": "Signals",
             "blueprintMarks": 15,
             "cumulativeMarks": 11,
             "matchType": "exact",
-            "summaryCue": "y(t) = t² x(t) appeared verbatim twice (Jul 2021 Q4A & Jan 2022 Part A Q13); linear & causal, but NOT time-invariant.",
+            "summaryCue": "y(t) = t\u00b2 x(t) appeared verbatim twice (Jul 2021 Q4A & Jan 2022 Part A Q13); linear & causal, but NOT time-invariant.",
             "appearances": [
               {
                 "examId": "mar-2021",
@@ -948,7 +955,7 @@
                 "marks": 5,
                 "sourceFile": "pyq/Network Analysis and Signals (ICE 2154)Makeup.pdf",
                 "page": 3,
-                "detail": "Exact: Is y(t) = t² x(t) causal, linear, stable & time-invariant?",
+                "detail": "Exact: Is y(t) = t\u00b2 x(t) causal, linear, stable & time-invariant?",
                 "similarity": "exact"
               },
               {
@@ -958,7 +965,7 @@
                 "marks": 1,
                 "sourceFile": "pyq/Network Analysys and signals (ICE2154) PART A.pdf",
                 "page": 3,
-                "detail": "h(t) = δ(t - t₀), t₀ > 0: causal & stable",
+                "detail": "h(t) = \u03b4(t - t\u2080), t\u2080 > 0: causal & stable",
                 "similarity": "variant"
               },
               {
@@ -968,7 +975,7 @@
                 "marks": 1,
                 "sourceFile": "pyq/Network Analysys and signals (ICE2154) PART A.pdf",
                 "page": 13,
-                "detail": "Exact repeat: System y(t) = t² x(t) classification",
+                "detail": "Exact repeat: System y(t) = t\u00b2 x(t) classification",
                 "similarity": "exact"
               },
               {
@@ -985,14 +992,14 @@
           },
           {
             "id": "pyq-q-conv-impulse",
-            "title": "Convolution of Impulse Difference x(t) = δ(t+1) − δ(t−1) & Pulse Convolutions",
+            "title": "Convolution of Impulse Difference x(t) = \u03b4(t+1) \u2212 \u03b4(t\u22121) & Pulse Convolutions",
             "moduleId": "nas-m4",
             "coCode": "CO4",
             "track": "Signals",
             "blueprintMarks": 15,
             "cumulativeMarks": 17,
             "matchType": "exact",
-            "summaryCue": "Impulse pair δ(t+1) − δ(t−1) convolved with ramp/step signal h(t) appeared back-to-back in Mar 2021 & Jul 2021.",
+            "summaryCue": "Impulse pair \u03b4(t+1) \u2212 \u03b4(t\u22121) convolved with ramp/step signal h(t) appeared back-to-back in Mar 2021 & Jul 2021.",
             "appearances": [
               {
                 "examId": "mar-2021",
@@ -1001,7 +1008,7 @@
                 "marks": 5,
                 "sourceFile": "pyq/Network Analysis and Signals (ICE 2154).pdf",
                 "page": 3,
-                "detail": "x(t)=δ(t+1)-δ(t-1) * h(t) + DT rectangular pulse convolution",
+                "detail": "x(t)=\u03b4(t+1)-\u03b4(t-1) * h(t) + DT rectangular pulse convolution",
                 "similarity": "exact"
               },
               {
@@ -1011,7 +1018,7 @@
                 "marks": 5,
                 "sourceFile": "pyq/Network Analysis and Signals (ICE 2154)Makeup.pdf",
                 "page": 3,
-                "detail": "Exact x(t)=δ(t+1)-δ(t-1) convolved with r(t+1)-2r(t)+r(t-1)",
+                "detail": "Exact x(t)=\u03b4(t+1)-\u03b4(t-1) convolved with r(t+1)-2r(t)+r(t-1)",
                 "similarity": "exact"
               },
               {
@@ -1031,7 +1038,7 @@
                 "marks": 3,
                 "sourceFile": "pyq/Network Analysis and Signals (ICE 2154)(Makeup).pdf",
                 "page": 4,
-                "detail": "DT convolution sum f[n] = x₁[n] * x₂[n]",
+                "detail": "DT convolution sum f[n] = x\u2081[n] * x\u2082[n]",
                 "similarity": "variant"
               }
             ]
@@ -1045,7 +1052,7 @@
             "blueprintMarks": 7,
             "cumulativeMarks": 13,
             "matchType": "exact",
-            "summaryCue": "Classic CO1 3–5 mark template: open R_L, find V_th & R_th via test source for dependent source, P_max = V_th²/(4R_th).",
+            "summaryCue": "Classic CO1 3\u20135 mark template: open R_L, find V_th & R_th via test source for dependent source, P_max = V_th\u00b2/(4R_th).",
             "appearances": [
               {
                 "examId": "mar-2021",
@@ -1064,7 +1071,7 @@
                 "marks": 5,
                 "sourceFile": "pyq/Network Analysis and Signals (ICE 2154)Makeup.pdf",
                 "page": 1,
-                "detail": "Find R_L & P_max (circuit with 0.5V₁ & I₁ dependent sources)",
+                "detail": "Find R_L & P_max (circuit with 0.5V\u2081 & I\u2081 dependent sources)",
                 "similarity": "exact"
               },
               {
@@ -1074,21 +1081,21 @@
                 "marks": 3,
                 "sourceFile": "pyq/Network Analysys and signals (ICE2154) PART B.pdf",
                 "page": 1,
-                "detail": "Find R_L & P_max (circuit with 0.5V₁ dependent source)",
+                "detail": "Find R_L & P_max (circuit with 0.5V\u2081 dependent source)",
                 "similarity": "exact"
               }
             ]
           },
           {
             "id": "pyq-q-transient-cf-pi",
-            "title": "Switched Transient Total Solution (Complementary + Particular -> i(t) / v(t) for t ≥ 0)",
+            "title": "Switched Transient Total Solution (Complementary + Particular -> i(t) / v(t) for t \u2265 0)",
             "moduleId": "nas-m2",
             "coCode": "CO2",
             "track": "Networks",
             "blueprintMarks": 5,
             "cumulativeMarks": 22,
             "matchType": "exact",
-            "summaryCue": "Appears in 5/5 exams! Jul 2021 Q2B & Jan 2022 Part B Q1B share identical CF+PI phrasing; Dec 2022 & Jan 2023 test classical t ≥ 0 solving.",
+            "summaryCue": "Appears in 5/5 exams! Jul 2021 Q2B & Jan 2022 Part B Q1B share identical CF+PI phrasing; Dec 2022 & Jan 2023 test classical t \u2265 0 solving.",
             "appearances": [
               {
                 "examId": "mar-2021",
@@ -1097,7 +1104,7 @@
                 "marks": 5,
                 "sourceFile": "pyq/Network Analysis and Signals (ICE 2154).pdf",
                 "page": 2,
-                "detail": "Switch opens at t=0 after steady state -> find i(t) for t ≥ 0",
+                "detail": "Switch opens at t=0 after steady state -> find i(t) for t \u2265 0",
                 "similarity": "variant"
               },
               {
@@ -1107,7 +1114,7 @@
                 "marks": 5,
                 "sourceFile": "pyq/Network Analysis and Signals (ICE 2154)Makeup.pdf",
                 "page": 2,
-                "detail": "Complementary function, particular & total solution i(t), V_C(∞)",
+                "detail": "Complementary function, particular & total solution i(t), V_C(\u221e)",
                 "similarity": "exact"
               },
               {
@@ -1137,7 +1144,7 @@
                 "marks": 3,
                 "sourceFile": "pyq/Network Analysis and Signals (ICE 2154) (1).pdf",
                 "page": 2,
-                "detail": "Switched RLC (q(0)=5C) -> classical time-domain i(t) for t ≥ 0",
+                "detail": "Switched RLC (q(0)=5C) -> classical time-domain i(t) for t \u2265 0",
                 "similarity": "variant"
               },
               {
@@ -1147,21 +1154,21 @@
                 "marks": 5,
                 "sourceFile": "pyq/Network Analysis and Signals (ICE 2154)(Makeup).pdf",
                 "page": 1,
-                "detail": "Switch opens at t=0 -> classical time-domain v(t) for t ≥ 0",
+                "detail": "Switch opens at t=0 -> classical time-domain v(t) for t \u2265 0",
                 "similarity": "variant"
               }
             ]
           },
           {
             "id": "pyq-q-initial-final-circuits",
-            "title": "Initial & Final Conditions (0⁻ / 0⁺ / d²/dt² / ∞) Including Identical 1A-100Ω-1H & Part-A Diagrams",
+            "title": "Initial & Final Conditions (0\u207b / 0\u207a / d\u00b2/dt\u00b2 / \u221e) Including Identical 1A-100\u03a9-1H & Part-A Diagrams",
             "moduleId": "nas-m2",
             "coCode": "CO2",
             "track": "Networks",
             "blueprintMarks": 5,
             "cumulativeMarks": 17,
             "matchType": "exact-circuit",
-            "summaryCue": "Mar 2021 Q3C & Dec 2022 Q1B reuse the exact 1A || switch || 100Ω || 1H diagram; Part A reuses 3A/10Ω/1H/20Ω (3×) & 12V/4Ω/0.05F/8Ω (2×).",
+            "summaryCue": "Mar 2021 Q3C & Dec 2022 Q1B reuse the exact 1A || switch || 100\u03a9 || 1H diagram; Part A reuses 3A/10\u03a9/1H/20\u03a9 (3\u00d7) & 12V/4\u03a9/0.05F/8\u03a9 (2\u00d7).",
             "appearances": [
               {
                 "examId": "mar-2021",
@@ -1170,7 +1177,7 @@
                 "marks": 5,
                 "sourceFile": "pyq/Network Analysis and Signals (ICE 2154).pdf",
                 "page": 2,
-                "detail": "Q2B (0+/∞ derivatives) + Q3C (1A || 100Ω || 1H v(t) circuit)",
+                "detail": "Q2B (0+/\u221e derivatives) + Q3C (1A || 100\u03a9 || 1H v(t) circuit)",
                 "similarity": "exact-circuit"
               },
               {
@@ -1190,7 +1197,7 @@
                 "marks": 1,
                 "sourceFile": "pyq/Network Analysys and signals (ICE2154) PART A.pdf",
                 "page": 11,
-                "detail": "3A/10Ω/1H/20Ω circuit -> i_L(∞)",
+                "detail": "3A/10\u03a9/1H/20\u03a9 circuit -> i_L(\u221e)",
                 "similarity": "exact-circuit"
               },
               {
@@ -1200,7 +1207,7 @@
                 "marks": 1,
                 "sourceFile": "pyq/Network Analysys and signals (ICE2154) PART A.pdf",
                 "page": 25,
-                "detail": "Identical 3A/10Ω/1H/20Ω circuit -> i_{10Ω}(0+)",
+                "detail": "Identical 3A/10\u03a9/1H/20\u03a9 circuit -> i_{10\u03a9}(0+)",
                 "similarity": "exact-circuit"
               },
               {
@@ -1210,7 +1217,7 @@
                 "marks": 1,
                 "sourceFile": "pyq/Network Analysys and signals (ICE2154) PART A.pdf",
                 "page": 28,
-                "detail": "Identical 3A/10Ω/1H/20Ω circuit -> i_L(0+)",
+                "detail": "Identical 3A/10\u03a9/1H/20\u03a9 circuit -> i_L(0+)",
                 "similarity": "exact-circuit"
               },
               {
@@ -1220,7 +1227,7 @@
                 "marks": 1,
                 "sourceFile": "pyq/Network Analysys and signals (ICE2154) PART A.pdf",
                 "page": 26,
-                "detail": "12V/4Ω/0.05F/8Ω circuit -> v_C(0+)",
+                "detail": "12V/4\u03a9/0.05F/8\u03a9 circuit -> v_C(0+)",
                 "similarity": "exact-circuit"
               },
               {
@@ -1230,7 +1237,7 @@
                 "marks": 1,
                 "sourceFile": "pyq/Network Analysys and signals (ICE2154) PART A.pdf",
                 "page": 32,
-                "detail": "Identical 12V/4Ω/0.05F/8Ω circuit -> v_C(∞)",
+                "detail": "Identical 12V/4\u03a9/0.05F/8\u03a9 circuit -> v_C(\u221e)",
                 "similarity": "exact-circuit"
               },
               {
@@ -1240,7 +1247,7 @@
                 "marks": 2,
                 "sourceFile": "pyq/Network Analysis and Signals (ICE 2154) (1).pdf",
                 "page": 1,
-                "detail": "Exact 1A || 100Ω || 1H diagram from Mar 2021 Q3C -> v, dv/dt, d²v/dt² at 0+",
+                "detail": "Exact 1A || 100\u03a9 || 1H diagram from Mar 2021 Q3C -> v, dv/dt, d\u00b2v/dt\u00b2 at 0+",
                 "similarity": "exact-circuit"
               },
               {
@@ -1250,7 +1257,7 @@
                 "marks": 2,
                 "sourceFile": "pyq/Network Analysis and Signals (ICE 2154)(Makeup).pdf",
                 "page": 1,
-                "detail": "Switch 1->2 at t=0 -> i(0+), di/dt(0+), d²i/dt²(0+)",
+                "detail": "Switch 1->2 at t=0 -> i(0+), di/dt(0+), d\u00b2i/dt\u00b2(0+)",
                 "similarity": "exact"
               }
             ]
@@ -1264,7 +1271,7 @@
             "blueprintMarks": 7,
             "cumulativeMarks": 10,
             "matchType": "exact-circuit",
-            "summaryCue": "Superposition appears in Mar 2021 & Jul 2021; Part A Q20 & Q30 ask V_2A and i₁ from the identical 36V/2A supermesh diagram.",
+            "summaryCue": "Superposition appears in Mar 2021 & Jul 2021; Part A Q20 & Q30 ask V_2A and i\u2081 from the identical 36V/2A supermesh diagram.",
             "appearances": [
               {
                 "examId": "mar-2021",
@@ -1273,7 +1280,7 @@
                 "marks": 3,
                 "sourceFile": "pyq/Network Analysis and Signals (ICE 2154).pdf",
                 "page": 1,
-                "detail": "Determine V₀ using Superposition theorem",
+                "detail": "Determine V\u2080 using Superposition theorem",
                 "similarity": "variant"
               },
               {
@@ -1283,7 +1290,7 @@
                 "marks": 5,
                 "sourceFile": "pyq/Network Analysis and Signals (ICE 2154)Makeup.pdf",
                 "page": 1,
-                "detail": "Find current in 1Ω resistor using Superposition theorem",
+                "detail": "Find current in 1\u03a9 resistor using Superposition theorem",
                 "similarity": "variant"
               },
               {
@@ -1303,21 +1310,21 @@
                 "marks": 1,
                 "sourceFile": "pyq/Network Analysys and signals (ICE2154) PART A.pdf",
                 "page": 31,
-                "detail": "Identical 36V/2A supermesh: mesh current i₁",
+                "detail": "Identical 36V/2A supermesh: mesh current i\u2081",
                 "similarity": "exact-circuit"
               }
             ]
           },
           {
             "id": "pyq-q-s-domain-circuits",
-            "title": "s-Domain Switched Networks, Laplace Norton & V₂/V₁, I₂/I₁, V₁/I₁ Transfer Ratios",
+            "title": "s-Domain Switched Networks, Laplace Norton & V\u2082/V\u2081, I\u2082/I\u2081, V\u2081/I\u2081 Transfer Ratios",
             "moduleId": "nas-m3",
             "coCode": "CO3",
             "track": "Networks",
             "blueprintMarks": 6,
             "cumulativeMarks": 32,
             "matchType": "exact",
-            "summaryCue": "Appears in all 5/5 exam sessions! Dec 2022 & Jan 2023 ask almost identically for Norton's s-domain equivalent AND V₂/V₁, I₂/I₁, V₁/I₁ ladder transfer ratios.",
+            "summaryCue": "Appears in all 5/5 exam sessions! Dec 2022 & Jan 2023 ask almost identically for Norton's s-domain equivalent AND V\u2082/V\u2081, I\u2082/I\u2081, V\u2081/I\u2081 ladder transfer ratios.",
             "appearances": [
               {
                 "examId": "mar-2021",
@@ -1336,7 +1343,7 @@
                 "marks": 5,
                 "sourceFile": "pyq/Network Analysis and Signals (ICE 2154)Makeup.pdf",
                 "page": 2,
-                "detail": "Two-loop i₁(t) & i₂(t) using Laplace Transform method",
+                "detail": "Two-loop i\u2081(t) & i\u2082(t) using Laplace Transform method",
                 "similarity": "variant"
               },
               {
@@ -1346,7 +1353,7 @@
                 "marks": 2,
                 "sourceFile": "pyq/Network Analysys and signals (ICE2154) PART A.pdf",
                 "page": 18,
-                "detail": "IVT x(0) [p.18] and FVT x(∞) [p.29] from X(s)",
+                "detail": "IVT x(0) [p.18] and FVT x(\u221e) [p.29] from X(s)",
                 "similarity": "variant"
               },
               {
@@ -1356,7 +1363,7 @@
                 "marks": 12,
                 "sourceFile": "pyq/Network Analysis and Signals (ICE 2154) (1).pdf",
                 "page": 2,
-                "detail": "Laplace switch (5m), Norton s-domain A-B (4m), V₂/V₁, I₂/I₁, V₁/I₁ (3m)",
+                "detail": "Laplace switch (5m), Norton s-domain A-B (4m), V\u2082/V\u2081, I\u2082/I\u2081, V\u2081/I\u2081 (3m)",
                 "similarity": "exact"
               },
               {
@@ -1366,7 +1373,7 @@
                 "marks": 8,
                 "sourceFile": "pyq/Network Analysis and Signals (ICE 2154)(Makeup).pdf",
                 "page": 2,
-                "detail": "Back-to-back repeat: Norton s-domain (5m) & V₂/V₁, I₂/I₁, V₁/I₁ (3m)",
+                "detail": "Back-to-back repeat: Norton s-domain (5m) & V\u2082/V\u2081, I\u2082/I\u2081, V\u2081/I\u2081 (3m)",
                 "similarity": "exact"
               }
             ]
@@ -1399,7 +1406,7 @@
                 "marks": 4,
                 "sourceFile": "pyq/Network Analysis and Signals (ICE 2154) (1).pdf",
                 "page": 3,
-                "detail": "Identical [-1..1], T=2 sawtooth plot -> exponential coeffs a₋₁, a₁",
+                "detail": "Identical [-1..1], T=2 sawtooth plot -> exponential coeffs a\u208b\u2081, a\u2081",
                 "similarity": "exact-circuit"
               },
               {
@@ -1426,7 +1433,7 @@
           },
           {
             "id": "pyq-q-scale-deriv-plot",
-            "title": "Time Scaling/Shifting x(at + b) & Derivative Signal Sketch (dh/dt ↔ Dx(t))",
+            "title": "Time Scaling/Shifting x(at + b) & Derivative Signal Sketch (dh/dt \u2194 Dx(t))",
             "moduleId": "nas-m4",
             "coCode": "CO4",
             "track": "Signals",
@@ -1486,7 +1493,7 @@
             "blueprintMarks": 15,
             "cumulativeMarks": 11,
             "matchType": "exact",
-            "summaryCue": "4/5 exams ask periodicity + Energy vs Power on trig combinations/squares (e.g. 2cos(πt)sin(3πt), cos²(2πt), 1+cos(πt)+sin(5πt)).",
+            "summaryCue": "4/5 exams ask periodicity + Energy vs Power on trig combinations/squares (e.g. 2cos(\u03c0t)sin(3\u03c0t), cos\u00b2(2\u03c0t), 1+cos(\u03c0t)+sin(5\u03c0t)).",
             "appearances": [
               {
                 "examId": "mar-2021",
@@ -1495,7 +1502,7 @@
                 "marks": 3,
                 "sourceFile": "pyq/Network Analysis and Signals (ICE 2154).pdf",
                 "page": 4,
-                "detail": "Energy & Power of tu(t) and u(n)−2u(n−4)+u(n−8)",
+                "detail": "Energy & Power of tu(t) and u(n)\u22122u(n\u22124)+u(n\u22128)",
                 "similarity": "variant"
               },
               {
@@ -1505,7 +1512,7 @@
                 "marks": 5,
                 "sourceFile": "pyq/Network Analysis and Signals (ICE 2154)Makeup.pdf",
                 "page": 3,
-                "detail": "Energy & power of 1 + cos(πt) + cos(2πt) + sin(5πt)",
+                "detail": "Energy & power of 1 + cos(\u03c0t) + cos(2\u03c0t) + sin(5\u03c0t)",
                 "similarity": "exact"
               },
               {
@@ -1515,7 +1522,7 @@
                 "marks": 1,
                 "sourceFile": "pyq/Network Analysys and signals (ICE2154) PART A.pdf",
                 "page": 8,
-                "detail": "(cos(2πt))² -> periodic, fundamental period, power signal",
+                "detail": "(cos(2\u03c0t))\u00b2 -> periodic, fundamental period, power signal",
                 "similarity": "exact"
               },
               {
@@ -1525,7 +1532,7 @@
                 "marks": 2,
                 "sourceFile": "pyq/Network Analysis and Signals (ICE 2154) (1).pdf",
                 "page": 3,
-                "detail": "y(t) = 2cos(πt)sin(3πt): periodic/aperiodic & power/energy",
+                "detail": "y(t) = 2cos(\u03c0t)sin(3\u03c0t): periodic/aperiodic & power/energy",
                 "similarity": "exact"
               }
             ]
@@ -1550,7 +1557,7 @@
           },
           {
             "id": "pyq-t-lccde",
-            "title": "2nd-Order LCCDE Frequency Response H(jω) -> h(t) -> y(t)",
+            "title": "2nd-Order LCCDE Frequency Response H(j\u03c9) -> h(t) -> y(t)",
             "moduleId": "nas-m5",
             "coCode": "CO5",
             "track": "Signals",
@@ -1560,7 +1567,7 @@
             "questionCount": 3,
             "cumulativeMarks": 13,
             "strategyVerdict": "Must-Do Core",
-            "summary": "3–5 mark multi-part staple: take jω on both sides -> factor quadratic -> partial fractions for h(t) -> multiply X(jω)H(jω) for y(t).",
+            "summary": "3\u20135 mark multi-part staple: take j\u03c9 on both sides -> factor quadratic -> partial fractions for h(t) -> multiply X(j\u03c9)H(j\u03c9) for y(t).",
             "sourceFile": "pyq/Network Analysys and signals (ICE2154) PART B.pdf",
             "page": 2
           },
@@ -1576,7 +1583,7 @@
             "questionCount": 4,
             "cumulativeMarks": 17,
             "strategyVerdict": "Must-Do Core",
-            "summary": "Appeared in 4/5 exam sessions (3–5m each). Drill δ-sifting convolution & piecewise pulse overlap limits.",
+            "summary": "Appeared in 4/5 exam sessions (3\u20135m each). Drill \u03b4-sifting convolution & piecewise pulse overlap limits.",
             "sourceFile": "pyq/Network Analysys and signals (ICE2154) PART B.pdf",
             "page": 2
           },
@@ -1608,7 +1615,7 @@
             "questionCount": 6,
             "cumulativeMarks": 11,
             "strategyVerdict": "High-ROI Focus",
-            "summary": "Guaranteed short-answer + MCQ score: test h(t)=0 for t<0 (causal), ∫|h(t)|dt < ∞ (BIBO), and y(t)=t²x(t) time-variance.",
+            "summary": "Guaranteed short-answer + MCQ score: test h(t)=0 for t<0 (causal), \u222b|h(t)|dt < \u221e (BIBO), and y(t)=t\u00b2x(t) time-variance.",
             "sourceFile": "pyq/Network Analysys and signals (ICE2154) PART A.pdf",
             "page": 13
           },
@@ -1624,13 +1631,13 @@
             "questionCount": 8,
             "cumulativeMarks": 24,
             "strategyVerdict": "Template Drill",
-            "summary": "100% paper frequency (5/5 exams!), including 3 repeats of the 3I₁ T+shunt network & T-to-Pi conversion. Master templates fast since CO3 is 6m.",
+            "summary": "100% paper frequency (5/5 exams!), including 3 repeats of the 3I\u2081 T+shunt network & T-to-Pi conversion. Master templates fast since CO3 is 6m.",
             "sourceFile": "pyq/Network Analysis and Signals (ICE 2154).pdf",
             "page": 3
           },
           {
             "id": "pyq-t-laplace-sdomain",
-            "title": "s-Domain Switching Circuits, Norton s-Domain, V₂/V₁ Ratios & IVT/FVT",
+            "title": "s-Domain Switching Circuits, Norton s-Domain, V\u2082/V\u2081 Ratios & IVT/FVT",
             "moduleId": "nas-m3",
             "coCode": "CO3",
             "track": "Networks",
@@ -1640,13 +1647,13 @@
             "questionCount": 10,
             "cumulativeMarks": 32,
             "strategyVerdict": "Template Drill",
-            "summary": "5/5 exam frequency: Laplace switching, Norton in s-domain, V₂/V₁ & I₂/I₁ ratios (Dec 22 & Jan 23 back-to-back) + IVT/FVT MCQs.",
+            "summary": "5/5 exam frequency: Laplace switching, Norton in s-domain, V\u2082/V\u2081 & I\u2082/I\u2081 ratios (Dec 22 & Jan 23 back-to-back) + IVT/FVT MCQs.",
             "sourceFile": "pyq/Network Analysis and Signals (ICE 2154) (1).pdf",
             "page": 2
           },
           {
             "id": "pyq-t-transients",
-            "title": "RL/RC/RLC Initial/Final Conditions (0+/∞) & Classical CF+PI Solutions",
+            "title": "RL/RC/RLC Initial/Final Conditions (0+/\u221e) & Classical CF+PI Solutions",
             "moduleId": "nas-m2",
             "coCode": "CO2",
             "track": "Networks",
@@ -1656,7 +1663,7 @@
             "questionCount": 17,
             "cumulativeMarks": 39,
             "strategyVerdict": "Template Drill",
-            "summary": "Warning: CO2 had 17 Qs across 5 old ICE 2154 exams (~10m/paper) but is only 5/50 marks in ICE 2123! Drill 0⁺/dv/dt/∞ continuity & 1st-order τ formula.",
+            "summary": "Warning: CO2 had 17 Qs across 5 old ICE 2154 exams (~10m/paper) but is only 5/50 marks in ICE 2123! Drill 0\u207a/dv/dt/\u221e continuity & 1st-order \u03c4 formula.",
             "sourceFile": "pyq/Network Analysis and Signals (ICE 2154) (1).pdf",
             "page": 1
           },
@@ -1672,7 +1679,7 @@
             "questionCount": 15,
             "cumulativeMarks": 31,
             "strategyVerdict": "Fast MCQ Lock",
-            "summary": "Appeared in 5/5 exams: Max Power Transfer (3×), Superposition (2×), Reciprocity (1×), plus fast Nodal/Supermesh numericals.",
+            "summary": "Appeared in 5/5 exams: Max Power Transfer (3\u00d7), Superposition (2\u00d7), Reciprocity (1\u00d7), plus fast Nodal/Supermesh numericals.",
             "sourceFile": "pyq/Network Analysis and Signals (ICE 2154).pdf",
             "page": 1
           }
@@ -1680,27 +1687,27 @@
         "reverseStrategy": [
           {
             "id": "rev-signals-core",
-            "verdict": "REVERSE CHECK #1 • PRIORITIZE SIGNALS",
+            "verdict": "REVERSE CHECK #1 \u2022 PRIORITIZE SIGNALS",
             "accent": "pink",
-            "headline": "CO4–5 Signals = 64% of your Endsem (32/50 marks) + highest verbatim repeats",
-            "metric": "43 PYQs • 32/50 Blueprint",
-            "detail": "X(jω)=2sin(ω)/(ω(jω+1)), 1+cos(2πt)+sin(3πt), [-1..1] sawtooth CTFS, y(t)=t²x(t), x(at+b) & derivative plots, and 2nd-order LCCDEs repeat cleanly across exams."
+            "headline": "CO4\u20135 Signals = 64% of your Endsem (32/50 marks) + highest verbatim repeats",
+            "metric": "43 PYQs \u2022 32/50 Blueprint",
+            "detail": "X(j\u03c9)=2sin(\u03c9)/(\u03c9(j\u03c9+1)), 1+cos(2\u03c0t)+sin(3\u03c0t), [-1..1] sawtooth CTFS, y(t)=t\u00b2x(t), x(at+b) & derivative plots, and 2nd-order LCCDEs repeat cleanly across exams."
           },
           {
             "id": "rev-pyq-skew",
-            "verdict": "REVERSE CHECK #2 • AVOID OVER-SPENDING ON CO2–3",
+            "verdict": "REVERSE CHECK #2 \u2022 AVOID OVER-SPENDING ON CO2\u20133",
             "accent": "teal",
             "headline": "Old ICE 2154 papers over-weighted CO2 & CO3 vs your ICE 2123 blueprint",
-            "metric": "35 PYQs • Only 11/50 Blueprint",
-            "detail": "Past ICE 2154 papers gave CO2 (17 Qs) & CO3 (18 Qs) ~10 marks each. Your ICE 2123 Endsem allocates just 5 marks (CO2) + 6 marks (CO3) — lock them via repeat templates only."
+            "metric": "35 PYQs \u2022 Only 11/50 Blueprint",
+            "detail": "Past ICE 2154 papers gave CO2 (17 Qs) & CO3 (18 Qs) ~10 marks each. Your ICE 2123 Endsem allocates just 5 marks (CO2) + 6 marks (CO3) \u2014 lock them via repeat templates only."
           },
           {
             "id": "rev-circuit-reuse",
-            "verdict": "REVERSE CHECK #3 • DRILL THE REUSED CIRCUITS FIRST",
+            "verdict": "REVERSE CHECK #3 \u2022 DRILL THE REUSED CIRCUITS FIRST",
             "accent": "yellow",
-            "headline": "Master 5 recurring CO1–3 circuit archetypes before attempting rare problems",
+            "headline": "Master 5 recurring CO1\u20133 circuit archetypes before attempting rare problems",
             "metric": "18 Marks Secured Fast",
-            "detail": "Prioritize (1) 1Ω-2Ω-2Ω-3I₁ Two-Port Z/Y, (2) 1A/100Ω/1H 0⁺ derivatives & CF+PI, (3) V₂/V₁ ladder & s-domain Norton, (4) Dependent-source Max Power Transfer."
+            "detail": "Prioritize (1) 1\u03a9-2\u03a9-2\u03a9-3I\u2081 Two-Port Z/Y, (2) 1A/100\u03a9/1H 0\u207a derivatives & CF+PI, (3) V\u2082/V\u2081 ladder & s-domain Norton, (4) Dependent-source Max Power Transfer."
           }
         ]
       }
@@ -1709,115 +1716,139 @@
       "id": "math-iii",
       "folderName": "MATH III",
       "shortName": "MATH III",
-      "fullName": "Mathematics III",
-      "courseCode": "MATH 2101",
+      "fullName": "Engineering Mathematics - III",
+      "courseCode": "MAT 2122",
       "accentColor": "teal",
-      "tagline": "Linear Algebra, Vector Spaces, Matrix Decompositions & Fourier Analysis",
+      "tagline": "Fourier Signals, Matrix Decompositions, Linear Systems & Inner Product Spaces",
       "weightageScaleLabel": "Endsem Blueprint (out of 50)",
       "weightageSource": "stated",
-      "weightageBasis": "University BTech Engineering Mathematics Theory Curriculum (5 Modules × 10 Marks = 50 Total Marks), verified against lecture notes and slide units.",
-      "resourceFiles": [],
+      "weightageBasis": "Official MAT 2122 Course Plan (Theory 3 Credits, 36 contact hours) and MAHE Endsem Blueprint (CO1=13, CO2=11, CO3=12, CO4=7, CO5=7; total 50 marks), audited across Nov 2024 and Nov 2025 exam papers.",
+      "resourceFiles": [
+        {
+          "id": "math-repeated-questions-pdf",
+          "title": "MAT 2122 Repeated Questions & Blueprint Analysis",
+          "description": "Complete 2-year audit (Nov 2024 & Nov 2025): 14 repeated question archetypes (100% paper recurrence), 50-mark blueprint & 1 AM Pareto strategy.",
+          "filename": "MATH_III_Repeated_Questions_PYQ_Analysis.pdf",
+          "relativePath": "resources/MATH_III_Repeated_Questions_PYQ_Analysis.pdf",
+          "category": "pyq-summary",
+          "badge": "PYQ REPEAT LIST"
+        },
+        {
+          "id": "math-formula-guide-pdf",
+          "title": "MAT 2122 Comprehensive Formula & Revision Guide",
+          "description": "Complete 11-page official summary covering Fourier analysis, matrix decompositions, vector spaces, linear transformations & inner products.",
+          "filename": "MATH_III_Comprehensive_Formula_Revision_Guide.pdf",
+          "relativePath": "resources/MATH_III_Comprehensive_Formula_Revision_Guide.pdf",
+          "category": "notes",
+          "badge": "FORMULA GUIDE"
+        }
+      ],
       "modules": [
         {
           "id": "math-iii-m1",
           "moduleNumber": 1,
           "coCode": "CO1",
-          "track": "Linear Algebra",
-          "title": "Vector Spaces, Basis & Dimension",
-          "weightage": 10,
+          "track": "Fourier Signals",
+          "title": "Fourier Series, Harmonic Analysis & Transforms",
+          "weightage": 13,
           "weightageUnit": "marks",
           "weightageSource": "stated",
+          "coursePlanHours": 10,
+          "coursePlanMarks100": 26,
           "sourceFiles": [
-            "Chapter_3_1_Basis_and_Dimension.pdf"
+            "Chapter_1_1_Fourier_Series.pdf",
+            "Chapter_1_2_Fourier_Transforms.pdf",
+            "Chapter_1_3_Harmonic_Analysis.pdf",
+            "Course Plan - BTech Theory - 3 Credits_MAT2122_Engineering_Mathematics_III.pdf"
           ],
           "prerequisites": [],
           "topicGroups": [
             {
-              "id": "math-iii-m1-subspaces",
-              "title": "Subspaces, Linear Combinations & Independence",
-              "sourceFile": "Chapter_3_1_Basis_and_Dimension.pdf",
-              "sourceRef": "pp. 1-3",
-              "priority": "core",
+              "id": "math-iii-m1-fourier-series",
+              "title": "Fourier Series, Dirichlet Conditions & Euler Formulas",
+              "sourceFile": "Chapter_1_1_Fourier_Series.pdf",
+              "sourceRef": "pp. 1-13",
+              "priority": "high-yield",
               "leaves": [
                 {
-                  "id": "math-iii-m1-s1",
-                  "title": "Vector Space Axioms & Subspace Verification Criteria",
-                  "sourceFile": "Chapter_3_1_Basis_and_Dimension.pdf",
-                  "sourceRef": "p. 1",
-                  "highYield": false
-                },
-                {
-                  "id": "math-iii-m1-s2",
-                  "title": "Linear Combinations and Spanning Sets span(S)",
-                  "sourceFile": "Chapter_3_1_Basis_and_Dimension.pdf",
-                  "sourceRef": "pp. 1-2",
+                  "id": "math-iii-m1-fs1",
+                  "title": "Dirichlet Conditions & Euler Formulas for a0, an, bn on (-pi, pi) and (0, 2pi)",
+                  "sourceFile": "Chapter_1_1_Fourier_Series.pdf",
+                  "sourceRef": "pp. 1-7",
                   "highYield": true
                 },
                 {
-                  "id": "math-iii-m1-s3",
-                  "title": "Linear Independence & Dependence Testing via Determinants/Rank",
-                  "sourceFile": "Chapter_3_1_Basis_and_Dimension.pdf",
-                  "sourceRef": "pp. 2-3",
+                  "id": "math-iii-m1-fs2",
+                  "title": "Half-Range Sine & Cosine Series Expansions on (0, L) with Bernoulli Parts",
+                  "sourceFile": "Chapter_1_1_Fourier_Series.pdf",
+                  "sourceRef": "pp. 7-12",
+                  "highYield": true
+                },
+                {
+                  "id": "math-iii-m1-fs3",
+                  "title": "Parseval Identity for Fourier Series & Infinite Series Deduction",
+                  "sourceFile": "Chapter_1_1_Fourier_Series.pdf",
+                  "sourceRef": "pp. 12-13",
                   "highYield": true
                 }
               ]
             },
             {
-              "id": "math-iii-m1-basis-dim",
-              "title": "Basis, Dimension & Echelon Extraction",
-              "sourceFile": "Chapter_3_1_Basis_and_Dimension.pdf",
-              "sourceRef": "pp. 2-5",
+              "id": "math-iii-m1-harmonic",
+              "title": "Numerical Harmonic Analysis from Discrete Tables",
+              "sourceFile": "Chapter_1_3_Harmonic_Analysis.pdf",
+              "sourceRef": "pp. 1-13",
               "priority": "high-yield",
               "leaves": [
                 {
-                  "id": "math-iii-m1-b1",
-                  "title": "Definition of Basis and Dimension of Vector Space",
-                  "sourceFile": "Chapter_3_1_Basis_and_Dimension.pdf",
+                  "id": "math-iii-m1-ha1",
+                  "title": "Discrete Tabular Formulas: a0 = (1/N)sum(y), an = (2/N)sum(y cos nx), bn = (2/N)sum(y sin nx)",
+                  "sourceFile": "Chapter_1_3_Harmonic_Analysis.pdf",
                   "sourceRef": "p. 1",
                   "highYield": true
                 },
                 {
-                  "id": "math-iii-m1-b2",
-                  "title": "Echelon Matrix Algorithm for Extracting Subspace Basis",
-                  "sourceFile": "Chapter_3_1_Basis_and_Dimension.pdf",
-                  "sourceRef": "pp. 2-3",
+                  "id": "math-iii-m1-ha2",
+                  "title": "Fundamental & Second Harmonic Evaluation from Equidistant Data",
+                  "sourceFile": "Chapter_1_3_Harmonic_Analysis.pdf",
+                  "sourceRef": "pp. 1-3",
                   "highYield": true
                 },
                 {
-                  "id": "math-iii-m1-b3",
-                  "title": "Extending a Linearly Independent Set to a Basis of Rⁿ",
-                  "sourceFile": "Chapter_3_1_Basis_and_Dimension.pdf",
-                  "sourceRef": "pp. 3-5",
+                  "id": "math-iii-m1-ha3",
+                  "title": "Harmonic Amplitude sqrt(an^2 + bn^2) & Phase Angle Determination",
+                  "sourceFile": "Chapter_1_3_Harmonic_Analysis.pdf",
+                  "sourceRef": "pp. 1-5",
                   "highYield": true
                 }
               ]
             },
             {
-              "id": "math-iii-m1-nullspace-sums",
-              "title": "Solution Space of AX=0 & Subspace Dimensions",
-              "sourceFile": "Chapter_3_1_Basis_and_Dimension.pdf",
-              "sourceRef": "pp. 4-8",
+              "id": "math-iii-m1-transforms",
+              "title": "Fourier Transforms, Properties & Convolution Theorem",
+              "sourceFile": "Chapter_1_2_Fourier_Transforms.pdf",
+              "sourceRef": "pp. 1-16",
               "priority": "high-yield",
               "leaves": [
                 {
-                  "id": "math-iii-m1-n1",
-                  "title": "Solution Space (Null Space) Basis & Dimension for Homogeneous AX=0",
-                  "sourceFile": "Chapter_3_1_Basis_and_Dimension.pdf",
-                  "sourceRef": "pp. 4-6",
+                  "id": "math-iii-m1-ft1",
+                  "title": "Fourier Transform Pair F(s) & Piecewise Function Transforms",
+                  "sourceFile": "Chapter_1_2_Fourier_Transforms.pdf",
+                  "sourceRef": "pp. 1-3",
                   "highYield": true
                 },
                 {
-                  "id": "math-iii-m1-n2",
-                  "title": "Sum U+W and Intersection U∩W of Subspaces",
-                  "sourceFile": "Chapter_3_1_Basis_and_Dimension.pdf",
-                  "sourceRef": "pp. 6-8",
+                  "id": "math-iii-m1-ft2",
+                  "title": "Fourier Cosine and Sine Transforms of exp(-ax) & x exp(-ax)",
+                  "sourceFile": "Chapter_1_2_Fourier_Transforms.pdf",
+                  "sourceRef": "pp. 10-13",
                   "highYield": true
                 },
                 {
-                  "id": "math-iii-m1-n3",
-                  "title": "Subspace Dimension Theorem: dim(U+W) = dim U + dim W - dim(U∩W)",
-                  "sourceFile": "Chapter_3_1_Basis_and_Dimension.pdf",
-                  "sourceRef": "p. 8",
+                  "id": "math-iii-m1-ft3",
+                  "title": "Operational Properties: Modulation, Shifting & Convolution Theorem F{f*g}",
+                  "sourceFile": "Chapter_1_2_Fourier_Transforms.pdf",
+                  "sourceRef": "pp. 3-6",
                   "highYield": true
                 }
               ]
@@ -1828,105 +1859,107 @@
           "id": "math-iii-m2",
           "moduleNumber": 2,
           "coCode": "CO2",
-          "track": "Linear Algebra",
-          "title": "Linear Transformations & Matrix Representations",
-          "weightage": 10,
+          "track": "Matrix Decompositions",
+          "title": "Matrix Decompositions: SVD, Cholesky & Diagonalization",
+          "weightage": 11,
           "weightageUnit": "marks",
           "weightageSource": "stated",
+          "coursePlanHours": 6,
+          "coursePlanMarks100": 22,
           "sourceFiles": [
-            "Chapter_3_2_Linear_Transformations.pdf",
-            "Chapter_3_3_Rank_Nullity_Matrix_Representation.pdf"
+            "Chapter_2_1_Matrix_Decomposition.pdf",
+            "Course Plan - BTech Theory - 3 Credits_MAT2122_Engineering_Mathematics_III.pdf"
           ],
           "prerequisites": [
-            "math-iii-m1"
+            "math-iii-m3"
           ],
           "topicGroups": [
             {
-              "id": "math-iii-m2-mappings",
-              "title": "Linear Transformations: Definition & Properties",
-              "sourceFile": "Chapter_3_2_Linear_Transformations.pdf",
-              "sourceRef": "pp. 1-4",
-              "priority": "core",
+              "id": "math-iii-m2-svd",
+              "title": "Singular Value Decomposition (SVD A = U Sigma V^T)",
+              "sourceFile": "Chapter_2_1_Matrix_Decomposition.pdf",
+              "sourceRef": "pp. 11-13",
+              "priority": "high-yield",
               "leaves": [
                 {
-                  "id": "math-iii-m2-m1",
-                  "title": "Linear Transformation Axioms: Additivity & Homogeneity",
-                  "sourceFile": "Chapter_3_2_Linear_Transformations.pdf",
-                  "sourceRef": "pp. 1-2",
-                  "highYield": false
+                  "id": "math-iii-m2-svd1",
+                  "title": "Eigenvalues of A^T A and Singular Values sigma_i = sqrt(lambda_i)",
+                  "sourceFile": "Chapter_2_1_Matrix_Decomposition.pdf",
+                  "sourceRef": "p. 11",
+                  "highYield": true
                 },
                 {
-                  "id": "math-iii-m2-m2",
-                  "title": "Properties: T(0)=0, T(-v)=-T(v), Composition of Linear Maps",
-                  "sourceFile": "Chapter_3_2_Linear_Transformations.pdf",
-                  "sourceRef": "p. 2",
-                  "highYield": false
+                  "id": "math-iii-m2-svd2",
+                  "title": "Right Singular Vectors V (Orthonormal Eigenvectors of A^T A)",
+                  "sourceFile": "Chapter_2_1_Matrix_Decomposition.pdf",
+                  "sourceRef": "pp. 11-12",
+                  "highYield": true
                 },
                 {
-                  "id": "math-iii-m2-m3",
-                  "title": "Spanning Set of Image: T(v₁),...,T(vₙ) Spans Im(T)",
-                  "sourceFile": "Chapter_3_2_Linear_Transformations.pdf",
-                  "sourceRef": "p. 4",
+                  "id": "math-iii-m2-svd3",
+                  "title": "Left Singular Vectors U = (1/sigma_i) A v_i & Outer Product Decomposition",
+                  "sourceFile": "Chapter_2_1_Matrix_Decomposition.pdf",
+                  "sourceRef": "pp. 12-13",
                   "highYield": true
                 }
               ]
             },
             {
-              "id": "math-iii-m2-rank-nullity",
-              "title": "Kernel, Image & Sylvester's Rank-Nullity Theorem",
-              "sourceFile": "Chapter_3_3_Rank_Nullity_Matrix_Representation.pdf",
-              "sourceRef": "pp. 1-3",
+              "id": "math-iii-m2-cholesky",
+              "title": "Cholesky Factorization for Symmetric Positive Definite Matrices",
+              "sourceFile": "Chapter_2_1_Matrix_Decomposition.pdf",
+              "sourceRef": "pp. 14-16",
               "priority": "high-yield",
               "leaves": [
                 {
-                  "id": "math-iii-m2-rn1",
-                  "title": "Kernel ker(T) & Image Im(T) Definitions and Subspace Proofs",
-                  "sourceFile": "Chapter_3_3_Rank_Nullity_Matrix_Representation.pdf",
-                  "sourceRef": "p. 1",
+                  "id": "math-iii-m2-ch1",
+                  "title": "Cholesky Factorization A = L L^T for Symmetric Positive Definite A",
+                  "sourceFile": "Chapter_2_1_Matrix_Decomposition.pdf",
+                  "sourceRef": "p. 14",
                   "highYield": true
                 },
                 {
-                  "id": "math-iii-m2-rn2",
-                  "title": "Rank-Nullity Theorem: dim V = rank(T) + nullity(T)",
-                  "sourceFile": "Chapter_3_3_Rank_Nullity_Matrix_Representation.pdf",
-                  "sourceRef": "pp. 1-2",
+                  "id": "math-iii-m2-ch2",
+                  "title": "Diagonal Entries l_jj = sqrt(a_jj - sum(l_jk^2)) & Off-Diagonal Formulas",
+                  "sourceFile": "Chapter_2_1_Matrix_Decomposition.pdf",
+                  "sourceRef": "pp. 14-15",
                   "highYield": true
                 },
                 {
-                  "id": "math-iii-m2-rn3",
-                  "title": "Injective (ker T = {0}), Surjective & Isomorphism Criteria",
-                  "sourceFile": "Chapter_3_3_Rank_Nullity_Matrix_Representation.pdf",
-                  "sourceRef": "pp. 2-3",
+                  "id": "math-iii-m2-ch3",
+                  "title": "3\u00d73 Matrix Cholesky Step-by-Step Numerical Computation",
+                  "sourceFile": "Chapter_2_1_Matrix_Decomposition.pdf",
+                  "sourceRef": "pp. 15-16",
                   "highYield": true
                 }
               ]
             },
             {
-              "id": "math-iii-m2-matrix-rep",
-              "title": "Matrix Representations & Change of Basis",
-              "sourceFile": "Chapter_3_3_Rank_Nullity_Matrix_Representation.pdf",
-              "sourceRef": "pp. 3-6",
+              "id": "math-iii-m2-diagonalization",
+              "title": "Eigenvalues, Eigenspaces & Matrix Diagonalization A = P D P^(-1)",
+              "sourceFile": "Chapter_2_1_Matrix_Decomposition.pdf",
+              "sourceRef": "pp. 1-10",
               "priority": "high-yield",
               "leaves": [
                 {
-                  "id": "math-iii-m2-mr1",
-                  "title": "Matrix Representation [T]_S Relative to Ordered Basis S",
-                  "sourceFile": "Chapter_3_3_Rank_Nullity_Matrix_Representation.pdf",
-                  "sourceRef": "pp. 3-4",
+                  "id": "math-iii-m2-dg1",
+                  "title": "Characteristic Equation det(A - lambda I) = 0 and Eigenspaces",
+                  "sourceFile": "Chapter_2_1_Matrix_Decomposition.pdf",
+                  "sourceRef": "pp. 1-4",
                   "highYield": true
                 },
                 {
-                  "id": "math-iii-m2-mr2",
-                  "title": "Derivative Operator Representation [D] on Function & Polynomial Spaces",
-                  "sourceFile": "Chapter_3_3_Rank_Nullity_Matrix_Representation.pdf",
-                  "sourceRef": "p. 4",
+                  "id": "math-iii-m2-dg2",
+                  "title": "Diagonalization A = P D P^(-1) with Linearly Independent Eigenvectors",
+                  "sourceFile": "Chapter_2_1_Matrix_Decomposition.pdf",
+                  "sourceRef": "pp. 5-8",
                   "highYield": true
                 },
                 {
-                  "id": "math-iii-m2-mr3",
-                  "title": "Transition Matrix P and Change of Basis: [T]_{S'} = P⁻¹ [T]_S P",
-                  "sourceFile": "Chapter_3_3_Rank_Nullity_Matrix_Representation.pdf",
-                  "sourceRef": "pp. 5-6",
+                  "id": "math-iii-m2-dg3",
+                  "title": "Spectral Theorem: Orthogonal Diagonalization A = P D P^T for Symmetric Matrices",
+                  "sourceFile": "Chapter_2_1_Matrix_Decomposition.pdf",
+                  "sourceRef": "pp. 9-10",
                   "highYield": true
                 }
               ]
@@ -1937,105 +1970,106 @@
           "id": "math-iii-m3",
           "moduleNumber": 3,
           "coCode": "CO3",
-          "track": "Linear Algebra",
-          "title": "Inner Product Spaces, Orthogonality & QR",
-          "weightage": 10,
+          "track": "Linear Systems & Subspaces",
+          "title": "Linear Systems, LU Decomposition & Subspace Dimensions",
+          "weightage": 12,
           "weightageUnit": "marks",
           "weightageSource": "stated",
+          "coursePlanHours": 5,
+          "coursePlanMarks100": 24,
           "sourceFiles": [
-            "Chapter_4_1_Inner_Product_Space.pdf",
-            "Chapter_2_3_QR_Decomposition.pdf"
+            "Chapter_2_2_LU_Decomposition.pdf",
+            "Chapter_3_1_Basis_and_Dimension.pdf",
+            "Course Plan - BTech Theory - 3 Credits_MAT2122_Engineering_Mathematics_III.pdf"
           ],
-          "prerequisites": [
-            "math-iii-m1"
-          ],
+          "prerequisites": [],
           "topicGroups": [
             {
-              "id": "math-iii-m3-inner-products",
-              "title": "Inner Product Axioms, Norms & Cauchy-Schwarz",
-              "sourceFile": "Chapter_4_1_Inner_Product_Space.pdf",
+              "id": "math-iii-m3-lu",
+              "title": "3\u00d73 Linear System Solving via LU Decomposition",
+              "sourceFile": "Chapter_2_2_LU_Decomposition.pdf",
               "sourceRef": "pp. 1-3",
-              "priority": "core",
+              "priority": "high-yield",
               "leaves": [
                 {
-                  "id": "math-iii-m3-ip1",
-                  "title": "Inner Product Axioms on Rⁿ, C[a,b] & Matrix Space M_{m,n}",
-                  "sourceFile": "Chapter_4_1_Inner_Product_Space.pdf",
+                  "id": "math-iii-m3-lu1",
+                  "title": "LU Factorization A = LU with Doolittle Convention (l_ii = 1)",
+                  "sourceFile": "Chapter_2_2_LU_Decomposition.pdf",
+                  "sourceRef": "p. 1",
+                  "highYield": true
+                },
+                {
+                  "id": "math-iii-m3-lu2",
+                  "title": "Forward Substitution LY = b to Compute Intermediate Vector Y",
+                  "sourceFile": "Chapter_2_2_LU_Decomposition.pdf",
                   "sourceRef": "pp. 1-2",
                   "highYield": true
                 },
                 {
-                  "id": "math-iii-m3-ip2",
-                  "title": "Cauchy-Schwarz Inequality |⟨u, v⟩| ≤ ‖u‖ ‖v‖ & Triangle Inequality",
-                  "sourceFile": "Chapter_4_1_Inner_Product_Space.pdf",
+                  "id": "math-iii-m3-lu3",
+                  "title": "Backward Substitution UX = Y to Solve for Final Solution X",
+                  "sourceFile": "Chapter_2_2_LU_Decomposition.pdf",
                   "sourceRef": "pp. 2-3",
-                  "highYield": true
-                },
-                {
-                  "id": "math-iii-m3-ip3",
-                  "title": "Norm, Distance & Angle Between Vectors: cos θ = ⟨u, v⟩ / (‖u‖ ‖v‖)",
-                  "sourceFile": "Chapter_4_1_Inner_Product_Space.pdf",
-                  "sourceRef": "p. 3",
                   "highYield": true
                 }
               ]
             },
             {
-              "id": "math-iii-m3-orthogonality",
-              "title": "Orthogonal Complements & Projections",
-              "sourceFile": "Chapter_4_1_Inner_Product_Space.pdf",
-              "sourceRef": "pp. 4-6",
+              "id": "math-iii-m3-basis-dim",
+              "title": "Subspace Basis Extraction & Extension in R^4",
+              "sourceFile": "Chapter_3_1_Basis_and_Dimension.pdf",
+              "sourceRef": "pp. 1-5",
               "priority": "high-yield",
               "leaves": [
                 {
-                  "id": "math-iii-m3-or1",
-                  "title": "Orthogonality of Vectors & Orthogonal Complement S^⊥",
-                  "sourceFile": "Chapter_4_1_Inner_Product_Space.pdf",
-                  "sourceRef": "pp. 4-5",
+                  "id": "math-iii-m3-bd1",
+                  "title": "Echelon Matrix Algorithm for Extracting Subspace Basis from Vectors",
+                  "sourceFile": "Chapter_3_1_Basis_and_Dimension.pdf",
+                  "sourceRef": "pp. 1-3",
                   "highYield": true
                 },
                 {
-                  "id": "math-iii-m3-or2",
-                  "title": "Direct Sum Decomposition V = W ⊕ W^⊥",
-                  "sourceFile": "Chapter_4_1_Inner_Product_Space.pdf",
-                  "sourceRef": "p. 5",
+                  "id": "math-iii-m3-bd2",
+                  "title": "Extending a Linearly Independent Set to a Basis of R^4",
+                  "sourceFile": "Chapter_3_1_Basis_and_Dimension.pdf",
+                  "sourceRef": "pp. 3-5",
                   "highYield": true
                 },
                 {
-                  "id": "math-iii-m3-or3",
-                  "title": "Orthogonal Projection Formula: proj_w(v) = (⟨v, w⟩ / ⟨w, w⟩) w",
-                  "sourceFile": "Chapter_4_1_Inner_Product_Space.pdf",
-                  "sourceRef": "pp. 5-6",
+                  "id": "math-iii-m3-bd3",
+                  "title": "Finding Homogeneous System Whose Solution Space is Spanned by Vectors",
+                  "sourceFile": "Chapter_3_1_Basis_and_Dimension.pdf",
+                  "sourceRef": "pp. 4-6",
                   "highYield": true
                 }
               ]
             },
             {
-              "id": "math-iii-m3-gram-schmidt",
-              "title": "Gram-Schmidt Orthogonalization & QR Decomposition",
-              "sourceFile": "Chapter_4_1_Inner_Product_Space.pdf",
+              "id": "math-iii-m3-subspace-sums",
+              "title": "Constraint Subspaces: Intersection W1 \u2229 W2 & Sum W1 + W2",
+              "sourceFile": "Chapter_3_1_Basis_and_Dimension.pdf",
               "sourceRef": "pp. 6-8",
               "priority": "high-yield",
               "leaves": [
                 {
-                  "id": "math-iii-m3-gs1",
-                  "title": "Gram-Schmidt Process Algorithm for Constructing Orthogonal Bases",
-                  "sourceFile": "Chapter_4_1_Inner_Product_Space.pdf",
+                  "id": "math-iii-m3-ss1",
+                  "title": "Basis and Dimension of Subspaces Defined by Linear Constraint Equations",
+                  "sourceFile": "Chapter_3_1_Basis_and_Dimension.pdf",
                   "sourceRef": "pp. 6-7",
                   "highYield": true
                 },
                 {
-                  "id": "math-iii-m3-gs2",
-                  "title": "Orthonormal Polynomial Bases {1, t, t², t³} on C[-1, 1]",
-                  "sourceFile": "Chapter_4_1_Inner_Product_Space.pdf",
+                  "id": "math-iii-m3-ss2",
+                  "title": "Basis and Dimension of Subspace Intersection W1 \u2229 W2",
+                  "sourceFile": "Chapter_3_1_Basis_and_Dimension.pdf",
                   "sourceRef": "pp. 7-8",
                   "highYield": true
                 },
                 {
-                  "id": "math-iii-m3-gs3",
-                  "title": "QR Decomposition A = QR with Gram-Schmidt Orthonormal Columns",
-                  "sourceFile": "Chapter_2_3_QR_Decomposition.pdf",
-                  "sourceRef": "pp. 1-2",
+                  "id": "math-iii-m3-ss3",
+                  "title": "Subspace Dimension Sum Theorem: dim(W1 + W2) = dim W1 + dim W2 - dim(W1 \u2229 W2)",
+                  "sourceFile": "Chapter_3_1_Basis_and_Dimension.pdf",
+                  "sourceRef": "p. 8",
                   "highYield": true
                 }
               ]
@@ -2046,107 +2080,94 @@
           "id": "math-iii-m4",
           "moduleNumber": 4,
           "coCode": "CO4",
-          "track": "Matrix Methods",
-          "title": "Matrix Decompositions: LU, Cholesky, SVD & Spectral",
-          "weightage": 10,
+          "track": "Linear Transformations",
+          "title": "Linear Transformations, Rank-Nullity & Change of Basis",
+          "weightage": 7,
           "weightageUnit": "marks",
           "weightageSource": "stated",
+          "coursePlanHours": 5,
+          "coursePlanMarks100": 14,
           "sourceFiles": [
-            "Chapter_2_1_Matrix_Decomposition.pdf",
-            "Chapter_2_2_LU_Decomposition.pdf",
-            "Chapter_2_3_QR_Decomposition.pdf"
+            "Chapter_3_2_Linear_Transformations.pdf",
+            "Chapter_3_3_Rank_Nullity_Matrix_Representation.pdf",
+            "Course Plan - BTech Theory - 3 Credits_MAT2122_Engineering_Mathematics_III.pdf"
           ],
           "prerequisites": [
-            "math-iii-m1",
-            "math-iii-m2"
+            "math-iii-m3"
           ],
           "topicGroups": [
             {
-              "id": "math-iii-m4-eigenvalues",
-              "title": "Eigenvalues, Cayley-Hamilton & Diagonalization",
-              "sourceFile": "Chapter_2_1_Matrix_Decomposition.pdf",
-              "sourceRef": "pp. 1-8",
+              "id": "math-iii-m4-kernel-image",
+              "title": "Kernel, Image & Sylvester Rank-Nullity Theorem",
+              "sourceFile": "Chapter_3_3_Rank_Nullity_Matrix_Representation.pdf",
+              "sourceRef": "pp. 1-3",
               "priority": "high-yield",
               "leaves": [
                 {
-                  "id": "math-iii-m4-e1",
-                  "title": "Eigenvalues, Eigenspaces & Multiplicity det(A - λI) = 0",
-                  "sourceFile": "Chapter_2_1_Matrix_Decomposition.pdf",
-                  "sourceRef": "pp. 1-3",
+                  "id": "math-iii-m4-ki1",
+                  "title": "Basis and Dimension of Kernel ker(A) and Image Im(A) for Matrix Mappings",
+                  "sourceFile": "Chapter_3_3_Rank_Nullity_Matrix_Representation.pdf",
+                  "sourceRef": "pp. 1-2",
                   "highYield": true
                 },
                 {
-                  "id": "math-iii-m4-e2",
-                  "title": "Cayley-Hamilton Theorem: Matrix Inverse A⁻¹ & Powers Aᵏ",
-                  "sourceFile": "Chapter_2_1_Matrix_Decomposition.pdf",
-                  "sourceRef": "pp. 3-5",
+                  "id": "math-iii-m4-ki2",
+                  "title": "Rank-Nullity Theorem Verification: dim V = rank(T) + nullity(T)",
+                  "sourceFile": "Chapter_3_3_Rank_Nullity_Matrix_Representation.pdf",
+                  "sourceRef": "p. 1",
                   "highYield": true
                 },
                 {
-                  "id": "math-iii-m4-e3",
-                  "title": "Matrix Diagonalization A = P D P⁻¹ & Matrix Powers A¹⁰⁰",
-                  "sourceFile": "Chapter_2_1_Matrix_Decomposition.pdf",
-                  "sourceRef": "pp. 5-8",
+                  "id": "math-iii-m4-ki3",
+                  "title": "Injectivity (ker T = {0}) and Surjectivity (rank T = dim W) Criteria",
+                  "sourceFile": "Chapter_3_3_Rank_Nullity_Matrix_Representation.pdf",
+                  "sourceRef": "pp. 2-3",
                   "highYield": true
                 }
               ]
             },
             {
-              "id": "math-iii-m4-spectral",
-              "title": "Orthogonal Diagonalization & Spectral Theorem",
-              "sourceFile": "Chapter_2_1_Matrix_Decomposition.pdf",
-              "sourceRef": "pp. 9-10",
-              "priority": "core",
+              "id": "math-iii-m4-matrix-rep",
+              "title": "Matrix Representations of Linear Operators",
+              "sourceFile": "Chapter_3_3_Rank_Nullity_Matrix_Representation.pdf",
+              "sourceRef": "pp. 3-4",
+              "priority": "high-yield",
               "leaves": [
                 {
-                  "id": "math-iii-m4-sp1",
-                  "title": "Real Symmetric Matrices: Real Eigenvalues & Orthogonal Eigenspaces",
-                  "sourceFile": "Chapter_2_1_Matrix_Decomposition.pdf",
-                  "sourceRef": "p. 9",
+                  "id": "math-iii-m4-mr1",
+                  "title": "Matrix Representation [T]_S for Operator T(x,y) Relative to Non-Standard Basis S",
+                  "sourceFile": "Chapter_3_3_Rank_Nullity_Matrix_Representation.pdf",
+                  "sourceRef": "pp. 3-4",
                   "highYield": true
                 },
                 {
-                  "id": "math-iii-m4-sp2",
-                  "title": "Spectral Theorem & Orthogonal Diagonalization A = P D Pᵀ",
-                  "sourceFile": "Chapter_2_1_Matrix_Decomposition.pdf",
-                  "sourceRef": "pp. 9-10",
+                  "id": "math-iii-m4-mr2",
+                  "title": "Derivative Operator Matrix Representation [D] on Polynomial & Trig Spaces",
+                  "sourceFile": "Chapter_3_3_Rank_Nullity_Matrix_Representation.pdf",
+                  "sourceRef": "p. 4",
                   "highYield": true
-                },
-                {
-                  "id": "math-iii-m4-sp3",
-                  "title": "Positive Definite Symmetric Matrices & Quadratic Form Classification",
-                  "sourceFile": "Chapter_2_1_Matrix_Decomposition.pdf",
-                  "sourceRef": "p. 10",
-                  "highYield": false
                 }
               ]
             },
             {
-              "id": "math-iii-m4-decompositions",
-              "title": "LU, Cholesky & Singular Value Decompositions",
-              "sourceFile": "Chapter_2_1_Matrix_Decomposition.pdf",
-              "sourceRef": "pp. 11-16",
+              "id": "math-iii-m4-change-basis",
+              "title": "Change of Basis: Transition Matrix P and Q = P^(-1)",
+              "sourceFile": "Chapter_3_3_Rank_Nullity_Matrix_Representation.pdf",
+              "sourceRef": "pp. 5-6",
               "priority": "high-yield",
               "leaves": [
                 {
-                  "id": "math-iii-m4-d1",
-                  "title": "LU Factorization A = LU with Forward (LY=b) & Back (UX=Y) Substitution",
-                  "sourceFile": "Chapter_2_2_LU_Decomposition.pdf",
-                  "sourceRef": "pp. 1-3",
+                  "id": "math-iii-m4-cb1",
+                  "title": "Transition Matrix P from Old Basis S to New Basis S' in R^2",
+                  "sourceFile": "Chapter_3_3_Rank_Nullity_Matrix_Representation.pdf",
+                  "sourceRef": "pp. 5-6",
                   "highYield": true
                 },
                 {
-                  "id": "math-iii-m4-d2",
-                  "title": "Cholesky Decomposition A = L Lᵀ for Symmetric Positive Definite Matrices",
-                  "sourceFile": "Chapter_2_1_Matrix_Decomposition.pdf",
-                  "sourceRef": "pp. 14-16",
-                  "highYield": true
-                },
-                {
-                  "id": "math-iii-m4-d3",
-                  "title": "Singular Value Decomposition A = U Σ Vᵀ (Singular Values σ_i = √λ_i(AᵀA))",
-                  "sourceFile": "Chapter_2_1_Matrix_Decomposition.pdf",
-                  "sourceRef": "pp. 11-13",
+                  "id": "math-iii-m4-cb2",
+                  "title": "Reverse Transition Matrix Q = P^(-1) and Operator Transform [T]_{S'} = P^(-1) [T]_S P",
+                  "sourceFile": "Chapter_3_3_Rank_Nullity_Matrix_Representation.pdf",
+                  "sourceRef": "p. 6",
                   "highYield": true
                 }
               ]
@@ -2157,111 +2178,725 @@
           "id": "math-iii-m5",
           "moduleNumber": 5,
           "coCode": "CO5",
-          "track": "Fourier Methods",
-          "title": "Fourier Series, Harmonic Analysis & Fourier Transforms",
-          "weightage": 10,
+          "track": "Inner Product Spaces",
+          "title": "Inner Product Spaces, Gram-Schmidt & Orthogonal Complements",
+          "weightage": 7,
           "weightageUnit": "marks",
           "weightageSource": "stated",
+          "coursePlanHours": 10,
+          "coursePlanMarks100": 14,
           "sourceFiles": [
-            "Chapter_1_1_Fourier_Series.pdf",
-            "Chapter_1_2_Fourier_Transforms.pdf",
-            "Chapter_1_3_Harmonic_Analysis.pdf"
+            "Chapter_4_1_Inner_Product_Space.pdf",
+            "Chapter_2_3_QR_Decomposition.pdf",
+            "Course Plan - BTech Theory - 3 Credits_MAT2122_Engineering_Mathematics_III.pdf"
           ],
-          "prerequisites": [],
+          "prerequisites": [
+            "math-iii-m3"
+          ],
           "topicGroups": [
             {
-              "id": "math-iii-m5-fourier-series",
-              "title": "Fourier Series, Dirichlet Conditions & Parseval's Identity",
-              "sourceFile": "Chapter_1_1_Fourier_Series.pdf",
-              "sourceRef": "pp. 1-13",
-              "priority": "high-yield",
+              "id": "math-iii-m5-inner-products",
+              "title": "Inner Product Axioms, Norms, Angles & Cauchy-Schwarz",
+              "sourceFile": "Chapter_4_1_Inner_Product_Space.pdf",
+              "sourceRef": "pp. 1-4",
+              "priority": "core",
               "leaves": [
                 {
-                  "id": "math-iii-m5-fs1",
-                  "title": "Dirichlet Conditions & Euler Formulas for a₀, aₙ, bₙ on Periodic Intervals",
-                  "sourceFile": "Chapter_1_1_Fourier_Series.pdf",
-                  "sourceRef": "pp. 1-7",
+                  "id": "math-iii-m5-ip1",
+                  "title": "Function Space C[a,b] Inner Product <f,g> = int_a^b f(t)g(t)dt",
+                  "sourceFile": "Chapter_4_1_Inner_Product_Space.pdf",
+                  "sourceRef": "p. 2",
                   "highYield": true
                 },
                 {
-                  "id": "math-iii-m5-fs2",
-                  "title": "Even & Odd Periodic Extensions: Fourier Cosine and Sine Series",
-                  "sourceFile": "Chapter_1_1_Fourier_Series.pdf",
-                  "sourceRef": "pp. 7-11",
+                  "id": "math-iii-m5-ip2",
+                  "title": "Cosine of Angle Between Functions: cos theta = <f,g> / (||f|| ||g||)",
+                  "sourceFile": "Chapter_4_1_Inner_Product_Space.pdf",
+                  "sourceRef": "p. 3",
                   "highYield": true
                 },
                 {
-                  "id": "math-iii-m5-fs3",
-                  "title": "Half-Range Expansions & Parseval's Identity for Series Summation",
-                  "sourceFile": "Chapter_1_1_Fourier_Series.pdf",
-                  "sourceRef": "pp. 12-13",
+                  "id": "math-iii-m5-ip3",
+                  "title": "Cauchy-Schwarz Inequality |<u,v>| <= ||u|| ||v|| & Matrix Space <A,B> = tr(B^T A)",
+                  "sourceFile": "Chapter_4_1_Inner_Product_Space.pdf",
+                  "sourceRef": "pp. 2-3",
                   "highYield": true
                 }
               ]
             },
             {
-              "id": "math-iii-m5-harmonic",
-              "title": "Numerical Harmonic Analysis from Discrete Tables",
-              "sourceFile": "Chapter_1_3_Harmonic_Analysis.pdf",
-              "sourceRef": "pp. 1-13",
+              "id": "math-iii-m5-orthogonal-comp",
+              "title": "Orthogonal Complement W^perp in R^5 & Direct Sums",
+              "sourceFile": "Chapter_4_1_Inner_Product_Space.pdf",
+              "sourceRef": "pp. 4-6",
               "priority": "high-yield",
               "leaves": [
                 {
-                  "id": "math-iii-m5-ha1",
-                  "title": "Discrete Fourier Coefficient Formulas: a₀ = (1/N)Σy, aₙ = (2/N)Σy cos(nx)",
-                  "sourceFile": "Chapter_1_3_Harmonic_Analysis.pdf",
-                  "sourceRef": "p. 1",
+                  "id": "math-iii-m5-oc1",
+                  "title": "Basis and Dimension of Orthogonal Complement W^perp for Subspace in R^5 (dim = 3)",
+                  "sourceFile": "Chapter_4_1_Inner_Product_Space.pdf",
+                  "sourceRef": "pp. 4-5",
                   "highYield": true
                 },
                 {
-                  "id": "math-iii-m5-ha2",
-                  "title": "Fundamental & 2nd Harmonic Computation from Equidistant Data Tables",
-                  "sourceFile": "Chapter_1_3_Harmonic_Analysis.pdf",
-                  "sourceRef": "pp. 1-3",
-                  "highYield": true
-                },
-                {
-                  "id": "math-iii-m5-ha3",
-                  "title": "Harmonic Amplitude √(aₙ² + bₙ²) & Phase Angle Determination",
-                  "sourceFile": "Chapter_1_3_Harmonic_Analysis.pdf",
-                  "sourceRef": "pp. 1-5",
+                  "id": "math-iii-m5-oc2",
+                  "title": "Direct Sum Decomposition V = W \u2295 W^perp and Orthogonal Projection Formula",
+                  "sourceFile": "Chapter_4_1_Inner_Product_Space.pdf",
+                  "sourceRef": "pp. 5-6",
                   "highYield": true
                 }
               ]
             },
             {
-              "id": "math-iii-m5-transforms",
-              "title": "Fourier Transforms, Properties & Convolution Theorem",
-              "sourceFile": "Chapter_1_2_Fourier_Transforms.pdf",
-              "sourceRef": "pp. 1-16",
+              "id": "math-iii-m5-gram-schmidt",
+              "title": "Gram-Schmidt Orthonormalization & QR Factorization",
+              "sourceFile": "Chapter_4_1_Inner_Product_Space.pdf",
+              "sourceRef": "pp. 6-8",
               "priority": "high-yield",
               "leaves": [
                 {
-                  "id": "math-iii-m5-ft1",
-                  "title": "Fourier Integral Representation & Fourier Transform Pair F(s)",
-                  "sourceFile": "Chapter_1_2_Fourier_Transforms.pdf",
-                  "sourceRef": "pp. 1-3",
+                  "id": "math-iii-m5-gs1",
+                  "title": "Gram-Schmidt Algorithm on Polynomial Space P(t) with Integer Coefficients",
+                  "sourceFile": "Chapter_4_1_Inner_Product_Space.pdf",
+                  "sourceRef": "pp. 6-8",
                   "highYield": true
                 },
                 {
-                  "id": "math-iii-m5-ft2",
-                  "title": "Fourier Cosine and Sine Transforms & Definite Integrals",
-                  "sourceFile": "Chapter_1_2_Fourier_Transforms.pdf",
-                  "sourceRef": "pp. 10-13",
-                  "highYield": true
-                },
-                {
-                  "id": "math-iii-m5-ft3",
-                  "title": "Operational Properties: Shifting, Modulation, Derivative & Convolution F{f*g}",
-                  "sourceFile": "Chapter_1_2_Fourier_Transforms.pdf",
-                  "sourceRef": "pp. 3-6",
+                  "id": "math-iii-m5-gs2",
+                  "title": "QR Factorization A = QR with Gram-Schmidt Orthonormal Columns",
+                  "sourceFile": "Chapter_2_3_QR_Decomposition.pdf",
+                  "sourceRef": "pp. 1-2",
                   "highYield": true
                 }
               ]
             }
           ]
         }
-      ]
+      ],
+      "pyqAnalysis": {
+        "papers": [
+          {
+            "id": "math-2025-nov",
+            "filename": "MAT_2122_Engineering_Mathematics_III_Nov_2025.pdf",
+            "relativePath": "pyq/MAT_2122_Engineering_Mathematics_III_Nov_2025.pdf",
+            "examSessionKey": "2025-nov",
+            "examDate": "20-Nov-2025",
+            "examLabel": "Nov 2025 Endsem",
+            "courseCode": "MAT 2122",
+            "maxMarks": 50,
+            "questionCount": 15
+          },
+          {
+            "id": "math-2024-nov",
+            "filename": "MAT_2122_Engineering_Mathematics_III_Nov_2024.pdf",
+            "relativePath": "pyq/MAT_2122_Engineering_Mathematics_III_Nov_2024.pdf",
+            "examSessionKey": "2024-nov",
+            "examDate": "22-Nov-2024",
+            "examLabel": "Nov 2024 Endsem",
+            "courseCode": "MAT 2122",
+            "maxMarks": 50,
+            "questionCount": 15
+          }
+        ],
+        "repeatedQuestions": [
+          {
+            "id": "math-q-harmonic",
+            "title": "Tabular Numerical Harmonic Analysis: Fourier Series Up to Second Harmonics",
+            "appearances": [
+              {
+                "examId": "math-2025-nov",
+                "examLabel": "Nov 2025 Endsem",
+                "year": 2025,
+                "questionNo": "Q1C",
+                "marks": 3,
+                "sourceFile": "pyq/MAT_2122_Engineering_Mathematics_III_Nov_2025.pdf",
+                "page": 1
+              },
+              {
+                "examId": "math-2024-nov",
+                "examLabel": "Nov 2024 Endsem",
+                "year": 2024,
+                "questionNo": "Q1C",
+                "marks": 4,
+                "sourceFile": "pyq/MAT_2122_Engineering_Mathematics_III_Nov_2024.pdf",
+                "page": 1
+              }
+            ],
+            "blueprintModuleId": "math-iii-m1",
+            "coCode": "CO1",
+            "track": "Fourier Signals",
+            "similarityType": "verbatim",
+            "templatePattern": "Given an equidistant discrete table of x (0 to 360 or 0 to 300) and y values, evaluate Fourier coefficients up to second harmonics and determine harmonic amplitudes.",
+            "solutionApproach": "Construct calculation table with columns: x, y, cos x, sin x, cos 2x, sin 2x. a0 = (1/N)sum(y); an = (2/N)sum(y cos nx); bn = (2/N)sum(y sin nx). Fundamental harmonic = a1 cos x + b1 sin x; 2nd harmonic = a2 cos 2x + b2 sin 2x; amplitude = sqrt(an^2 + bn^2)."
+          },
+          {
+            "id": "math-q-lu",
+            "title": "Solve 3\u00d73 Linear System via LU Decomposition Method",
+            "appearances": [
+              {
+                "examId": "math-2025-nov",
+                "examLabel": "Nov 2025 Endsem",
+                "year": 2025,
+                "questionNo": "Q3A",
+                "marks": 3,
+                "sourceFile": "pyq/MAT_2122_Engineering_Mathematics_III_Nov_2025.pdf",
+                "page": 2
+              },
+              {
+                "examId": "math-2024-nov",
+                "examLabel": "Nov 2024 Endsem",
+                "year": 2024,
+                "questionNo": "Q2C",
+                "marks": 4,
+                "sourceFile": "pyq/MAT_2122_Engineering_Mathematics_III_Nov_2024.pdf",
+                "page": 1
+              }
+            ],
+            "blueprintModuleId": "math-iii-m3",
+            "coCode": "CO3",
+            "track": "Linear Systems & Subspaces",
+            "similarityType": "verbatim",
+            "templatePattern": "Solve a system of 3 linear equations in 3 variables using LU factorization.",
+            "solutionApproach": "Factor coefficient matrix A = LU with Doolittle convention (l_ii = 1). Set AX = LUX = b. Step 1: Solve LY = b for Y = [y1, y2, y3]^T by forward substitution. Step 2: Solve UX = Y for X = [x, y, z]^T by backward substitution."
+          },
+          {
+            "id": "math-q-svd",
+            "title": "Singular Value Decomposition (SVD) of Non-Square/Square Matrix",
+            "appearances": [
+              {
+                "examId": "math-2025-nov",
+                "examLabel": "Nov 2025 Endsem",
+                "year": 2025,
+                "questionNo": "Q3C",
+                "marks": 4,
+                "sourceFile": "pyq/MAT_2122_Engineering_Mathematics_III_Nov_2025.pdf",
+                "page": 2
+              },
+              {
+                "examId": "math-2024-nov",
+                "examLabel": "Nov 2024 Endsem",
+                "year": 2024,
+                "questionNo": "Q3A",
+                "marks": 5,
+                "sourceFile": "pyq/MAT_2122_Engineering_Mathematics_III_Nov_2024.pdf",
+                "page": 1
+              }
+            ],
+            "blueprintModuleId": "math-iii-m2",
+            "coCode": "CO2",
+            "track": "Matrix Decompositions",
+            "similarityType": "verbatim",
+            "templatePattern": "Compute the SVD A = U Sigma V^T of a given m\u00d7n matrix.",
+            "solutionApproach": "Compute A^T A. Find eigenvalues lambda_i >= 0. Singular values sigma_i = sqrt(lambda_i) arranged in descending order. Find orthonormal eigenvectors of A^T A to construct V. Compute left singular vectors ui = (1/sigma_i) A vi to form U. Assemble A = U Sigma V^T."
+          },
+          {
+            "id": "math-q-cholesky",
+            "title": "Cholesky Decomposition of 3\u00d73 Symmetric Positive Definite Matrix",
+            "appearances": [
+              {
+                "examId": "math-2025-nov",
+                "examLabel": "Nov 2025 Endsem",
+                "year": 2025,
+                "questionNo": "Q3B",
+                "marks": 3,
+                "sourceFile": "pyq/MAT_2122_Engineering_Mathematics_III_Nov_2025.pdf",
+                "page": 2
+              },
+              {
+                "examId": "math-2024-nov",
+                "examLabel": "Nov 2024 Endsem",
+                "year": 2024,
+                "questionNo": "Q3B",
+                "marks": 2,
+                "sourceFile": "pyq/MAT_2122_Engineering_Mathematics_III_Nov_2024.pdf",
+                "page": 1
+              }
+            ],
+            "blueprintModuleId": "math-iii-m2",
+            "coCode": "CO2",
+            "track": "Matrix Decompositions",
+            "similarityType": "verbatim",
+            "templatePattern": "Factor a given 3\u00d73 real symmetric matrix into A = L L^T.",
+            "solutionApproach": "Verify A is symmetric positive definite. Set L as lower triangular matrix: l11 = sqrt(a11); lj1 = aj1/l11; ljj = sqrt(ajj - sum(l_jk^2)); lij = (aij - sum(l_ik*l_jk))/ljj. Form L and verify L L^T = A."
+          },
+          {
+            "id": "math-q-diagonalization",
+            "title": "Matrix Diagonalization A = P D P^(-1) & Eigenvector Construction",
+            "appearances": [
+              {
+                "examId": "math-2025-nov",
+                "examLabel": "Nov 2025 Endsem",
+                "year": 2025,
+                "questionNo": "Q2C",
+                "marks": 4,
+                "sourceFile": "pyq/MAT_2122_Engineering_Mathematics_III_Nov_2025.pdf",
+                "page": 2
+              },
+              {
+                "examId": "math-2024-nov",
+                "examLabel": "Nov 2024 Endsem",
+                "year": 2024,
+                "questionNo": "Q3C",
+                "marks": 3,
+                "sourceFile": "pyq/MAT_2122_Engineering_Mathematics_III_Nov_2024.pdf",
+                "page": 1
+              }
+            ],
+            "blueprintModuleId": "math-iii-m2",
+            "coCode": "CO2",
+            "track": "Matrix Decompositions",
+            "similarityType": "verbatim",
+            "templatePattern": "Diagonalize a given square matrix A by finding modal matrix P and diagonal matrix D.",
+            "solutionApproach": "Solve det(A - lambda I) = 0 for eigenvalues. For each eigenvalue, find linearly independent eigenvectors by solving (A - lambda I)v = 0. Form modal matrix P with eigenvectors as columns; D is diagonal matrix of corresponding eigenvalues."
+          },
+          {
+            "id": "math-q-subspace-basis",
+            "title": "Basis and Dimension of Subspace in R^4 and Extension to R^4",
+            "appearances": [
+              {
+                "examId": "math-2025-nov",
+                "examLabel": "Nov 2025 Endsem",
+                "year": 2025,
+                "questionNo": "Q4A",
+                "marks": 3,
+                "sourceFile": "pyq/MAT_2122_Engineering_Mathematics_III_Nov_2025.pdf",
+                "page": 2
+              },
+              {
+                "examId": "math-2024-nov",
+                "examLabel": "Nov 2024 Endsem",
+                "year": 2024,
+                "questionNo": "Q4A",
+                "marks": 3,
+                "sourceFile": "pyq/MAT_2122_Engineering_Mathematics_III_Nov_2024.pdf",
+                "page": 1
+              }
+            ],
+            "blueprintModuleId": "math-iii-m3",
+            "coCode": "CO3",
+            "track": "Linear Systems & Subspaces",
+            "similarityType": "near-verbatim",
+            "templatePattern": "Given vectors spanning subspace W in R^4, extract a basis, determine dimension, and extend to basis of R^4.",
+            "solutionApproach": "Form matrix with vectors as rows. Row reduce to echelon form. Non-zero rows form a basis of W. Dimension = number of non-zero rows. To extend to R^4, append standard basis vectors e_i that maintain full rank 4."
+          },
+          {
+            "id": "math-q-subspace-inter-sum",
+            "title": "Constraint Subspaces: Basis & Dimension of W1 \u2229 W2 and W1 + W2",
+            "appearances": [
+              {
+                "examId": "math-2025-nov",
+                "examLabel": "Nov 2025 Endsem",
+                "year": 2025,
+                "questionNo": "Q4B",
+                "marks": 3,
+                "sourceFile": "pyq/MAT_2122_Engineering_Mathematics_III_Nov_2025.pdf",
+                "page": 2
+              },
+              {
+                "examId": "math-2024-nov",
+                "examLabel": "Nov 2024 Endsem",
+                "year": 2024,
+                "questionNo": "Q4B",
+                "marks": 3,
+                "sourceFile": "pyq/MAT_2122_Engineering_Mathematics_III_Nov_2024.pdf",
+                "page": 2
+              }
+            ],
+            "blueprintModuleId": "math-iii-m3",
+            "coCode": "CO3",
+            "track": "Linear Systems & Subspaces",
+            "similarityType": "near-verbatim",
+            "templatePattern": "Given two subspaces W1 and W2 defined by constraint equations, find basis and dimension of W1 \u2229 W2 and W1 + W2.",
+            "solutionApproach": "Combine constraint equations of W1 and W2 into a homogeneous system; solve for free variables to obtain basis of intersection W1 \u2229 W2. Use dimension formula: dim(W1 + W2) = dim W1 + dim W2 - dim(W1 \u2229 W2)."
+          },
+          {
+            "id": "math-q-kernel-image",
+            "title": "Basis and Dimension of Kernel and Image of Matrix Mapping T: R^3 -> R^3",
+            "appearances": [
+              {
+                "examId": "math-2025-nov",
+                "examLabel": "Nov 2025 Endsem",
+                "year": 2025,
+                "questionNo": "Q4C",
+                "marks": 4,
+                "sourceFile": "pyq/MAT_2122_Engineering_Mathematics_III_Nov_2025.pdf",
+                "page": 2
+              },
+              {
+                "examId": "math-2024-nov",
+                "examLabel": "Nov 2024 Endsem",
+                "year": 2024,
+                "questionNo": "Q4C",
+                "marks": 4,
+                "sourceFile": "pyq/MAT_2122_Engineering_Mathematics_III_Nov_2024.pdf",
+                "page": 2
+              }
+            ],
+            "blueprintModuleId": "math-iii-m4",
+            "coCode": "CO4",
+            "track": "Linear Transformations",
+            "similarityType": "verbatim",
+            "templatePattern": "Find basis and dimension of kernel and image for a linear matrix mapping T(v) = Av.",
+            "solutionApproach": "For ker(T): Solve Av = 0 via row reduction; free variables yield basis vectors of kernel (Nullity). For Im(T): Pivot columns of the original matrix A form the basis of the image (Rank). Verify dim V = rank + nullity."
+          },
+          {
+            "id": "math-q-orthogonal-complement",
+            "title": "Basis of Orthogonal Complement W^perp of Subspace in R^5",
+            "appearances": [
+              {
+                "examId": "math-2025-nov",
+                "examLabel": "Nov 2025 Endsem",
+                "year": 2025,
+                "questionNo": "Q5C",
+                "marks": 4,
+                "sourceFile": "pyq/MAT_2122_Engineering_Mathematics_III_Nov_2025.pdf",
+                "page": 3
+              },
+              {
+                "examId": "math-2024-nov",
+                "examLabel": "Nov 2024 Endsem",
+                "year": 2024,
+                "questionNo": "Q5C",
+                "marks": 4,
+                "sourceFile": "pyq/MAT_2122_Engineering_Mathematics_III_Nov_2024.pdf",
+                "page": 2
+              }
+            ],
+            "blueprintModuleId": "math-iii-m5",
+            "coCode": "CO5",
+            "track": "Inner Product Spaces",
+            "similarityType": "verbatim",
+            "templatePattern": "Given 2 vectors spanning subspace W in R^5, find a basis of its orthogonal complement W^perp.",
+            "solutionApproach": "Let x = (x1,x2,x3,x4,x5) in W^perp <=> <x, u1> = 0 and <x, u2> = 0. Set up homogeneous 2\u00d75 system. Row reduce to echelon form. 2 pivot variables and 3 free variables yield exactly 3 basis vectors for W^perp (dim W^perp = 3)."
+          },
+          {
+            "id": "math-q-change-of-basis",
+            "title": "Change of Basis: Transition Matrix P and Operator Representation [T]_S in R^2",
+            "appearances": [
+              {
+                "examId": "math-2025-nov",
+                "examLabel": "Nov 2025 Endsem",
+                "year": 2025,
+                "questionNo": "Q5A",
+                "marks": 3,
+                "sourceFile": "pyq/MAT_2122_Engineering_Mathematics_III_Nov_2025.pdf",
+                "page": 3
+              },
+              {
+                "examId": "math-2024-nov",
+                "examLabel": "Nov 2024 Endsem",
+                "year": 2024,
+                "questionNo": "Q5A",
+                "marks": 3,
+                "sourceFile": "pyq/MAT_2122_Engineering_Mathematics_III_Nov_2024.pdf",
+                "page": 2
+              }
+            ],
+            "blueprintModuleId": "math-iii-m4",
+            "coCode": "CO4",
+            "track": "Linear Transformations",
+            "similarityType": "near-verbatim",
+            "templatePattern": "Given bases S and S' of R^2, compute the change of basis matrix P, reverse matrix Q = P^(-1), or operator matrix [T]_S.",
+            "solutionApproach": "Express new basis vectors as linear combinations of old basis vectors; coordinate vectors form columns of transition matrix P. For operator matrix [T]_S, compute T(u_i) and write as coordinate columns relative to S."
+          },
+          {
+            "id": "math-q-fourier-series",
+            "title": "Fourier Series Representation of Piecewise Linear Periodic Functions",
+            "appearances": [
+              {
+                "examId": "math-2025-nov",
+                "examLabel": "Nov 2025 Endsem",
+                "year": 2025,
+                "questionNo": "Q1A",
+                "marks": 3,
+                "sourceFile": "pyq/MAT_2122_Engineering_Mathematics_III_Nov_2025.pdf",
+                "page": 1
+              },
+              {
+                "examId": "math-2024-nov",
+                "examLabel": "Nov 2024 Endsem",
+                "year": 2024,
+                "questionNo": "Q1A",
+                "marks": 3,
+                "sourceFile": "pyq/MAT_2122_Engineering_Mathematics_III_Nov_2024.pdf",
+                "page": 1
+              }
+            ],
+            "blueprintModuleId": "math-iii-m1",
+            "coCode": "CO1",
+            "track": "Fourier Signals",
+            "similarityType": "near-verbatim",
+            "templatePattern": "Find the Fourier series of a piecewise linear function f(x) with period 2pi on (-pi, pi) or (0, 2pi).",
+            "solutionApproach": "Check even/odd symmetry. Evaluate Euler coefficients: a0 = (1/pi)int(f(x)dx); an = (1/pi)int(f(x)cos nx dx); bn = (1/pi)int(f(x)sin nx dx). Apply integration by parts."
+          },
+          {
+            "id": "math-q-half-range",
+            "title": "Fourier Half-Range Sine & Cosine Series on (0, L)",
+            "appearances": [
+              {
+                "examId": "math-2025-nov",
+                "examLabel": "Nov 2025 Endsem",
+                "year": 2025,
+                "questionNo": "Q1B",
+                "marks": 4,
+                "sourceFile": "pyq/MAT_2122_Engineering_Mathematics_III_Nov_2025.pdf",
+                "page": 1
+              },
+              {
+                "examId": "math-2024-nov",
+                "examLabel": "Nov 2024 Endsem",
+                "year": 2024,
+                "questionNo": "Q1B",
+                "marks": 3,
+                "sourceFile": "pyq/MAT_2122_Engineering_Mathematics_III_Nov_2024.pdf",
+                "page": 1
+              }
+            ],
+            "blueprintModuleId": "math-iii-m1",
+            "coCode": "CO1",
+            "track": "Fourier Signals",
+            "similarityType": "near-verbatim",
+            "templatePattern": "Find the half-range sine or cosine series for a linear polynomial f(x) = ax + b on interval (0, L).",
+            "solutionApproach": "For Sine Series: a0 = an = 0; bn = (2/L)int_0^L f(x)sin(n*pi*x/L)dx. For Cosine Series: bn = 0; a0 = (2/L)int_0^L f(x)dx; an = (2/L)int_0^L f(x)cos(n*pi*x/L)dx. Use integration by parts."
+          },
+          {
+            "id": "math-q-fourier-transforms",
+            "title": "Fourier Transform & Fourier Cosine Transform of Elementary Functions",
+            "appearances": [
+              {
+                "examId": "math-2025-nov",
+                "examLabel": "Nov 2025 Endsem",
+                "year": 2025,
+                "questionNo": "Q2A",
+                "marks": 3,
+                "sourceFile": "pyq/MAT_2122_Engineering_Mathematics_III_Nov_2025.pdf",
+                "page": 1
+              },
+              {
+                "examId": "math-2024-nov",
+                "examLabel": "Nov 2024 Endsem",
+                "year": 2024,
+                "questionNo": "Q2A",
+                "marks": 3,
+                "sourceFile": "pyq/MAT_2122_Engineering_Mathematics_III_Nov_2024.pdf",
+                "page": 1
+              },
+              {
+                "examId": "math-2024-nov",
+                "examLabel": "Nov 2024 Endsem",
+                "year": 2024,
+                "questionNo": "Q2B",
+                "marks": 3,
+                "sourceFile": "pyq/MAT_2122_Engineering_Mathematics_III_Nov_2024.pdf",
+                "page": 1
+              }
+            ],
+            "blueprintModuleId": "math-iii-m1",
+            "coCode": "CO1",
+            "track": "Fourier Signals",
+            "similarityType": "near-verbatim",
+            "templatePattern": "Evaluate the Fourier transform or cosine transform of a piecewise polynomial or x*exp(-ax).",
+            "solutionApproach": "Cosine Transform: Fc(s) = sqrt(2/pi)int_0^inf f(t)cos(st)dt. For x*exp(-ax), use derivative property or integration by parts twice to obtain standard form."
+          },
+          {
+            "id": "math-q-inner-product-gram",
+            "title": "Function/Polynomial Inner Products: Angles & Gram-Schmidt Orthogonalization",
+            "appearances": [
+              {
+                "examId": "math-2025-nov",
+                "examLabel": "Nov 2025 Endsem",
+                "year": 2025,
+                "questionNo": "Q5B",
+                "marks": 3,
+                "sourceFile": "pyq/MAT_2122_Engineering_Mathematics_III_Nov_2025.pdf",
+                "page": 3
+              },
+              {
+                "examId": "math-2024-nov",
+                "examLabel": "Nov 2024 Endsem",
+                "year": 2024,
+                "questionNo": "Q5B",
+                "marks": 3,
+                "sourceFile": "pyq/MAT_2122_Engineering_Mathematics_III_Nov_2024.pdf",
+                "page": 2
+              }
+            ],
+            "blueprintModuleId": "math-iii-m5",
+            "coCode": "CO5",
+            "track": "Inner Product Spaces",
+            "similarityType": "near-verbatim",
+            "templatePattern": "Compute angle between functions in C[a,b] or apply Gram-Schmidt to {1, t, t^2} with integral inner product.",
+            "solutionApproach": "Evaluate integral <f,g> = int_a^b f(t)g(t)dt. For angle: cos theta = <f,g> / (||f|| ||g||). For Gram-Schmidt: w0 = 1; w1 = v1 - (<v1,w0>/<w0,w0>)*w0; w2 = v2 - projections onto w0 and w1."
+          }
+        ],
+        "repeatedTopics": [
+          {
+            "id": "math-top-harmonic",
+            "title": "Tabular Numerical Harmonic Analysis (Second Harmonics)",
+            "moduleId": "math-iii-m1",
+            "coCode": "CO1",
+            "track": "Fourier Signals",
+            "blueprintMarks": 13,
+            "paperHits": 2,
+            "totalPapers": 2,
+            "questionCount": 2,
+            "cumulativeMarks": 7,
+            "strategyVerdict": "Must-Do Core",
+            "summary": "Appeared in 100% of exam sessions (3-4m). Tabular evaluation of a0, a1, b1, a2, b2 from equidistant data table.",
+            "sourceFile": "Chapter_1_3_Harmonic_Analysis.pdf",
+            "page": 1
+          },
+          {
+            "id": "math-top-lu",
+            "title": "3\u00d73 Linear System Solving via LU Decomposition",
+            "moduleId": "math-iii-m3",
+            "coCode": "CO3",
+            "track": "Linear Systems & Subspaces",
+            "blueprintMarks": 12,
+            "paperHits": 2,
+            "totalPapers": 2,
+            "questionCount": 2,
+            "cumulativeMarks": 7,
+            "strategyVerdict": "Must-Do Core",
+            "summary": "Guaranteed 3-4 mark question on every single paper. Factor A = LU, forward solve LY=b, back solve UX=Y.",
+            "sourceFile": "Chapter_2_2_LU_Decomposition.pdf",
+            "page": 1
+          },
+          {
+            "id": "math-top-svd",
+            "title": "Singular Value Decomposition (SVD A = U Sigma V^T)",
+            "moduleId": "math-iii-m2",
+            "coCode": "CO2",
+            "track": "Matrix Decompositions",
+            "blueprintMarks": 11,
+            "paperHits": 2,
+            "totalPapers": 2,
+            "questionCount": 2,
+            "cumulativeMarks": 9,
+            "strategyVerdict": "Must-Do Core",
+            "summary": "Highest single question weightage (4-5 marks) on every paper. Find A^T A eigenvalues, singular values, V and U.",
+            "sourceFile": "Chapter_2_1_Matrix_Decomposition.pdf",
+            "page": 11
+          },
+          {
+            "id": "math-top-cholesky",
+            "title": "Cholesky Factorization of Symmetric Matrices (A = L L^T)",
+            "moduleId": "math-iii-m2",
+            "coCode": "CO2",
+            "track": "Matrix Decompositions",
+            "blueprintMarks": 11,
+            "paperHits": 2,
+            "totalPapers": 2,
+            "questionCount": 2,
+            "cumulativeMarks": 5,
+            "strategyVerdict": "High-ROI Quick Win",
+            "summary": "Fast 2-3 marks: recursive square-root formula for lower triangular matrix L of a 3\u00d73 symmetric matrix.",
+            "sourceFile": "Chapter_2_1_Matrix_Decomposition.pdf",
+            "page": 14
+          },
+          {
+            "id": "math-top-diagonalization",
+            "title": "Matrix Diagonalization A = P D P^(-1) & Eigenvectors",
+            "moduleId": "math-iii-m2",
+            "coCode": "CO2",
+            "track": "Matrix Decompositions",
+            "blueprintMarks": 11,
+            "paperHits": 2,
+            "totalPapers": 2,
+            "questionCount": 2,
+            "cumulativeMarks": 7,
+            "strategyVerdict": "High-ROI Focus",
+            "summary": "Tested in 100% of exams: compute characteristic polynomial, find modal matrix P and diagonal matrix D.",
+            "sourceFile": "Chapter_2_1_Matrix_Decomposition.pdf",
+            "page": 5
+          },
+          {
+            "id": "math-top-kernel-image",
+            "title": "Kernel & Image Basis/Dimension for Matrix Mappings (Rank-Nullity)",
+            "moduleId": "math-iii-m4",
+            "coCode": "CO4",
+            "track": "Linear Transformations",
+            "blueprintMarks": 7,
+            "paperHits": 2,
+            "totalPapers": 2,
+            "questionCount": 2,
+            "cumulativeMarks": 8,
+            "strategyVerdict": "Must-Do Core",
+            "summary": "Guaranteed 4-mark problem: solve Av = 0 for ker(A) basis (nullity) and take pivot columns for Im(A) basis (rank).",
+            "sourceFile": "Chapter_3_3_Rank_Nullity_Matrix_Representation.pdf",
+            "page": 1
+          },
+          {
+            "id": "math-top-orthogonal-complement",
+            "title": "Basis of Orthogonal Complement W^perp of Subspace in R^5",
+            "moduleId": "math-iii-m5",
+            "coCode": "CO5",
+            "track": "Inner Product Spaces",
+            "blueprintMarks": 7,
+            "paperHits": 2,
+            "totalPapers": 2,
+            "questionCount": 2,
+            "cumulativeMarks": 8,
+            "strategyVerdict": "Must-Do Core",
+            "summary": "Guaranteed 4-mark problem on both papers: 2 spanning vectors in R^5 give a 2\u00d75 homogeneous system with dim(W^perp) = 3.",
+            "sourceFile": "Chapter_4_1_Inner_Product_Space.pdf",
+            "page": 4
+          },
+          {
+            "id": "math-top-fourier-series",
+            "title": "Fourier Series & Half-Range Sine/Cosine Expansions",
+            "moduleId": "math-iii-m1",
+            "coCode": "CO1",
+            "track": "Fourier Signals",
+            "blueprintMarks": 13,
+            "paperHits": 2,
+            "totalPapers": 2,
+            "questionCount": 4,
+            "cumulativeMarks": 13,
+            "strategyVerdict": "High-Yield Drill",
+            "summary": "Full-range and half-range series of linear polynomials. Drill integration by parts (Bernoulli formula).",
+            "sourceFile": "Chapter_1_1_Fourier_Series.pdf",
+            "page": 7
+          }
+        ],
+        "reverseStrategy": [
+          {
+            "priority": "Priority 1",
+            "accent": "pink",
+            "headline": "Master CO1 Fourier Series + CO3 Linear Systems to Lock In 25 Marks (50% Pass Guaranteed)",
+            "metric": "25 Marks Before 10 PM",
+            "detail": "CO1 (Fourier series, tabular harmonics, cosine transform - 13m) and CO3 (LU decomposition, echelon basis, subspace sums - 12m) together comprise 50% of the entire exam paper. Passing is guaranteed before touching other modules."
+          },
+          {
+            "priority": "Priority 2",
+            "accent": "yellow",
+            "headline": "Drill Matrix Decompositions (CO2 - 11 Marks): SVD + Cholesky + Diagonalization",
+            "metric": "36 / 50 Marks (72%)",
+            "detail": "Every paper features SVD (4-5m), Cholesky (2-3m), and Diagonalization (3-4m) without exception. These 3 algorithm templates are purely mechanical arithmetic once the step-by-step procedure is memorized."
+          },
+          {
+            "priority": "Priority 3",
+            "accent": "teal",
+            "headline": "Standardize the 4-Mark Matrix Mapping Template: Kernel & Image of T(v) = Av",
+            "metric": "4 Marks Guaranteed",
+            "detail": "Row reduce A: pivot columns immediately yield basis of Im(A) (rank); parametric solution of Av = 0 immediately yields basis of ker(A) (nullity). Check that rank + nullity = 3."
+          },
+          {
+            "priority": "Priority 4",
+            "accent": "pink",
+            "headline": "Never Lose Marks on W^perp in R^5: Know That Dimension is Always 3",
+            "metric": "4 Marks in 5 Minutes",
+            "detail": "When 2 spanning vectors u1, u2 in R^5 are given, W has dimension 2. Its orthogonal complement W^perp has dimension 5 - 2 = 3. Setting <x, u1> = 0 and <x, u2> = 0 gives 3 free variables and 3 basis vectors."
+          },
+          {
+            "priority": "Priority 5",
+            "accent": "yellow",
+            "headline": "Avoid the LU Substitution Inversion Trap",
+            "metric": "Common Student Error",
+            "detail": "In LU decomposition, solve LY = b first using FORWARD substitution (top-to-bottom), then solve UX = Y using BACKWARD substitution (bottom-to-top). Inverting this order is the most frequent exam mistake."
+          }
+        ]
+      }
     },
     "SNT": {
       "id": "snt",

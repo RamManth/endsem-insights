@@ -319,37 +319,37 @@ const MATH_III_SPRINT_SLOTS: SprintSlot[] = [
     startMinute: 30,
     endHour: 20,
     endMinute: 45,
-    moduleNumber: 5,
-    moduleId: 'math-iii-m5',
-    coCode: 'CO5',
-    track: 'Fourier Methods',
-    title: 'Module 5: Fourier Series, Harmonic Analysis & Transforms',
-    slotMarks: 10,
-    cumulativeMarks: 10,
-    cumulativePercent: 20,
+    moduleNumber: 1,
+    moduleId: 'math-iii-m1',
+    coCode: 'CO1',
+    track: 'Fourier Signals',
+    title: 'Module 1: Fourier Series, Harmonic Analysis & Transforms',
+    slotMarks: 13,
+    cumulativeMarks: 13,
+    cumulativePercent: 26,
     accent: 'pink',
-    headline: 'Master Tabular Harmonic Analysis, Dirichlet Series & Parseval',
+    headline: 'Lock in Tabular Harmonic Analysis (Q1C), Half-Range Series (Q1B) & Fourier Series (Q1A)',
     keyRepeats: [
       {
-        title: 'Dirichlet conditions, Euler formulas a₀, aₙ, bₙ & Parseval identity',
-        freq: 'Core Exam Pattern',
-        solvedRef: 'Chapter 1.1 (pp. 1-13)',
-        slideRef: 'Chapter_1_1_Fourier_Series.pdf, pp. 1-13',
-      },
-      {
         title: 'Tabular Harmonic Analysis: Equidistant table for 1st & 2nd harmonics',
-        freq: 'Guaranteed Numerical Problem',
-        solvedRef: 'Chapter 1.3 (pp. 1-5)',
+        freq: '2/2 verbatim (2025 Q1C 3m, 2024 Q1C 4m)',
+        solvedRef: 'Repeat Cluster #1',
         slideRef: 'Chapter_1_3_Harmonic_Analysis.pdf, p. 1',
       },
       {
-        title: 'Fourier Transform: Modulation, Shifting & Convolution Theorem',
-        freq: 'Recurring Transform Problem',
-        solvedRef: 'Chapter 1.2 (pp. 1-16)',
-        slideRef: 'Chapter_1_2_Fourier_Transforms.pdf, pp. 3-6',
+        title: 'Half-range sine/cosine series on (0, L) with Bernoulli integration by parts',
+        freq: '2/2 verbatim (2025 Q1B 4m, 2024 Q1B 3m)',
+        solvedRef: 'Repeat Cluster #12',
+        slideRef: 'Chapter_1_1_Fourier_Series.pdf, p. 7',
+      },
+      {
+        title: 'Fourier series of piecewise periodic functions & Fourier Cosine Transform',
+        freq: '2/2 verbatim (2025 Q1A/2A 6m, 2024 Q1A/2A 6m)',
+        solvedRef: 'Repeat Clusters #11 & #13',
+        slideRef: 'Chapter_1_1_Fourier_Series.pdf & Chapter_1_2_Fourier_Transforms.pdf',
       },
     ],
-    fallbackIfLate: 'Focus strictly on Tabular Harmonic Analysis (p. 1) and Half-Range Sine/Cosine series (p. 12).',
+    fallbackIfLate: 'Focus strictly on Tabular Harmonic Analysis (Q1C p. 1) and Half-Range Sine/Cosine series (p. 7).',
   },
   {
     slotNumber: 2,
@@ -359,37 +359,37 @@ const MATH_III_SPRINT_SLOTS: SprintSlot[] = [
     startMinute: 45,
     endHour: 22,
     endMinute: 0,
-    moduleNumber: 4,
-    moduleId: 'math-iii-m4',
-    coCode: 'CO4',
-    track: 'Matrix Methods',
-    title: 'Module 4: Matrix Decompositions (LU, Cholesky, SVD, Spectral)',
-    slotMarks: 10,
-    cumulativeMarks: 20,
-    cumulativePercent: 40,
+    moduleNumber: 3,
+    moduleId: 'math-iii-m3',
+    coCode: 'CO3',
+    track: 'Linear Systems & Subspaces',
+    title: 'Module 3: LU Decomposition, Subspace Basis & Intersection/Sum',
+    slotMarks: 12,
+    cumulativeMarks: 25,
+    cumulativePercent: 50,
     accent: 'yellow',
-    headline: 'Lock in LU Factorization, SVD A = UΣVᵀ, and Cayley-Hamilton A⁻¹',
+    headline: '50% PASS GUARANTEE: 3×3 LU Decomposition (Q3A) + Subspace Echelon Basis (Q4A/B)',
     keyRepeats: [
       {
-        title: 'LU Decomposition: Forward (LY=b) & Back (UX=Y) substitution',
-        freq: 'High-Yield Algorithm',
-        solvedRef: 'Chapter 2.2 (pp. 1-3)',
+        title: '3×3 Linear System via LU Decomposition: Forward LY=b then Backward UX=Y',
+        freq: '2/2 verbatim (2025 Q3A 3m, 2024 Q2C 4m)',
+        solvedRef: 'Repeat Cluster #2',
         slideRef: 'Chapter_2_2_LU_Decomposition.pdf, pp. 1-3',
       },
       {
-        title: 'Singular Value Decomposition A = UΣVᵀ & Cholesky A = LLᵀ',
-        freq: 'Advanced Decompositions',
-        solvedRef: 'Chapter 2.1 (pp. 11-16)',
-        slideRef: 'Chapter_2_1_Matrix_Decomposition.pdf, pp. 11-14',
+        title: 'Subspace Basis & Dimension in R⁴ via Echelon Form & Extension to R⁴',
+        freq: '2/2 verbatim (2025 Q4A 3m, 2024 Q4A 3m)',
+        solvedRef: 'Repeat Cluster #6',
+        slideRef: 'Chapter_3_1_Basis_and_Dimension.pdf, pp. 2-5',
       },
       {
-        title: 'Cayley-Hamilton Theorem p(A)=0 & Symmetric Diagonalization A = PDPᵀ',
-        freq: 'Spectral Theorem',
-        solvedRef: 'Chapter 2.1 (pp. 3-10)',
-        slideRef: 'Chapter_2_1_Matrix_Decomposition.pdf, pp. 3-10',
+        title: 'Constraint Subspaces: Basis & Dimension of W₁ ∩ W₂ and W₁ + W₂',
+        freq: '2/2 verbatim (2025 Q4B 3m, 2024 Q4B 3m)',
+        solvedRef: 'Repeat Cluster #7',
+        slideRef: 'Chapter_3_1_Basis_and_Dimension.pdf, pp. 6-8',
       },
     ],
-    fallbackIfLate: 'Master 3×3 LU decomposition forward/backward steps first; review SVD singular value formula σ_i = √λ_i.',
+    fallbackIfLate: 'Master 3×3 LU decomposition forward/backward steps first; review echelon row operations for basis extraction.',
   },
   {
     slotNumber: 3,
@@ -402,34 +402,34 @@ const MATH_III_SPRINT_SLOTS: SprintSlot[] = [
     moduleNumber: 2,
     moduleId: 'math-iii-m2',
     coCode: 'CO2',
-    track: 'Linear Algebra',
-    title: 'Module 2: Linear Transformations & Rank-Nullity Theorem',
-    slotMarks: 10,
-    cumulativeMarks: 30,
-    cumulativePercent: 60,
+    track: 'Matrix Decompositions',
+    title: 'Module 2: Matrix Decompositions (SVD, Cholesky, Diagonalization)',
+    slotMarks: 11,
+    cumulativeMarks: 36,
+    cumulativePercent: 72,
     accent: 'teal',
-    headline: "Sylvester's Rank-Nullity, Kernel/Image Bases & Derivative Matrix [D]",
+    headline: 'FIRST CLASS WITH DISTINCTION (72%): SVD (A = UΣVᵀ) + Cholesky (A = LLᵀ) + Modal P',
     keyRepeats: [
       {
-        title: 'Rank-Nullity Theorem: dim V = rank(T) + nullity(T) & 1-1/onto criteria',
-        freq: 'Core Theorem',
-        solvedRef: 'Chapter 3.3 (pp. 1-3)',
-        slideRef: 'Chapter_3_3_Rank_Nullity_Matrix_Representation.pdf, pp. 1-3',
+        title: 'Singular Value Decomposition A = UΣVᵀ (Singular values σ_i = √λ_i(AᵀA))',
+        freq: '2/2 verbatim (2025 Q3C 4m, 2024 Q3A 5m)',
+        solvedRef: 'Repeat Cluster #3',
+        slideRef: 'Chapter_2_1_Matrix_Decomposition.pdf, pp. 11-13',
       },
       {
-        title: 'Matrix representation of derivative operator [D] on polynomials',
-        freq: 'Operator Representation',
-        solvedRef: 'Chapter 3.3 (p. 4)',
-        slideRef: 'Chapter_3_3_Rank_Nullity_Matrix_Representation.pdf, p. 4',
+        title: 'Cholesky Factorization A = L Lᵀ for 3×3 Symmetric Positive Definite Matrix',
+        freq: '2/2 verbatim (2025 Q3B 3m, 2024 Q3B 2m)',
+        solvedRef: 'Repeat Cluster #4',
+        slideRef: 'Chapter_2_1_Matrix_Decomposition.pdf, pp. 14-16',
       },
       {
-        title: "Change of basis transition matrix P and [T]_{S'} = P⁻¹ [T]_S P",
-        freq: 'Coordinate Transform',
-        solvedRef: 'Chapter 3.3 (pp. 5-6)',
-        slideRef: 'Chapter_3_3_Rank_Nullity_Matrix_Representation.pdf, pp. 5-6',
+        title: 'Matrix Diagonalization A = P D P⁻¹ via Eigenvectors of Characteristic Eq',
+        freq: '2/2 verbatim (2025 Q2C 4m, 2024 Q3C 3m)',
+        solvedRef: 'Repeat Cluster #5',
+        slideRef: 'Chapter_2_1_Matrix_Decomposition.pdf, pp. 5-8',
       },
     ],
-    fallbackIfLate: 'Practice one rank-nullity proof problem and finding the matrix of T relative to standard basis.',
+    fallbackIfLate: 'Drill SVD algorithm step-by-step; memorize Cholesky diagonal square-root formulas.',
   },
   {
     slotNumber: 4,
@@ -439,37 +439,31 @@ const MATH_III_SPRINT_SLOTS: SprintSlot[] = [
     startMinute: 15,
     endHour: 24,
     endMinute: 0,
-    moduleNumber: 3,
-    moduleId: 'math-iii-m3',
-    coCode: 'CO3',
-    track: 'Linear Algebra',
-    title: 'Module 3: Inner Product Spaces, Gram-Schmidt & QR Factorization',
-    slotMarks: 10,
-    cumulativeMarks: 40,
-    cumulativePercent: 80,
+    moduleNumber: 4,
+    moduleId: 'math-iii-m4',
+    coCode: 'CO4',
+    track: 'Linear Transformations',
+    title: 'Module 4: Linear Transformations, Rank-Nullity & Change of Basis',
+    slotMarks: 7,
+    cumulativeMarks: 43,
+    cumulativePercent: 86,
     accent: 'pink',
-    headline: 'Gram-Schmidt Orthonormalization, Cauchy-Schwarz & Matrix Angles',
+    headline: 'Kernel/Image Bases for Matrix Mapping T(v) = Av & Transition Matrix P in R²',
     keyRepeats: [
       {
-        title: 'Gram-Schmidt Orthonormalization Process on vectors and polynomials',
-        freq: 'Guaranteed 8m Algorithm',
-        solvedRef: 'Chapter 4.1 (pp. 6-8)',
-        slideRef: 'Chapter_4_1_Inner_Product_Space.pdf, pp. 6-8',
+        title: 'Kernel & Image Bases: Solve Av = 0 for ker(A); pivot columns for Im(A)',
+        freq: '2/2 verbatim (2025 Q4C 4m, 2024 Q4C 4m)',
+        solvedRef: 'Repeat Cluster #8',
+        slideRef: 'Chapter_3_3_Rank_Nullity_Matrix_Representation.pdf, pp. 1-3',
       },
       {
-        title: 'Cauchy-Schwarz Inequality & Angle between matrices ⟨A, B⟩ = tr(Bᵀ A)',
-        freq: 'Geometric Axioms',
-        solvedRef: 'Chapter 4.1 (pp. 2-3)',
-        slideRef: 'Chapter_4_1_Inner_Product_Space.pdf, pp. 2-3',
-      },
-      {
-        title: 'QR Factorization A = QR via Gram-Schmidt Orthonormal Columns',
-        freq: 'Matrix Factorization',
-        solvedRef: 'Chapter 2.3 (pp. 1-2)',
-        slideRef: 'Chapter_2_3_QR_Decomposition.pdf, pp. 1-2',
+        title: "Change of Basis: Transition Matrix P from S to S' and Q = P⁻¹ in R²",
+        freq: '2/2 verbatim (2025 Q5A 3m, 2024 Q5A 3m)',
+        solvedRef: 'Repeat Cluster #10',
+        slideRef: 'Chapter_3_3_Rank_Nullity_Matrix_Representation.pdf, pp. 5-6',
       },
     ],
-    fallbackIfLate: 'Memorize Gram-Schmidt projection formula w_k = v_k - ∑(⟨v_k,w_i⟩/⟨w_i,w_i⟩)w_i and trace inner product.',
+    fallbackIfLate: 'Row reduce matrix A: non-pivot columns give nullity/kernel; pivot columns give rank/image.',
   },
   {
     slotNumber: 5,
@@ -479,37 +473,31 @@ const MATH_III_SPRINT_SLOTS: SprintSlot[] = [
     startMinute: 0,
     endHour: 0,
     endMinute: 45,
-    moduleNumber: 1,
-    moduleId: 'math-iii-m1',
-    coCode: 'CO1',
-    track: 'Linear Algebra',
-    title: 'Module 1: Vector Spaces, Basis, Dimension & Null Space',
-    slotMarks: 10,
+    moduleNumber: 5,
+    moduleId: 'math-iii-m5',
+    coCode: 'CO5',
+    track: 'Inner Product Spaces',
+    title: 'Module 5: Orthogonal Complement W^⊥ in R⁵ & Gram-Schmidt',
+    slotMarks: 7,
     cumulativeMarks: 50,
     cumulativePercent: 100,
     accent: 'yellow',
-    headline: 'Echelon Basis Extraction, Null Space of AX=0 & Subspace Dimensions',
+    headline: '100% SCORE SECURED: Orthogonal Complement W^⊥ in R⁵ (dim = 3) & Function Angles',
     keyRepeats: [
       {
-        title: 'Echelon matrix algorithm for extracting subspace basis & extending to R⁴',
-        freq: 'Core Foundation',
-        solvedRef: 'Chapter 3.1 (pp. 2-5)',
-        slideRef: 'Chapter_3_1_Basis_and_Dimension.pdf, pp. 2-5',
+        title: 'Basis of Orthogonal Complement W^⊥ for 2 Spanning Vectors in R⁵ (dim = 3)',
+        freq: '2/2 verbatim (2025 Q5C 4m, 2024 Q5C 4m)',
+        solvedRef: 'Repeat Cluster #9',
+        slideRef: 'Chapter_4_1_Inner_Product_Space.pdf, pp. 4-6',
       },
       {
-        title: 'Solution space (Null space) basis and dimension for homogeneous AX=0',
-        freq: 'Linear Systems',
-        solvedRef: 'Chapter 3.1 (pp. 4-6)',
-        slideRef: 'Chapter_3_1_Basis_and_Dimension.pdf, pp. 4-6',
-      },
-      {
-        title: 'Subspace Dimension Theorem: dim(U+W) = dim U + dim W - dim(U∩W)',
-        freq: 'Dimension Proof',
-        solvedRef: 'Chapter 3.1 (p. 8)',
-        slideRef: 'Chapter_3_1_Basis_and_Dimension.pdf, p. 8',
+        title: 'Function Space Angles in C[a,b] & Gram-Schmidt on Polynomials P(t)',
+        freq: '2/2 verbatim (2025 Q5B 3m, 2024 Q5B 3m)',
+        solvedRef: 'Repeat Cluster #14',
+        slideRef: 'Chapter_4_1_Inner_Product_Space.pdf, pp. 3-8',
       },
     ],
-    fallbackIfLate: 'Solve one echelon row reduction for basis extraction; verify dim(U+W) formula.',
+    fallbackIfLate: 'Set up ⟨x, u₁⟩ = 0 and ⟨x, u₂⟩ = 0 in R⁵; 3 free variables immediately give W^⊥ basis.',
   },
   {
     slotNumber: 6,
@@ -528,10 +516,10 @@ const MATH_III_SPRINT_SLOTS: SprintSlot[] = [
     cumulativeMarks: 50,
     cumulativePercent: 100,
     accent: 'teal',
-    headline: 'Formula Recall: Parseval, Rank-Nullity, Gram-Schmidt, LU, Cholesky, SVD',
+    headline: 'Formula Recall: SVD, Cholesky, LU, Rank-Nullity, Euler, W^⊥ in R⁵',
     keyRepeats: [
       {
-        title: 'Full Formula Sheet Sweep: Sylvester, Gram-Schmidt, LU, Cholesky, SVD, Euler',
+        title: 'Full Formula Sheet Sweep: SVD, Cholesky, LU, Rank-Nullity, Euler, W^⊥',
         freq: 'Final Verification',
         solvedRef: 'Formula Cheat Sheet',
         slideRef: 'All 10 Chapter PDFs',
@@ -561,7 +549,7 @@ export function OneAmSprintStrategy({
     return () => window.clearInterval(timer);
   }, []);
 
-  const isMath = subject.id === 'math-iii' || subject.courseCode === 'MATH 2101';
+  const isMath = subject.id === 'math-iii' || subject.courseCode === 'MAT 2122' || subject.courseCode === 'MATH 2101';
   const slots = isMath ? MATH_III_SPRINT_SLOTS : NAS_SPRINT_SLOTS;
   const solvedPdfUrl = `/study-files/${subject.folderName}/resources/NAS_Repeated_Questions_Solved_With_Circuits.pdf#page=1`;
 
@@ -583,7 +571,7 @@ export function OneAmSprintStrategy({
           <div className="sprint-hero-banner__left">
             <span className="memphis-pill memphis-pill--solid-yellow" style={{ marginBottom: '0.45rem' }}>
               {isMath
-                ? 'BALANCED SPRINT: 10m + 10m + 10m + 10m + 10m = 50 MARKS'
+                ? 'PARETO CRASH SPRINT: 13m (CO1) + 12m (CO3) + 11m (CO2) + 7m (CO4) + 7m (CO5) = 50 MARKS'
                 : 'PARETO SPRINT: 17m + 15m + 7m + 6m + 5m = 50 MARKS'}
             </span>
             <h3 style={{ fontSize: '1.25rem', lineHeight: 1.3 }}>
@@ -592,8 +580,9 @@ export function OneAmSprintStrategy({
             <p style={{ marginTop: '0.45rem', fontSize: '0.9rem', color: 'var(--ink-muted)' }}>
               {isMath ? (
                 <>
-                  By putting <strong>Module 5 (Fourier Methods)</strong> and <strong>Module 4 (Matrix Decompositions)</strong> first,
-                  you lock in <strong>40% of all exam marks before 10:00 PM</strong>.
+                  By putting <strong>CO1 Fourier Analysis (13m)</strong> and <strong>CO3 Linear Systems (12m)</strong> first,
+                  you lock in <strong>25 marks (50% passing guarantee) before 10:00 PM</strong>.
+                  Adding <strong>CO2 Matrix Decompositions (11m)</strong> guarantees <strong>72% (First Class with Distinction) by 11:15 PM</strong>!
                 </>
               ) : (
                 <>
@@ -631,14 +620,14 @@ export function OneAmSprintStrategy({
 
             {isMath ? (
               <a
-                href={`/study-files/${subject.folderName}/Chapter_1_1_Fourier_Series.pdf#page=1`}
+                href={`/study-files/${subject.folderName}/resources/MATH_III_Repeated_Questions_PYQ_Analysis.pdf#page=1`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="memphis-btn memphis-btn--pink"
                 style={{ textDecoration: 'none' }}
               >
                 <Sparkles size={15} aria-hidden="true" />
-                <span>Primary Lecture Slides (106p)</span>
+                <span>Repeat Question Audit PDF (3p)</span>
                 <ExternalLink size={13} aria-hidden="true" />
               </a>
             ) : (

@@ -40,7 +40,7 @@ describe('studyParser', () => {
     expect(math?.status).toBe('ready');
     expect(math?.modules).toHaveLength(5);
     expect(math?.totalWeightage).toBe(50);
-    expect(math?.sourceFiles).toHaveLength(10);
+    expect(math?.sourceFiles).toHaveLength(11);
     expect(snt?.status).toBe('missing_material');
   });
 
