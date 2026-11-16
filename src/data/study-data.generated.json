@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAt": "2026-11-16T06:40:54.445705+00:00",
+  "generatedAt": "2026-11-16T11:30:11.233043+00:00",
   "studyRootName": "Endsem insights",
   "subjects": [
     {
@@ -3160,24 +3160,6 @@
           }
         ]
       }
-    },
-    {
-      "id": "snt",
-      "folderName": "SNT",
-      "shortName": "SNT",
-      "fullName": "SNT",
-      "courseCode": "Pending Syllabus",
-      "accentColor": "yellow",
-      "tagline": "Awaiting study material upload in SNT/",
-      "status": "missing_material",
-      "statusMessage": "No study PDFs or notes found in 'SNT/'. Add module PDFs or a course plan to 'SNT/' and run 'npm run parse'.",
-      "weightageScaleLabel": "Not Yet Available",
-      "weightageSource": "missing",
-      "weightageBasis": "No PDF or text files currently exist in SNT/.",
-      "totalWeightage": 0,
-      "sourceFiles": [],
-      "parseWarnings": [],
-      "modules": []
     }
   ]
 }

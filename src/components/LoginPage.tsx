@@ -7,9 +7,8 @@ import {
   ShieldCheck,
   AlertCircle,
   ArrowRight,
-  Sparkles,
 } from 'lucide-react';
-import { validatePassword, setAuthenticated, CORRECT_PASSWORD } from '../lib/auth';
+import { validatePassword, setAuthenticated } from '../lib/auth';
 import { MemphisLogoMark, MemphisSquiggle, MemphisGeoBadge } from './MemphisDecor';
 
 interface LoginPageProps {
@@ -45,11 +44,6 @@ export function LoginPage({ onLogin }: LoginPageProps) {
     },
     [password, rememberMe, onLogin]
   );
-
-  const handleQuickFill = useCallback(() => {
-    setPassword(CORRECT_PASSWORD);
-    setError(null);
-  }, []);
 
   return (
     <div className="login-page-container" data-testid="login-page">
@@ -162,22 +156,9 @@ export function LoginPage({ onLogin }: LoginPageProps) {
           </button>
         </form>
 
-        <div className="login-helper-box">
-          <div className="login-helper-box__content">
-            <Sparkles size={15} className="login-helper-icon" aria-hidden="true" />
-            <span className="login-helper-text">
-              Exam Access Key: <code>{CORRECT_PASSWORD}</code>
-            </span>
-          </div>
-          <button
-            type="button"
-            className="login-quick-fill-btn"
-            onClick={handleQuickFill}
-            data-testid="login-quick-fill-btn"
-            title="Auto-fill default access key"
-          >
-            Auto-fill
-          </button>
+        <div className="login-footer-note" data-testid="login-footer-note">
+          <ShieldCheck size={14} className="login-footer-icon" aria-hidden="true" />
+          <span>Restricted Study Portal • Authorized Access Only</span>
         </div>
       </div>
     </div>

@@ -8,11 +8,11 @@ import {
 import type { ModuleRecord } from '../types/study';
 
 describe('studyParser', () => {
-  it('validates the generated study dataset with NAS and MATH III ready, SNT missing material', () => {
+  it('validates the generated study dataset with NAS and MATH III ready', () => {
     const result = parseAndValidateStudyDataset(generatedData);
 
     expect(result.hasFatalError).toBe(false);
-    expect(result.dataset.subjects).toHaveLength(3);
+    expect(result.dataset.subjects).toHaveLength(2);
 
     const nas = result.dataset.subjects.find((s) => s.id === 'nas');
     const math = result.dataset.subjects.find((s) => s.id === 'math-iii');
@@ -41,7 +41,7 @@ describe('studyParser', () => {
     expect(math?.modules).toHaveLength(5);
     expect(math?.totalWeightage).toBe(50);
     expect(math?.sourceFiles).toHaveLength(11);
-    expect(snt?.status).toBe('missing_material');
+    expect(snt).toBeUndefined();
   });
 
   it('ranks NAS modules strictly from highest to lowest weightage', () => {

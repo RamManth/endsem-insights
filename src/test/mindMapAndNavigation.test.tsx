@@ -44,7 +44,7 @@ describe('App navigation & subject views', () => {
     await new Promise((resolve) => setTimeout(resolve, 0));
   });
 
-  it('renders the home prompt with 3 subject cards and navigates to NAS and back', () => {
+  it('renders the home prompt with 2 active subject cards and navigates to NAS and back', () => {
     render(<App rawData={generatedData} initialHash="#/" />);
 
     expect(
@@ -53,7 +53,7 @@ describe('App navigation & subject views', () => {
 
     expect(screen.getByTestId('subject-card-nas')).toBeInTheDocument();
     expect(screen.getByTestId('subject-card-math-iii')).toBeInTheDocument();
-    expect(screen.getByTestId('subject-card-snt')).toBeInTheDocument();
+    expect(screen.queryByTestId('subject-card-snt')).not.toBeInTheDocument();
 
     // Navigate to NAS in 1 click
     fireEvent.click(screen.getByTestId('subject-card-nas'));
@@ -194,7 +194,7 @@ describe('App navigation & subject views', () => {
     expect(within(topicsList).getByTestId('pyq-topic-pyq-t-fourier-ctft')).toBeInTheDocument();
   });
 
-  it('navigates to MATH III and SNT via Home without subject switchers in TopNav', () => {
+  it('navigates to MATH III via Home without subject switchers in TopNav', () => {
     render(<App rawData={generatedData} initialHash="#/" />);
 
     const nav = screen.getByRole('navigation', { name: /Workspace navigation/i });
@@ -206,13 +206,9 @@ describe('App navigation & subject views', () => {
     expect(screen.getByTestId('subject-view-math-iii')).toBeInTheDocument();
     expect(within(nav).getByTestId('topnav-active-subject')).toHaveTextContent('MATH III');
 
-    // Still no subject switching pills in TopNav when viewing a subject
-    expect(within(nav).queryByRole('button', { name: /SNT/i })).not.toBeInTheDocument();
-
-    // Return to Home via TopNav All Subjects button, then open SNT
+    // Return to Home via TopNav All Subjects button
     fireEvent.click(within(nav).getByTestId('topnav-home-btn'));
-    fireEvent.click(screen.getByTestId('subject-card-snt'));
-    expect(screen.getByText(/SNT has no study material yet/i)).toBeInTheDocument();
+    expect(screen.getByTestId('subject-card-math-iii')).toBeInTheDocument();
   });
 
   it('handles unknown subject routes and malformed datasets gracefully', () => {

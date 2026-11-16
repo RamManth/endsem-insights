@@ -20,7 +20,7 @@ describe('LoginPage and Portal Authentication', () => {
     expect(validatePassword('')).toBe(false);
   });
 
-  it('renders login page with password field when unauthenticated', () => {
+  it('renders login page with password field when unauthenticated and hides password', () => {
     render(<App rawData={generatedData} initialHash="#/" />);
 
     expect(screen.getByTestId('login-page')).toBeInTheDocument();
@@ -28,8 +28,11 @@ describe('LoginPage and Portal Authentication', () => {
     expect(screen.getByText(/RESTRICTED ACCESS/i)).toBeInTheDocument();
     expect(screen.getByTestId('login-password-input')).toBeInTheDocument();
     expect(screen.getByTestId('login-submit-btn')).toBeInTheDocument();
-    expect(screen.getByTestId('login-quick-fill-btn')).toBeInTheDocument();
-    expect(screen.getByText(CORRECT_PASSWORD)).toBeInTheDocument();
+    expect(screen.getByTestId('login-footer-note')).toBeInTheDocument();
+
+    // Password must be strictly hidden on lock screen
+    expect(screen.queryByText(CORRECT_PASSWORD)).not.toBeInTheDocument();
+    expect(screen.queryByTestId('login-quick-fill-btn')).not.toBeInTheDocument();
 
     // Ensure dashboard content is NOT visible
     expect(
@@ -79,15 +82,13 @@ describe('LoginPage and Portal Authentication', () => {
     expect(input).toHaveAttribute('type', 'password');
   });
 
-  it('populates password via quick-fill button', () => {
+  it('keeps password hidden and masked on lock screen by default', () => {
     render(<App rawData={generatedData} initialHash="#/" />);
 
     const input = screen.getByTestId('login-password-input');
-    const quickFillBtn = screen.getByTestId('login-quick-fill-btn');
-
+    expect(input).toHaveAttribute('type', 'password');
     expect(input).toHaveValue('');
-    fireEvent.click(quickFillBtn);
-    expect(input).toHaveValue('ram@123');
+    expect(screen.queryByText(/ram@123/i)).not.toBeInTheDocument();
   });
 
   it('successfully unlocks dashboard on entering ram@123 and persists session', async () => {

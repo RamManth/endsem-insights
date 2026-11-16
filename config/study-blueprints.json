@@ -13,7 +13,8 @@
     "test",
     "coverage",
     ".git",
-    ".vscode"
+    ".vscode",
+    "SNT"
   ],
   "subjects": {
     "NAS": {
@@ -2897,18 +2898,6 @@
           }
         ]
       }
-    },
-    "SNT": {
-      "id": "snt",
-      "folderName": "SNT",
-      "shortName": "SNT",
-      "fullName": "SNT",
-      "courseCode": "Pending Syllabus",
-      "accentColor": "yellow",
-      "tagline": "Awaiting study material upload in SNT/",
-      "weightageScaleLabel": "Not Yet Available",
-      "weightageSource": "missing",
-      "weightageBasis": "No PDF or text files currently exist in SNT/."
     }
   }
 }
