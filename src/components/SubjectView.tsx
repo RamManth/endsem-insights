@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import type { SubjectRecord } from '../types/study';
 import { buildStudyFileLibrary, computeExamReadiness } from '../lib/studyHelpers';
+import { getChecklistForSubject } from '../lib/syllabusChecklistData';
 import { smoothScrollToY } from '../lib/scrollMotion';
 import { ExamCountdownBar } from './ExamCountdownBar';
 import { FormulaCheatDrawer } from './FormulaCheatDrawer';
@@ -68,6 +69,10 @@ export function SubjectView({
     () => (subject ? buildStudyFileLibrary([subject]).length : 0),
     [subject]
   );
+  const checklistCount = useMemo(
+    () => (subject ? getChecklistForSubject(subject).length : 0),
+    [subject]
+  );
   const hasFiles = fileCount > 0;
 
   const dashboardTabs = useMemo<GravityTabItem[]>(() => {
@@ -92,7 +97,7 @@ export function SubjectView({
       {
         id: 'checklist',
         label: 'Checklist',
-        badge: '20 ITEMS',
+        badge: `${checklistCount} ITEMS`,
         icon: <CheckSquare size={15} aria-hidden="true" />,
         accent: 'teal',
         testId: 'dash-tab-checklist',

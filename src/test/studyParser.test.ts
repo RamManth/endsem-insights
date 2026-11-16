@@ -8,7 +8,7 @@ import {
 import type { ModuleRecord } from '../types/study';
 
 describe('studyParser', () => {
-  it('validates the generated study dataset with NAS ready and MATH III / SNT missing material', () => {
+  it('validates the generated study dataset with NAS and MATH III ready, SNT missing material', () => {
     const result = parseAndValidateStudyDataset(generatedData);
 
     expect(result.hasFatalError).toBe(false);
@@ -37,7 +37,10 @@ describe('studyParser', () => {
       )
     ).toBe(true);
 
-    expect(math?.status).toBe('missing_material');
+    expect(math?.status).toBe('ready');
+    expect(math?.modules).toHaveLength(5);
+    expect(math?.totalWeightage).toBe(50);
+    expect(math?.sourceFiles).toHaveLength(10);
     expect(snt?.status).toBe('missing_material');
   });
 

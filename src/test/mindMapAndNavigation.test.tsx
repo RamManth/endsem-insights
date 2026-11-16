@@ -202,9 +202,8 @@ describe('App navigation & subject views', () => {
     expect(within(nav).queryByRole('button', { name: /SNT/i })).not.toBeInTheDocument();
 
     fireEvent.click(screen.getByTestId('subject-card-math-iii'));
-    const errorCard = screen.getByTestId('subject-error-state');
-    expect(errorCard).toBeInTheDocument();
-    expect(within(errorCard).getByText(/MATH III has no study material yet/i)).toBeInTheDocument();
+    expect(screen.getByTestId('subject-view-math-iii')).toBeInTheDocument();
+    expect(within(nav).getByTestId('topnav-active-subject')).toHaveTextContent('MATH III');
 
     // Still no subject switching pills in TopNav when viewing a subject
     expect(within(nav).queryByRole('button', { name: /SNT/i })).not.toBeInTheDocument();

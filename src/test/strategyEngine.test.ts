@@ -23,13 +23,13 @@ describe('strategyEngine', () => {
   it('clamps extreme time budgets and handles subjects without modules cleanly', () => {
     const { dataset } = parseAndValidateStudyDataset(generatedData);
     const nas = dataset.subjects.find((s) => s.id === 'nas')!;
-    const math = dataset.subjects.find((s) => s.id === 'math-iii')!;
+    const snt = dataset.subjects.find((s) => s.id === 'snt')!;
 
     const sprint = generateStudyStrategy(nas, 0);
     expect(sprint.availableHours).toBe(2);
     expect(sprint.steps).toHaveLength(5);
 
-    const emptyStrategy = generateStudyStrategy(math, 10);
+    const emptyStrategy = generateStudyStrategy(snt, 10);
     expect(emptyStrategy.steps).toHaveLength(0);
     expect(emptyStrategy.topTwoCoveragePercent).toBe(0);
   });

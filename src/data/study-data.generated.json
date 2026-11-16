@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "generatedAt": "2026-11-12T12:13:16.359340+00:00",
+  "generatedAt": "2026-11-16T05:29:13.408465+00:00",
   "studyRootName": "Endsem insights",
   "subjects": [
     {
@@ -1826,18 +1826,665 @@
       "folderName": "MATH III",
       "shortName": "MATH III",
       "fullName": "Mathematics III",
-      "courseCode": "Pending Syllabus",
+      "courseCode": "MATH 2101",
       "accentColor": "teal",
-      "tagline": "Awaiting study material upload in MATH III/",
-      "status": "missing_material",
-      "statusMessage": "No study PDFs or notes found in 'MATH III/'. Add module PDFs or a course plan to 'MATH III/' and run 'npm run parse'.",
-      "weightageScaleLabel": "Not Yet Available",
-      "weightageSource": "missing",
-      "weightageBasis": "No PDF or text files currently exist in MATH III/.",
-      "totalWeightage": 0,
-      "sourceFiles": [],
+      "tagline": "Linear Algebra, Vector Spaces, Matrix Decompositions & Fourier Analysis",
+      "status": "ready",
+      "statusMessage": "All modules parsed cleanly.",
+      "weightageScaleLabel": "Endsem Blueprint (out of 50)",
+      "weightageSource": "stated",
+      "weightageBasis": "University BTech Engineering Mathematics Theory Curriculum (5 Modules \u00d7 10 Marks = 50 Total Marks), verified against lecture notes and slide units.",
+      "totalWeightage": 50.0,
+      "sourceFiles": [
+        {
+          "filename": "Chapter_1_1_Fourier_Series.pdf",
+          "relativePath": "MATH III/Chapter_1_1_Fourier_Series.pdf",
+          "pageCount": 30,
+          "sizeBytes": 1050984,
+          "exampleCount": 4,
+          "isCoursePlan": false,
+          "parseError": null
+        },
+        {
+          "filename": "Chapter_1_2_Fourier_Transforms.pdf",
+          "relativePath": "MATH III/Chapter_1_2_Fourier_Transforms.pdf",
+          "pageCount": 16,
+          "sizeBytes": 555116,
+          "exampleCount": 0,
+          "isCoursePlan": false,
+          "parseError": null
+        },
+        {
+          "filename": "Chapter_1_3_Harmonic_Analysis.pdf",
+          "relativePath": "MATH III/Chapter_1_3_Harmonic_Analysis.pdf",
+          "pageCount": 13,
+          "sizeBytes": 641721,
+          "exampleCount": 0,
+          "isCoursePlan": false,
+          "parseError": null
+        },
+        {
+          "filename": "Chapter_2_1_Matrix_Decomposition.pdf",
+          "relativePath": "MATH III/Chapter_2_1_Matrix_Decomposition.pdf",
+          "pageCount": 16,
+          "sizeBytes": 223543,
+          "exampleCount": 2,
+          "isCoursePlan": false,
+          "parseError": null
+        },
+        {
+          "filename": "Chapter_2_2_LU_Decomposition.pdf",
+          "relativePath": "MATH III/Chapter_2_2_LU_Decomposition.pdf",
+          "pageCount": 3,
+          "sizeBytes": 101434,
+          "exampleCount": 0,
+          "isCoursePlan": false,
+          "parseError": null
+        },
+        {
+          "filename": "Chapter_2_3_QR_Decomposition.pdf",
+          "relativePath": "MATH III/Chapter_2_3_QR_Decomposition.pdf",
+          "pageCount": 2,
+          "sizeBytes": 65042,
+          "exampleCount": 1,
+          "isCoursePlan": false,
+          "parseError": null
+        },
+        {
+          "filename": "Chapter_3_1_Basis_and_Dimension.pdf",
+          "relativePath": "MATH III/Chapter_3_1_Basis_and_Dimension.pdf",
+          "pageCount": 8,
+          "sizeBytes": 204473,
+          "exampleCount": 2,
+          "isCoursePlan": false,
+          "parseError": null
+        },
+        {
+          "filename": "Chapter_3_2_Linear_Transformations.pdf",
+          "relativePath": "MATH III/Chapter_3_2_Linear_Transformations.pdf",
+          "pageCount": 4,
+          "sizeBytes": 142077,
+          "exampleCount": 3,
+          "isCoursePlan": false,
+          "parseError": null
+        },
+        {
+          "filename": "Chapter_3_3_Rank_Nullity_Matrix_Representation.pdf",
+          "relativePath": "MATH III/Chapter_3_3_Rank_Nullity_Matrix_Representation.pdf",
+          "pageCount": 6,
+          "sizeBytes": 284444,
+          "exampleCount": 4,
+          "isCoursePlan": false,
+          "parseError": null
+        },
+        {
+          "filename": "Chapter_4_1_Inner_Product_Space.pdf",
+          "relativePath": "MATH III/Chapter_4_1_Inner_Product_Space.pdf",
+          "pageCount": 8,
+          "sizeBytes": 432148,
+          "exampleCount": 3,
+          "isCoursePlan": false,
+          "parseError": null
+        }
+      ],
+      "resourceFiles": [],
       "parseWarnings": [],
-      "modules": []
+      "modules": [
+        {
+          "id": "math-iii-m1",
+          "moduleNumber": 1,
+          "coCode": "CO1",
+          "track": "Linear Algebra",
+          "title": "Vector Spaces, Basis & Dimension",
+          "weightage": 10,
+          "weightageUnit": "marks",
+          "weightageSource": "stated",
+          "sourceFiles": [
+            "Chapter_3_1_Basis_and_Dimension.pdf"
+          ],
+          "prerequisites": [],
+          "topicGroups": [
+            {
+              "id": "math-iii-m1-subspaces",
+              "title": "Subspaces, Linear Combinations & Independence",
+              "sourceFile": "Chapter_3_1_Basis_and_Dimension.pdf",
+              "sourceRef": "pp. 1-3",
+              "priority": "core",
+              "leaves": [
+                {
+                  "id": "math-iii-m1-s1",
+                  "title": "Vector Space Axioms & Subspace Verification Criteria",
+                  "sourceFile": "Chapter_3_1_Basis_and_Dimension.pdf",
+                  "sourceRef": "p. 1",
+                  "highYield": false
+                },
+                {
+                  "id": "math-iii-m1-s2",
+                  "title": "Linear Combinations and Spanning Sets span(S)",
+                  "sourceFile": "Chapter_3_1_Basis_and_Dimension.pdf",
+                  "sourceRef": "pp. 1-2",
+                  "highYield": true
+                },
+                {
+                  "id": "math-iii-m1-s3",
+                  "title": "Linear Independence & Dependence Testing via Determinants/Rank",
+                  "sourceFile": "Chapter_3_1_Basis_and_Dimension.pdf",
+                  "sourceRef": "pp. 2-3",
+                  "highYield": true
+                }
+              ]
+            },
+            {
+              "id": "math-iii-m1-basis-dim",
+              "title": "Basis, Dimension & Echelon Extraction",
+              "sourceFile": "Chapter_3_1_Basis_and_Dimension.pdf",
+              "sourceRef": "pp. 2-5",
+              "priority": "high-yield",
+              "leaves": [
+                {
+                  "id": "math-iii-m1-b1",
+                  "title": "Definition of Basis and Dimension of Vector Space",
+                  "sourceFile": "Chapter_3_1_Basis_and_Dimension.pdf",
+                  "sourceRef": "p. 1",
+                  "highYield": true
+                },
+                {
+                  "id": "math-iii-m1-b2",
+                  "title": "Echelon Matrix Algorithm for Extracting Subspace Basis",
+                  "sourceFile": "Chapter_3_1_Basis_and_Dimension.pdf",
+                  "sourceRef": "pp. 2-3",
+                  "highYield": true
+                },
+                {
+                  "id": "math-iii-m1-b3",
+                  "title": "Extending a Linearly Independent Set to a Basis of R\u207f",
+                  "sourceFile": "Chapter_3_1_Basis_and_Dimension.pdf",
+                  "sourceRef": "pp. 3-5",
+                  "highYield": true
+                }
+              ]
+            },
+            {
+              "id": "math-iii-m1-nullspace-sums",
+              "title": "Solution Space of AX=0 & Subspace Dimensions",
+              "sourceFile": "Chapter_3_1_Basis_and_Dimension.pdf",
+              "sourceRef": "pp. 4-8",
+              "priority": "high-yield",
+              "leaves": [
+                {
+                  "id": "math-iii-m1-n1",
+                  "title": "Solution Space (Null Space) Basis & Dimension for Homogeneous AX=0",
+                  "sourceFile": "Chapter_3_1_Basis_and_Dimension.pdf",
+                  "sourceRef": "pp. 4-6",
+                  "highYield": true
+                },
+                {
+                  "id": "math-iii-m1-n2",
+                  "title": "Sum U+W and Intersection U\u2229W of Subspaces",
+                  "sourceFile": "Chapter_3_1_Basis_and_Dimension.pdf",
+                  "sourceRef": "pp. 6-8",
+                  "highYield": true
+                },
+                {
+                  "id": "math-iii-m1-n3",
+                  "title": "Subspace Dimension Theorem: dim(U+W) = dim U + dim W - dim(U\u2229W)",
+                  "sourceFile": "Chapter_3_1_Basis_and_Dimension.pdf",
+                  "sourceRef": "p. 8",
+                  "highYield": true
+                }
+              ]
+            }
+          ],
+          "pageCount": 8,
+          "exampleCount": 2
+        },
+        {
+          "id": "math-iii-m2",
+          "moduleNumber": 2,
+          "coCode": "CO2",
+          "track": "Linear Algebra",
+          "title": "Linear Transformations & Matrix Representations",
+          "weightage": 10,
+          "weightageUnit": "marks",
+          "weightageSource": "stated",
+          "sourceFiles": [
+            "Chapter_3_2_Linear_Transformations.pdf",
+            "Chapter_3_3_Rank_Nullity_Matrix_Representation.pdf"
+          ],
+          "prerequisites": [
+            "math-iii-m1"
+          ],
+          "topicGroups": [
+            {
+              "id": "math-iii-m2-mappings",
+              "title": "Linear Transformations: Definition & Properties",
+              "sourceFile": "Chapter_3_2_Linear_Transformations.pdf",
+              "sourceRef": "pp. 1-4",
+              "priority": "core",
+              "leaves": [
+                {
+                  "id": "math-iii-m2-m1",
+                  "title": "Linear Transformation Axioms: Additivity & Homogeneity",
+                  "sourceFile": "Chapter_3_2_Linear_Transformations.pdf",
+                  "sourceRef": "pp. 1-2",
+                  "highYield": false
+                },
+                {
+                  "id": "math-iii-m2-m2",
+                  "title": "Properties: T(0)=0, T(-v)=-T(v), Composition of Linear Maps",
+                  "sourceFile": "Chapter_3_2_Linear_Transformations.pdf",
+                  "sourceRef": "p. 2",
+                  "highYield": false
+                },
+                {
+                  "id": "math-iii-m2-m3",
+                  "title": "Spanning Set of Image: T(v\u2081),...,T(v\u2099) Spans Im(T)",
+                  "sourceFile": "Chapter_3_2_Linear_Transformations.pdf",
+                  "sourceRef": "p. 4",
+                  "highYield": true
+                }
+              ]
+            },
+            {
+              "id": "math-iii-m2-rank-nullity",
+              "title": "Kernel, Image & Sylvester's Rank-Nullity Theorem",
+              "sourceFile": "Chapter_3_3_Rank_Nullity_Matrix_Representation.pdf",
+              "sourceRef": "pp. 1-3",
+              "priority": "high-yield",
+              "leaves": [
+                {
+                  "id": "math-iii-m2-rn1",
+                  "title": "Kernel ker(T) & Image Im(T) Definitions and Subspace Proofs",
+                  "sourceFile": "Chapter_3_3_Rank_Nullity_Matrix_Representation.pdf",
+                  "sourceRef": "p. 1",
+                  "highYield": true
+                },
+                {
+                  "id": "math-iii-m2-rn2",
+                  "title": "Rank-Nullity Theorem: dim V = rank(T) + nullity(T)",
+                  "sourceFile": "Chapter_3_3_Rank_Nullity_Matrix_Representation.pdf",
+                  "sourceRef": "pp. 1-2",
+                  "highYield": true
+                },
+                {
+                  "id": "math-iii-m2-rn3",
+                  "title": "Injective (ker T = {0}), Surjective & Isomorphism Criteria",
+                  "sourceFile": "Chapter_3_3_Rank_Nullity_Matrix_Representation.pdf",
+                  "sourceRef": "pp. 2-3",
+                  "highYield": true
+                }
+              ]
+            },
+            {
+              "id": "math-iii-m2-matrix-rep",
+              "title": "Matrix Representations & Change of Basis",
+              "sourceFile": "Chapter_3_3_Rank_Nullity_Matrix_Representation.pdf",
+              "sourceRef": "pp. 3-6",
+              "priority": "high-yield",
+              "leaves": [
+                {
+                  "id": "math-iii-m2-mr1",
+                  "title": "Matrix Representation [T]_S Relative to Ordered Basis S",
+                  "sourceFile": "Chapter_3_3_Rank_Nullity_Matrix_Representation.pdf",
+                  "sourceRef": "pp. 3-4",
+                  "highYield": true
+                },
+                {
+                  "id": "math-iii-m2-mr2",
+                  "title": "Derivative Operator Representation [D] on Function & Polynomial Spaces",
+                  "sourceFile": "Chapter_3_3_Rank_Nullity_Matrix_Representation.pdf",
+                  "sourceRef": "p. 4",
+                  "highYield": true
+                },
+                {
+                  "id": "math-iii-m2-mr3",
+                  "title": "Transition Matrix P and Change of Basis: [T]_{S'} = P\u207b\u00b9 [T]_S P",
+                  "sourceFile": "Chapter_3_3_Rank_Nullity_Matrix_Representation.pdf",
+                  "sourceRef": "pp. 5-6",
+                  "highYield": true
+                }
+              ]
+            }
+          ],
+          "pageCount": 10,
+          "exampleCount": 7
+        },
+        {
+          "id": "math-iii-m3",
+          "moduleNumber": 3,
+          "coCode": "CO3",
+          "track": "Linear Algebra",
+          "title": "Inner Product Spaces, Orthogonality & QR",
+          "weightage": 10,
+          "weightageUnit": "marks",
+          "weightageSource": "stated",
+          "sourceFiles": [
+            "Chapter_4_1_Inner_Product_Space.pdf",
+            "Chapter_2_3_QR_Decomposition.pdf"
+          ],
+          "prerequisites": [
+            "math-iii-m1"
+          ],
+          "topicGroups": [
+            {
+              "id": "math-iii-m3-inner-products",
+              "title": "Inner Product Axioms, Norms & Cauchy-Schwarz",
+              "sourceFile": "Chapter_4_1_Inner_Product_Space.pdf",
+              "sourceRef": "pp. 1-3",
+              "priority": "core",
+              "leaves": [
+                {
+                  "id": "math-iii-m3-ip1",
+                  "title": "Inner Product Axioms on R\u207f, C[a,b] & Matrix Space M_{m,n}",
+                  "sourceFile": "Chapter_4_1_Inner_Product_Space.pdf",
+                  "sourceRef": "pp. 1-2",
+                  "highYield": true
+                },
+                {
+                  "id": "math-iii-m3-ip2",
+                  "title": "Cauchy-Schwarz Inequality |\u27e8u, v\u27e9| \u2264 \u2016u\u2016 \u2016v\u2016 & Triangle Inequality",
+                  "sourceFile": "Chapter_4_1_Inner_Product_Space.pdf",
+                  "sourceRef": "pp. 2-3",
+                  "highYield": true
+                },
+                {
+                  "id": "math-iii-m3-ip3",
+                  "title": "Norm, Distance & Angle Between Vectors: cos \u03b8 = \u27e8u, v\u27e9 / (\u2016u\u2016 \u2016v\u2016)",
+                  "sourceFile": "Chapter_4_1_Inner_Product_Space.pdf",
+                  "sourceRef": "p. 3",
+                  "highYield": true
+                }
+              ]
+            },
+            {
+              "id": "math-iii-m3-orthogonality",
+              "title": "Orthogonal Complements & Projections",
+              "sourceFile": "Chapter_4_1_Inner_Product_Space.pdf",
+              "sourceRef": "pp. 4-6",
+              "priority": "high-yield",
+              "leaves": [
+                {
+                  "id": "math-iii-m3-or1",
+                  "title": "Orthogonality of Vectors & Orthogonal Complement S^\u22a5",
+                  "sourceFile": "Chapter_4_1_Inner_Product_Space.pdf",
+                  "sourceRef": "pp. 4-5",
+                  "highYield": true
+                },
+                {
+                  "id": "math-iii-m3-or2",
+                  "title": "Direct Sum Decomposition V = W \u2295 W^\u22a5",
+                  "sourceFile": "Chapter_4_1_Inner_Product_Space.pdf",
+                  "sourceRef": "p. 5",
+                  "highYield": true
+                },
+                {
+                  "id": "math-iii-m3-or3",
+                  "title": "Orthogonal Projection Formula: proj_w(v) = (\u27e8v, w\u27e9 / \u27e8w, w\u27e9) w",
+                  "sourceFile": "Chapter_4_1_Inner_Product_Space.pdf",
+                  "sourceRef": "pp. 5-6",
+                  "highYield": true
+                }
+              ]
+            },
+            {
+              "id": "math-iii-m3-gram-schmidt",
+              "title": "Gram-Schmidt Orthogonalization & QR Decomposition",
+              "sourceFile": "Chapter_4_1_Inner_Product_Space.pdf",
+              "sourceRef": "pp. 6-8",
+              "priority": "high-yield",
+              "leaves": [
+                {
+                  "id": "math-iii-m3-gs1",
+                  "title": "Gram-Schmidt Process Algorithm for Constructing Orthogonal Bases",
+                  "sourceFile": "Chapter_4_1_Inner_Product_Space.pdf",
+                  "sourceRef": "pp. 6-7",
+                  "highYield": true
+                },
+                {
+                  "id": "math-iii-m3-gs2",
+                  "title": "Orthonormal Polynomial Bases {1, t, t\u00b2, t\u00b3} on C[-1, 1]",
+                  "sourceFile": "Chapter_4_1_Inner_Product_Space.pdf",
+                  "sourceRef": "pp. 7-8",
+                  "highYield": true
+                },
+                {
+                  "id": "math-iii-m3-gs3",
+                  "title": "QR Decomposition A = QR with Gram-Schmidt Orthonormal Columns",
+                  "sourceFile": "Chapter_2_3_QR_Decomposition.pdf",
+                  "sourceRef": "pp. 1-2",
+                  "highYield": true
+                }
+              ]
+            }
+          ],
+          "pageCount": 10,
+          "exampleCount": 4
+        },
+        {
+          "id": "math-iii-m4",
+          "moduleNumber": 4,
+          "coCode": "CO4",
+          "track": "Matrix Methods",
+          "title": "Matrix Decompositions: LU, Cholesky, SVD & Spectral",
+          "weightage": 10,
+          "weightageUnit": "marks",
+          "weightageSource": "stated",
+          "sourceFiles": [
+            "Chapter_2_1_Matrix_Decomposition.pdf",
+            "Chapter_2_2_LU_Decomposition.pdf",
+            "Chapter_2_3_QR_Decomposition.pdf"
+          ],
+          "prerequisites": [
+            "math-iii-m1",
+            "math-iii-m2"
+          ],
+          "topicGroups": [
+            {
+              "id": "math-iii-m4-eigenvalues",
+              "title": "Eigenvalues, Cayley-Hamilton & Diagonalization",
+              "sourceFile": "Chapter_2_1_Matrix_Decomposition.pdf",
+              "sourceRef": "pp. 1-8",
+              "priority": "high-yield",
+              "leaves": [
+                {
+                  "id": "math-iii-m4-e1",
+                  "title": "Eigenvalues, Eigenspaces & Multiplicity det(A - \u03bbI) = 0",
+                  "sourceFile": "Chapter_2_1_Matrix_Decomposition.pdf",
+                  "sourceRef": "pp. 1-3",
+                  "highYield": true
+                },
+                {
+                  "id": "math-iii-m4-e2",
+                  "title": "Cayley-Hamilton Theorem: Matrix Inverse A\u207b\u00b9 & Powers A\u1d4f",
+                  "sourceFile": "Chapter_2_1_Matrix_Decomposition.pdf",
+                  "sourceRef": "pp. 3-5",
+                  "highYield": true
+                },
+                {
+                  "id": "math-iii-m4-e3",
+                  "title": "Matrix Diagonalization A = P D P\u207b\u00b9 & Matrix Powers A\u00b9\u2070\u2070",
+                  "sourceFile": "Chapter_2_1_Matrix_Decomposition.pdf",
+                  "sourceRef": "pp. 5-8",
+                  "highYield": true
+                }
+              ]
+            },
+            {
+              "id": "math-iii-m4-spectral",
+              "title": "Orthogonal Diagonalization & Spectral Theorem",
+              "sourceFile": "Chapter_2_1_Matrix_Decomposition.pdf",
+              "sourceRef": "pp. 9-10",
+              "priority": "core",
+              "leaves": [
+                {
+                  "id": "math-iii-m4-sp1",
+                  "title": "Real Symmetric Matrices: Real Eigenvalues & Orthogonal Eigenspaces",
+                  "sourceFile": "Chapter_2_1_Matrix_Decomposition.pdf",
+                  "sourceRef": "p. 9",
+                  "highYield": true
+                },
+                {
+                  "id": "math-iii-m4-sp2",
+                  "title": "Spectral Theorem & Orthogonal Diagonalization A = P D P\u1d40",
+                  "sourceFile": "Chapter_2_1_Matrix_Decomposition.pdf",
+                  "sourceRef": "pp. 9-10",
+                  "highYield": true
+                },
+                {
+                  "id": "math-iii-m4-sp3",
+                  "title": "Positive Definite Symmetric Matrices & Quadratic Form Classification",
+                  "sourceFile": "Chapter_2_1_Matrix_Decomposition.pdf",
+                  "sourceRef": "p. 10",
+                  "highYield": false
+                }
+              ]
+            },
+            {
+              "id": "math-iii-m4-decompositions",
+              "title": "LU, Cholesky & Singular Value Decompositions",
+              "sourceFile": "Chapter_2_1_Matrix_Decomposition.pdf",
+              "sourceRef": "pp. 11-16",
+              "priority": "high-yield",
+              "leaves": [
+                {
+                  "id": "math-iii-m4-d1",
+                  "title": "LU Factorization A = LU with Forward (LY=b) & Back (UX=Y) Substitution",
+                  "sourceFile": "Chapter_2_2_LU_Decomposition.pdf",
+                  "sourceRef": "pp. 1-3",
+                  "highYield": true
+                },
+                {
+                  "id": "math-iii-m4-d2",
+                  "title": "Cholesky Decomposition A = L L\u1d40 for Symmetric Positive Definite Matrices",
+                  "sourceFile": "Chapter_2_1_Matrix_Decomposition.pdf",
+                  "sourceRef": "pp. 14-16",
+                  "highYield": true
+                },
+                {
+                  "id": "math-iii-m4-d3",
+                  "title": "Singular Value Decomposition A = U \u03a3 V\u1d40 (Singular Values \u03c3_i = \u221a\u03bb_i(A\u1d40A))",
+                  "sourceFile": "Chapter_2_1_Matrix_Decomposition.pdf",
+                  "sourceRef": "pp. 11-13",
+                  "highYield": true
+                }
+              ]
+            }
+          ],
+          "pageCount": 21,
+          "exampleCount": 3
+        },
+        {
+          "id": "math-iii-m5",
+          "moduleNumber": 5,
+          "coCode": "CO5",
+          "track": "Fourier Methods",
+          "title": "Fourier Series, Harmonic Analysis & Fourier Transforms",
+          "weightage": 10,
+          "weightageUnit": "marks",
+          "weightageSource": "stated",
+          "sourceFiles": [
+            "Chapter_1_1_Fourier_Series.pdf",
+            "Chapter_1_2_Fourier_Transforms.pdf",
+            "Chapter_1_3_Harmonic_Analysis.pdf"
+          ],
+          "prerequisites": [],
+          "topicGroups": [
+            {
+              "id": "math-iii-m5-fourier-series",
+              "title": "Fourier Series, Dirichlet Conditions & Parseval's Identity",
+              "sourceFile": "Chapter_1_1_Fourier_Series.pdf",
+              "sourceRef": "pp. 1-13",
+              "priority": "high-yield",
+              "leaves": [
+                {
+                  "id": "math-iii-m5-fs1",
+                  "title": "Dirichlet Conditions & Euler Formulas for a\u2080, a\u2099, b\u2099 on Periodic Intervals",
+                  "sourceFile": "Chapter_1_1_Fourier_Series.pdf",
+                  "sourceRef": "pp. 1-7",
+                  "highYield": true
+                },
+                {
+                  "id": "math-iii-m5-fs2",
+                  "title": "Even & Odd Periodic Extensions: Fourier Cosine and Sine Series",
+                  "sourceFile": "Chapter_1_1_Fourier_Series.pdf",
+                  "sourceRef": "pp. 7-11",
+                  "highYield": true
+                },
+                {
+                  "id": "math-iii-m5-fs3",
+                  "title": "Half-Range Expansions & Parseval's Identity for Series Summation",
+                  "sourceFile": "Chapter_1_1_Fourier_Series.pdf",
+                  "sourceRef": "pp. 12-13",
+                  "highYield": true
+                }
+              ]
+            },
+            {
+              "id": "math-iii-m5-harmonic",
+              "title": "Numerical Harmonic Analysis from Discrete Tables",
+              "sourceFile": "Chapter_1_3_Harmonic_Analysis.pdf",
+              "sourceRef": "pp. 1-13",
+              "priority": "high-yield",
+              "leaves": [
+                {
+                  "id": "math-iii-m5-ha1",
+                  "title": "Discrete Fourier Coefficient Formulas: a\u2080 = (1/N)\u03a3y, a\u2099 = (2/N)\u03a3y cos(nx)",
+                  "sourceFile": "Chapter_1_3_Harmonic_Analysis.pdf",
+                  "sourceRef": "p. 1",
+                  "highYield": true
+                },
+                {
+                  "id": "math-iii-m5-ha2",
+                  "title": "Fundamental & 2nd Harmonic Computation from Equidistant Data Tables",
+                  "sourceFile": "Chapter_1_3_Harmonic_Analysis.pdf",
+                  "sourceRef": "pp. 1-3",
+                  "highYield": true
+                },
+                {
+                  "id": "math-iii-m5-ha3",
+                  "title": "Harmonic Amplitude \u221a(a\u2099\u00b2 + b\u2099\u00b2) & Phase Angle Determination",
+                  "sourceFile": "Chapter_1_3_Harmonic_Analysis.pdf",
+                  "sourceRef": "pp. 1-5",
+                  "highYield": true
+                }
+              ]
+            },
+            {
+              "id": "math-iii-m5-transforms",
+              "title": "Fourier Transforms, Properties & Convolution Theorem",
+              "sourceFile": "Chapter_1_2_Fourier_Transforms.pdf",
+              "sourceRef": "pp. 1-16",
+              "priority": "high-yield",
+              "leaves": [
+                {
+                  "id": "math-iii-m5-ft1",
+                  "title": "Fourier Integral Representation & Fourier Transform Pair F(s)",
+                  "sourceFile": "Chapter_1_2_Fourier_Transforms.pdf",
+                  "sourceRef": "pp. 1-3",
+                  "highYield": true
+                },
+                {
+                  "id": "math-iii-m5-ft2",
+                  "title": "Fourier Cosine and Sine Transforms & Definite Integrals",
+                  "sourceFile": "Chapter_1_2_Fourier_Transforms.pdf",
+                  "sourceRef": "pp. 10-13",
+                  "highYield": true
+                },
+                {
+                  "id": "math-iii-m5-ft3",
+                  "title": "Operational Properties: Shifting, Modulation, Derivative & Convolution F{f*g}",
+                  "sourceFile": "Chapter_1_2_Fourier_Transforms.pdf",
+                  "sourceRef": "pp. 3-6",
+                  "highYield": true
+                }
+              ]
+            }
+          ],
+          "pageCount": 59,
+          "exampleCount": 4
+        }
+      ],
+      "pyqAnalysis": null
     },
     {
       "id": "snt",

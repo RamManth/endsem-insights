@@ -5,7 +5,7 @@ export interface SyllabusChecklistItem {
   moduleId: string;
   moduleNumber: number;
   coCode: string;
-  track: 'Networks' | 'Signals';
+  track: string;
   title: string;
   marks: number;
   pyqFrequency?: string;
@@ -359,9 +359,255 @@ export const NAS_CHECKLIST_ITEMS: SyllabusChecklistItem[] = [
   },
 ];
 
+export const MATH_III_CHECKLIST_ITEMS: SyllabusChecklistItem[] = [
+  // ==========================================
+  // MODULE 5: FOURIER METHODS (10 Marks)
+  // ==========================================
+  {
+    id: 'chk-math-m5-fourier-series',
+    moduleId: 'math-iii-m5',
+    moduleNumber: 5,
+    coCode: 'CO5',
+    track: 'Fourier Methods',
+    title: 'Fourier Series: Dirichlet Conditions, a₀, aₙ, bₙ & Parseval Summation',
+    marks: 4,
+    pyqFrequency: 'Core University Exam Pattern',
+    priority: '1am-core',
+    estMinutes: 25,
+    keyConcept: 'Dirichlet conditions, even/odd symmetry test, Euler formulas for a₀, aₙ, bₙ, and Parseval identity for ∑1/n²',
+    sourceFile: 'Chapter_1_1_Fourier_Series.pdf',
+    page: 7,
+  },
+  {
+    id: 'chk-math-m5-harmonic',
+    moduleId: 'math-iii-m5',
+    moduleNumber: 5,
+    coCode: 'CO5',
+    track: 'Fourier Methods',
+    title: 'Tabular Harmonic Analysis: 1st & 2nd Harmonics from Discrete Data Table',
+    marks: 3,
+    pyqFrequency: 'Guaranteed 6-8m Problem',
+    priority: '1am-core',
+    estMinutes: 20,
+    keyConcept: 'Set up table for x, y, cos x, sin x, cos 2x, sin 2x; compute a₀=(1/N)∑y, a₁=(2/N)∑y cos x, b₁=(2/N)∑y sin x',
+    sourceFile: 'Chapter_1_3_Harmonic_Analysis.pdf',
+    page: 1,
+  },
+  {
+    id: 'chk-math-m5-ft-convolution',
+    moduleId: 'math-iii-m5',
+    moduleNumber: 5,
+    coCode: 'CO5',
+    track: 'Fourier Methods',
+    title: 'Fourier Transform Properties: Modulation, Shifting & Convolution Theorem',
+    marks: 3,
+    pyqFrequency: 'Recurring Transform Problem',
+    priority: 'quick-win',
+    estMinutes: 15,
+    keyConcept: 'FT of exp(-a|t|), modulation theorem f(t)cos(at), and convolution evaluation ∫f(u)g(t-u)du ↔ F(s)G(s)',
+    sourceFile: 'Chapter_1_2_Fourier_Transforms.pdf',
+    page: 4,
+  },
+  // ==========================================
+  // MODULE 4: MATRIX DECOMPOSITIONS (10 Marks)
+  // ==========================================
+  {
+    id: 'chk-math-m4-lu-decomp',
+    moduleId: 'math-iii-m4',
+    moduleNumber: 4,
+    coCode: 'CO4',
+    track: 'Matrix Methods',
+    title: 'LU Factorization of 3×3 Matrix and Solving System AX = b',
+    marks: 4,
+    pyqFrequency: 'High-Yield Algorithm',
+    priority: '1am-core',
+    estMinutes: 20,
+    keyConcept: 'Factor A = LU with Doolittle l_ii=1; forward substitution LY=b for Y; back substitution UX=Y for X',
+    sourceFile: 'Chapter_2_2_LU_Decomposition.pdf',
+    page: 1,
+  },
+  {
+    id: 'chk-math-m4-svd-cholesky',
+    moduleId: 'math-iii-m4',
+    moduleNumber: 4,
+    coCode: 'CO4',
+    track: 'Matrix Methods',
+    title: 'Singular Value Decomposition A = U Σ Vᵀ & Cholesky A = L Lᵀ',
+    marks: 3,
+    pyqFrequency: 'Advanced Matrix Decompositions',
+    priority: '1am-core',
+    estMinutes: 25,
+    keyConcept: 'Compute eigenvalues of AᵀA for singular values σ_i=√λ_i; construct orthonormal eigenvectors for V and U = (1/σ_i)Av_i; Cholesky l_ii = √(a_ii - ∑l_ik²)',
+    sourceFile: 'Chapter_2_1_Matrix_Decomposition.pdf',
+    page: 11,
+  },
+  {
+    id: 'chk-math-m4-diagonalization',
+    moduleId: 'math-iii-m4',
+    moduleNumber: 4,
+    coCode: 'CO4',
+    track: 'Matrix Methods',
+    title: 'Cayley-Hamilton Theorem for A⁻¹ & Orthogonal Diagonalization A = P D Pᵀ',
+    marks: 3,
+    pyqFrequency: 'Core Spectral Theorem',
+    priority: 'quick-win',
+    estMinutes: 20,
+    keyConcept: 'Verify characteristic equation p(A)=0; multiply by A⁻¹; orthogonal eigenvectors for symmetric matrix form modal matrix P',
+    sourceFile: 'Chapter_2_1_Matrix_Decomposition.pdf',
+    page: 5,
+  },
+  // ==========================================
+  // MODULE 2: LINEAR TRANSFORMATIONS (10 Marks)
+  // ==========================================
+  {
+    id: 'chk-math-m2-rank-nullity',
+    moduleId: 'math-iii-m2',
+    moduleNumber: 2,
+    coCode: 'CO2',
+    track: 'Linear Algebra',
+    title: 'Rank-Nullity Theorem: Finding Bases and Dimensions of ker(T) and Im(T)',
+    marks: 4,
+    pyqFrequency: 'Fundamental Linear Algebra Proof',
+    priority: '1am-core',
+    estMinutes: 20,
+    keyConcept: 'Solve T(v)=0 for kernel basis (nullity); image basis spanned by T(e_i) (rank); verify dim V = rank + nullity',
+    sourceFile: 'Chapter_3_3_Rank_Nullity_Matrix_Representation.pdf',
+    page: 1,
+  },
+  {
+    id: 'chk-math-m2-matrix-rep',
+    moduleId: 'math-iii-m2',
+    moduleNumber: 2,
+    coCode: 'CO2',
+    track: 'Linear Algebra',
+    title: 'Matrix Representation of Derivative Operator [D] on Polynomial/Trig Spaces',
+    marks: 3,
+    pyqFrequency: 'Recurring Operator Problem',
+    priority: 'quick-win',
+    estMinutes: 15,
+    keyConcept: 'Apply D to each basis element {1, t, t²} or {sin t, cos t, e^{3t}}; express output as coordinate column vectors',
+    sourceFile: 'Chapter_3_3_Rank_Nullity_Matrix_Representation.pdf',
+    page: 4,
+  },
+  {
+    id: 'chk-math-m2-change-basis',
+    moduleId: 'math-iii-m2',
+    moduleNumber: 2,
+    coCode: 'CO2',
+    track: 'Linear Algebra',
+    title: 'Change of Basis: Transition Matrix P and Operator Similarity [T]_{S\'} = P⁻¹ [T]_S P',
+    marks: 3,
+    pyqFrequency: 'Coordinate Transformation',
+    priority: 'quick-win',
+    estMinutes: 15,
+    keyConcept: 'Columns of P are coordinates of new basis vectors in terms of old basis; inverse P⁻¹ gives reverse transformation',
+    sourceFile: 'Chapter_3_3_Rank_Nullity_Matrix_Representation.pdf',
+    page: 5,
+  },
+  // ==========================================
+  // MODULE 3: INNER PRODUCT SPACES (10 Marks)
+  // ==========================================
+  {
+    id: 'chk-math-m3-gram-schmidt',
+    moduleId: 'math-iii-m3',
+    moduleNumber: 3,
+    coCode: 'CO3',
+    track: 'Linear Algebra',
+    title: 'Gram-Schmidt Orthonormalization of Polynomials on C[-1, 1]',
+    marks: 4,
+    pyqFrequency: 'Guaranteed Multi-Step Problem',
+    priority: '1am-core',
+    estMinutes: 25,
+    keyConcept: 'Inner product ⟨f,g⟩ = ∫_{-1}^1 f(t)g(t)dt; orthogonalize {1, t, t²} via w_k = v_k - ∑(⟨v_k,w_i⟩/⟨w_i,w_i⟩)w_i; normalize',
+    sourceFile: 'Chapter_4_1_Inner_Product_Space.pdf',
+    page: 7,
+  },
+  {
+    id: 'chk-math-m3-cauchy-angles',
+    moduleId: 'math-iii-m3',
+    moduleNumber: 3,
+    coCode: 'CO3',
+    track: 'Linear Algebra',
+    title: 'Cauchy-Schwarz Inequality and Angle Between Matrices ⟨A, B⟩ = tr(Bᵀ A)',
+    marks: 3,
+    pyqFrequency: 'Axiom & Geometric Properties',
+    priority: 'quick-win',
+    estMinutes: 15,
+    keyConcept: 'Verify 4 inner product axioms; compute matrix norm ‖A‖ = √tr(AᵀA); evaluate cos θ = tr(BᵀA) / (‖A‖ ‖B‖)',
+    sourceFile: 'Chapter_4_1_Inner_Product_Space.pdf',
+    page: 3,
+  },
+  {
+    id: 'chk-math-m3-qr-decomp',
+    moduleId: 'math-iii-m3',
+    moduleNumber: 3,
+    coCode: 'CO3',
+    track: 'Linear Algebra',
+    title: 'QR Factorization of 3×3 Matrix via Gram-Schmidt',
+    marks: 3,
+    pyqFrequency: 'High-Yield Factorization',
+    priority: 'quick-win',
+    estMinutes: 15,
+    keyConcept: 'Gram-Schmidt on columns of A yields orthonormal columns of Q; R is upper triangular with r_ij = ⟨a_j, q_i⟩',
+    sourceFile: 'Chapter_2_3_QR_Decomposition.pdf',
+    page: 1,
+  },
+  // ==========================================
+  // MODULE 1: VECTOR SPACES (10 Marks)
+  // ==========================================
+  {
+    id: 'chk-math-m1-echelon-basis',
+    moduleId: 'math-iii-m1',
+    moduleNumber: 1,
+    coCode: 'CO1',
+    track: 'Linear Algebra',
+    title: 'Echelon Algorithm for Subspace Basis and Extending to Basis of R⁴',
+    marks: 4,
+    pyqFrequency: 'Core Foundational Problem',
+    priority: '1am-core',
+    estMinutes: 15,
+    keyConcept: 'Form matrix with vectors as rows; reduce to row echelon form; nonzero rows form basis; append standard unit vectors for extension',
+    sourceFile: 'Chapter_3_1_Basis_and_Dimension.pdf',
+    page: 2,
+  },
+  {
+    id: 'chk-math-m1-nullspace',
+    moduleId: 'math-iii-m1',
+    moduleNumber: 1,
+    coCode: 'CO1',
+    track: 'Linear Algebra',
+    title: 'Solution Space (Null Space) of AX = 0: Basis and Dimension',
+    marks: 3,
+    pyqFrequency: 'Linear Systems Solution Space',
+    priority: 'quick-win',
+    estMinutes: 15,
+    keyConcept: 'Row reduce coefficient matrix; count non-pivot columns (free variables); express general solution as linear combination of basis vectors',
+    sourceFile: 'Chapter_3_1_Basis_and_Dimension.pdf',
+    page: 4,
+  },
+  {
+    id: 'chk-math-m1-dimension-sum',
+    moduleId: 'math-iii-m1',
+    moduleNumber: 1,
+    coCode: 'CO1',
+    track: 'Linear Algebra',
+    title: 'Subspace Sum and Intersection Theorem: dim(U+W) = dim U + dim W - dim(U∩W)',
+    marks: 3,
+    pyqFrequency: 'Subspace Dimension Formula',
+    priority: 'quick-win',
+    estMinutes: 15,
+    keyConcept: 'Find basis of U+W by combining generators; find basis of U∩W by equating vector expressions; verify dimension identity',
+    sourceFile: 'Chapter_3_1_Basis_and_Dimension.pdf',
+    page: 8,
+  },
+];
+
 export function getChecklistForSubject(subject: SubjectRecord): SyllabusChecklistItem[] {
   if (subject.id.toLowerCase() === 'nas') {
     return NAS_CHECKLIST_ITEMS;
+  }
+  if (subject.id.toLowerCase() === 'math-iii') {
+    return MATH_III_CHECKLIST_ITEMS;
   }
 
   // Fallback for generic subject
